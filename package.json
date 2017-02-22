@@ -1,13 +1,19 @@
 {
+<<<<<<< HEAD
   "name": "final",
   "version": "0.1.0",
+  "description": "final project",
   "private": true,
+  "main": "knexfile.js",
   "devDependencies": {
     "react-scripts": "0.9.0"
   },
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "dotenv": "^4.0.0",
+    "knex": "^0.12.7",
+    "pg": "^6.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
