@@ -2,15 +2,22 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// Won't run with the following below because we haven't defined them yet
+import Nav from './Nav.jsx';
+import Body from './Body.jsx';
+import Footer from './Footer.jsx';
+
+
+
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      bodyImage: "test" // picture of body here
-    };
-    this.post = this.post.bind(this)
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     bodyImage: "test" // picture of body here
+  //   };
+  //   this.post = this.post.bind(this)
+  // }
 
 
   render() {
