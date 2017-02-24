@@ -3,6 +3,8 @@ exports.up = function(knex, Promise) {
     knex.schema.createTable('users', function(table) {
       table.increments('id').primary();
       table.integer('doctor_id').references('doctors.id').notNullable();
+      table.string('name')
+      table.string('email');
       table.string('password').notNullable();
       table.integer('age');
       table.string('gender');
