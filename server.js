@@ -105,6 +105,7 @@ app.post("/login", (req, res) => {
   let userLoginEmail === req.body.email;
   let userLoginPassword === req.body.password;
 
+//fix below!
   for (loop through the database to find user information) {
     if('database name'[userID].email === userLoginEmail) {
       if(bcrypt.compareSync(userLoginPassword, 'database name'[userID].password)) {
