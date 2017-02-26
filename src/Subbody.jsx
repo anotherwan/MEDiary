@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { Link } from "react-router";
 
 class Subbody extends Component {
 
   render () {
     return (
       <div className="subbody">
-        <h1> Subbody TSTSTSTSTSTSTSTSTSTSTSSTST</h1>
-
+        SUBBODY
       </div>
+
     )
 
 //sub body code shizzle

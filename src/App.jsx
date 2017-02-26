@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 // Won't run with the following below because we haven't defined them yet
 
-import Main from './Main.jsx';
+import Home from './Home.jsx';
 import Footer from './Footer.jsx';
 import Nav from './Nav.jsx';
 
@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-        <Main />
+        {this.props.children}
       </div>
 
     );

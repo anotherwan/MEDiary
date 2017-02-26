@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from "react-router";
 import App from './App';
 import './index.css';
 
-import Main from './Main.jsx';
+import Home from './Home.jsx';
 import Login from './Login.jsx';
 import Nav from './Nav.jsx';
 import Register from './Register.jsx';
@@ -17,12 +17,12 @@ ReactDOM.render(
   <Router history={hashHistory}>
 
     <Route path="/" component={App}>
+      <IndexRoute component={Home} />
 
-      <Route path="/login" component={Login}></Route>
-      <Route path="/register" component={Register}></Route>
-      <IndexRoute component={Main}></IndexRoute>
-        <Route path="/head" component={Subbody}></Route>
-        <Route path="/torso" component={Subbody}></Route>
+      <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
+      <Route path="/head" component={Subbody} />
+      <Route path="/torso" component={Subbody} />
 
     </Route>
 

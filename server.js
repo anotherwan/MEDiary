@@ -16,10 +16,11 @@ const bcrypt           = require('bcrypt');
 
 
 const userRoutes = require("./routes/users");
-const inputRoutes = require("/routes/inputs");
+const inputRoutes = require("./routes/inputs");
 
 app.use("/api/users", userRoutes(knex));
 app.use("/api/inputs," inputRoutes(knex));
+
 app.use(knexLogger(knex));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -98,7 +99,7 @@ app.post("/register", (req, res) => {
 
 
 app.get("/login", (req, res) => {
-  res.render("login")
+
 })
 
 app.post("/login", (req, res) => {

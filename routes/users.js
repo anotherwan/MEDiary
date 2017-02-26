@@ -2,3 +2,15 @@
 
 const express = require('express');
 const router  = express.Router();
+
+module.exports = (knex) => {
+
+  router.get("/", (req, res) => {
+    knex
+      .select("*")
+      .from("users")
+      .where({email: 'shuman@notarobot.com'})
+      .then((results) => {
+        res.json(results);
+    });
+  });
