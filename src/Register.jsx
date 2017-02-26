@@ -15,6 +15,19 @@ class Register extends Component {
             E-mail:
             <input type="email" name="email" />
           </label><br/>
+
+
+          <label>
+            Password:
+            <input type="password" name="password" />
+          </label><br/>
+          <label>
+            Gender:
+            <select>
+              <option value="male"> Male </option>
+              <option value="female"> Female </option>
+            </select>
+          </label>
         </form>
 
       </div>
