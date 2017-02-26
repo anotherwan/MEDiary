@@ -5,6 +5,21 @@ class Register extends Component {
   render () {
     return (
       <div className="register">
+        <form>
+          <label>
+            Name:
+            <input type="text" name="name" />
+          </label><br/>
+
+          <label>
+            E-mail:
+            <input type="email" name="email" />
+          </label><br/>
+
+          <label>
+            Password:
+            <input type="password"
+        </form>
 
       </div>
     )
@@ -14,3 +29,10 @@ class Register extends Component {
 }
 
 export default Register;
+
+
+          // password: 'human',
+          // age: 22,
+          // gender: 'male',
+          // weight: 145,
+          // height: '5ft 10in'

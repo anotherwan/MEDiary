@@ -11,11 +11,13 @@ class Login extends Component {
       <form>
         <label>
           Name:
-          <input type="email" name="email" />
+          <input type="email" name="email"/>
+          <br/>
         </label>
         <label>
           Password:
           <input type="password" name="password" />
+          <br/>
         </label>
           <input type="submit" value="Submit" />
       </form>

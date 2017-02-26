@@ -9,7 +9,9 @@ class Nav extends Component {
       <nav className="nav">
         <h1> Med-Diary </h1>
         <h4><Link to="/login"><button>LOGIN</button></Link> </h4>
-        <h4><Link to="/head"><button >HEAD</button></Link></h4>
+        <h4><Link to="/head"><button>HEAD</button></Link></h4>
+        <h4><Link to="/register"><button>Register</button></Link></h4>
+        <h4><Link to="/"><button>HOME</button></Link></h4>
       </nav>
 
     )
