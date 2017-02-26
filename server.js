@@ -16,10 +16,11 @@ const bcrypt           = require('bcrypt');
 
 
 const userRoutes = require("./routes/users");
-const inputRoutes = require("/routes/inputs");
+const inputRoutes = require("./routes/inputs");
 
 app.use("/api/users", userRoutes(knex));
 app.use("/api/inputs," inputRoutes(knex));
+
 app.use(knexLogger(knex));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -98,13 +99,14 @@ app.post("/register", (req, res) => {
 
 
 app.get("/login", (req, res) => {
-  res.render("login")
+
 })
 
 app.post("/login", (req, res) => {
   let userLoginEmail === req.body.email;
   let userLoginPassword === req.body.password;
 
+//fix below!
   for (loop through the database to find user information) {
     if('database name'[userID].email === userLoginEmail) {
       if(bcrypt.compareSync(userLoginPassword, 'database name'[userID].password)) {
