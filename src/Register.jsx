@@ -15,10 +15,6 @@ class Register extends Component {
             E-mail:
             <input type="email" name="email" />
           </label><br/>
-
-          <label>
-            Password:
-            <input type="password"
         </form>
 
       </div>
