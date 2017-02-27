@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from "react-router";
 import Head from "./Head.jsx";
 import Torso from "./Torso.jsx";
@@ -6,23 +6,24 @@ import './App.css';
 
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
+import torsoMan from '../public/images/torsoMan.svg';
 
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      headComponent: true,
+      headComponent: false,
       torsoComponent: false,
-   };
-  this._onHeadClick = this._onHeadClick.bind(this);
-  this._onTorsoClick = this._onTorsoClick.bind(this);
+    };
+    this._onHeadClick = this._onHeadClick.bind(this);
+    this._onTorsoClick = this._onTorsoClick.bind(this);
   }
 
   _onHeadClick() {
-    console.log(this.state)
+    console.log("test:", this.state)
     this.setState({
-      headComponent: "sdfsdf",
+      headComponent: true,
       torsoComponent: false,
     });
     console.log(this.state)
@@ -41,7 +42,8 @@ class Home extends Component {
       <div className="home">
         {this.props.children}
         <img src={maleBody}/>
-        <Link to="/head"><button onClick={this._onHeadClick}>Head</button></Link>
+        <Link to="/head"><img onClick={this._onHeadClick} src={headHead} role="presentation" height="200" width="200"/> </Link>
+        <Link to="/torso"><img onClick={this._onTorsoClick} src={torsoMan} role="presentation" height="200" width="100"/> </Link>
         {console.log("blah: ", this.state)}
         {this.state.torsoComponent ?
           <Torso /> :

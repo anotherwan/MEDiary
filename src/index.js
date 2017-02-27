@@ -11,6 +11,7 @@ import Nav from './Nav.jsx';
 import Register from './Register.jsx';
 import Subbody from './Subbody.jsx';
 import Torso from "./Torso.jsx";
+import Head from "./Head.jsx";
 
 const main = document.getElementById('root');
 
@@ -22,8 +23,8 @@ ReactDOM.render(
 
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/head" component={Subbody} />
-      <Route path="/torso" component={Subbody} />
+      <Route path="/head" component={Head} />
+      <Route path="/torso" component={Torso} />
 
     </Route>
 
