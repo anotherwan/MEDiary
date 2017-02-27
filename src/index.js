@@ -10,6 +10,7 @@ import Login from './Login.jsx';
 import Nav from './Nav.jsx';
 import Register from './Register.jsx';
 import Subbody from './Subbody.jsx';
+import Torso from "./Torso.jsx";
 
 const main = document.getElementById('root');
 
