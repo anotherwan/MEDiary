@@ -11,42 +11,49 @@ class Register extends Component {
       age: '',
       gender: 'male',
       weight: '',
-      height: ''
+      height: '',
+      reg_error: ''
     };
-    this.onSubmit = this.handleSubmit.bind(this);
+    //this.onSubmit = this.handleSubmit.bind(this);
+    //this.setError = this.setError.bind(this);
   }
 
-handleSubmit = (event) => {
-  event.preventDefault();
-  //let self = this;
+  // setError() {
+  //   this.setState({
+  //     reg_error: 'Error: Email in use!'
+  //   })
+  // }
 
-  fetch('http://localhost:4000/register', {
-    method: 'post',
-    mode: 'cors',
-    headers: { 'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      age: this.state.age,
-      gender: this.state.gender,
-      weight: this.state.weight,
-      height: this.state.height
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+
+    fetch('http://localhost:4000/register', {
+      method: 'post',
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+        age: this.state.age,
+        gender: this.state.gender,
+        weight: this.state.weight,
+        height: this.state.height
+      })
+    }).then((response) => {
+      if (response.status === 409) {
+        this.setState({
+          reg_error: 'Error: That email address in already in use.'
+        })
+      }
     })
-  }).then(function(res) {
-    // Check for eroros?
-    //if res.statusCode => 400
-    return res.json();
-  }).then(function(body) {
-    console.log(body);
-  });
-}
-
+  }
 
   render () {
     return (
       <div className="register" >
-        <form id="register" onSubmit={this.onSubmit} >
+        <form id="register" onSubmit={(e) => this.handleSubmit(e)} >
           <label>
             Name:
             <input type="text" onChange={(e) => this.setState({name: e.target.value})} value={this.state.name} />
@@ -81,6 +88,9 @@ handleSubmit = (event) => {
           </label> <br />
             <input type="submit" value="Submit" />
         </form>
+        <div >
+            {this.state.reg_error}
+        </div>
       </div>
     )
   }
