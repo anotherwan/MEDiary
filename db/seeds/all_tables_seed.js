@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise) {
           doctor_id: getDrId(),
           name: 'Sick Human',
           email: 'shuman@notarobot.com',
-          password: 'human',
+          password: '$2a$10$HoqV4ZXhy.uUt9F1qngGCuW80xnTms1.I0c2LME/vvrghzMSHT7FW', //working pwd is 'sick'
           age: 22,
           gender: 'male',
           weight: 145,
