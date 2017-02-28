@@ -61,12 +61,27 @@ function generateRandomID() {
 
 
 app.post("/register", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   let userExists = false;
   let userPassword = bcrypt.hashSync(req.body.password, 10);
   let userID = generateRandomID();
   let userEmail = req.body.email;
+  knex.select('*')
+    .from('users')
+    .where('users.email', req.body.email)
+    .then((results) => {
+      let user = results[0]
+      console.log(user)
+    if(req.body.email === user.email) {
+      userExists = true;
+    }
+    console.log(userExists)
+  })
 
+  if(userExists === true) {
+    res.status(400).send("Email is already in use.")
+    console.log("Email already in use")
+  }
 
   function getDrId() {
     return knex('doctors')
@@ -74,65 +89,46 @@ app.post("/register", (req, res) => {
       .where('name', 'like', 'D%');
   }
 
-  // run a code that will loop through the database (check for email)
-  // if there is an user there change userExists = true
-  // so the same user cant register with the same e-mail
-
-   function emailExists(data) {
-    return knex('users')
-      .select('email')
-      .where('email', '=', data);
-  }
-
-
-
-  if (userExists) {
-    res.status(400).send("E-mail is currently in use.")
-  } else if (req.body.email === "" || req.body.password === "") {
-    res.status(400).send("E-mail and/or Password was left blank.")
-  } else {
-    req.session.user_id = userID
-    knex('users').insert({
-      doctor_id: getDrId(),
-      name: req.body.name,
-      email: req.body.email,
-      password: userPassword,
-      age: req.body.age,
-      gender: req.body.gender,
-      weight: req.body.weight,
-      height: req.body.height
-    }).then((results) => {
-      res.json({
-        success: true,
-        mesage: 'OK'
-      })
-    })
-  }
+  // if (userExists) {
+  //   res.status(400).send("E-mail is currently in use.")
+  // } else if (req.body.email === "" || req.body.password === "") {
+  //   res.status(400).send("E-mail and/or Password was left blank.")
+  // } else {
+  //   req.session.user_id = userID
+  //   knex('users').insert({
+  //     doctor_id: getDrId(),
+  //     name: req.body.name,
+  //     email: req.body.email,
+  //     password: userPassword,
+  //     age: req.body.age,
+  //     gender: req.body.gender,
+  //     weight: req.body.weight,
+  //     height: req.body.height
+  //   }).then((results) => {
+  //     res.json({
+  //       success: true,
+  //       mesage: 'OK'
+  //     })
+  //   })
+  // }
 })
 
-// app.post("/register", (req, res) => {
-//   let userExists = false;
-//   let userPassword = bcrypt.hashSync(req.body.password, 10);
-//   let userID = generateRandomID();
 
-//   // run a code that will loop through the database (check for email)
-//   // if there is an user there change userExists = true
-//   // so the same user cant register with the same e-mail
-
-//   if (userExists) {
-//     res.status(400).send("E-mail already in use.")
-//   } else if (req.body.email === "" || req.body.password === "") {
-//     res.status(400).send("E-mail and/or Password was left blank.")
-//   } else {
-//     req.session.user_id = userID
-//       const newUser = {
-//         id: userID,
-//         email: req.body.email,
-//         password: userPassword,
-//       }
-//   }
-//   res.redirect("/user")
-// })
+app.post("/login", (req, res) =>{
+  let userLoginEmail = req.body.email;
+  let userLoginPassword = req.body.password;
+  knex.select('*')
+    .from('users')
+    .where('users.email', userLoginEmail)
+    .then((results) => {
+      let user = results[0];
+    if(userLoginEmail = user.email) {
+      if(bcrypt.compareSync(userLoginPassword, user.password)) {
+          req.session.user_id = user.id
+      }
+    }
+  })
+})
 
 
 // app.get("/login", (req, res) => {
