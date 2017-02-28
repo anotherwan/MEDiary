@@ -16,8 +16,8 @@ class Register extends Component {
     this.onSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = (e) => {
+    e.preventDefault();
 
     fetch('http://localhost:4000/register', {
       method: 'post',
@@ -33,8 +33,6 @@ class Register extends Component {
         height: this.state.height
       })
     }).then(function(res) {
-      // Check for eroros?
-      //if res.statusCode => 400
       return res.json();
     }).then(function(body) {
       console.log(body);

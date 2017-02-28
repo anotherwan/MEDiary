@@ -69,6 +69,8 @@ app.post("/register", (req, res) => {
       let user = response[0];
 
       if (!user) {
+        req.session.user_id = userID
+        console.log(req.session.user_id)
         knex('users').insert({
           doctor_id: getDrId(),
           name: req.body.name,
@@ -79,7 +81,6 @@ app.post("/register", (req, res) => {
           weight: req.body.weight,
           height: req.body.height
         }).then((results) => {
-          req.session.user_id = userID
           res.json({
             success: true,
             mesage: 'OK'
@@ -112,7 +113,7 @@ app.post("/login", (req, res) => {
         //   console.log("Pass no match")
         // }
         res.session = user.id;
-        console.log(req.session)
+        console.log(res.session)
       }
 
   })
