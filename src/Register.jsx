@@ -2,17 +2,6 @@ import React, {Component} from 'react';
 
 class Register extends Component {
 
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    alert('working')
-  }
-
-  render () {
-    return (
-      <div className="register">
-        <form onSubmit={this.handleSubmit}>
-
   constructor(props) {
     super(props);
     this.state = {
