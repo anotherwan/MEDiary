@@ -24,7 +24,7 @@ class Tracker extends Component {
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({
         user_id: this.state.user_id, //req.session.user_id,
-        body_part_id: this.state.body_part_id, //req.params.id,
+        body_part_id: this.state.body_part_id, //req.params.id?,
         pain_rating: this.state.pain_rating, //e.target.value
         description: this.state.description, //e.target.value
         date_created: this.state.date_created
