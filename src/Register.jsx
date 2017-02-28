@@ -7,8 +7,6 @@ class Register extends Component {
     alert('working')
   }
 
-
-
   render () {
     return (
       <div className="register">

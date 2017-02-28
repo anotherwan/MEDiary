@@ -21,12 +21,10 @@ class Home extends Component {
   }
 
   _onHeadClick() {
-    console.log("test:", this.state)
     this.setState({
       headComponent: true,
       torsoComponent: false,
     });
-    console.log(this.state)
   }
 
   _onTorsoClick() {
@@ -44,12 +42,8 @@ class Home extends Component {
         <img src={maleBody}/>
         <Link to="/head"><img onClick={this._onHeadClick} src={headHead} role="presentation" height="200" width="200"/> </Link>
         <Link to="/torso"><img onClick={this._onTorsoClick} src={torsoMan} role="presentation" height="200" width="100"/> </Link>
-        {console.log("blah: ", this.state)}
-        {this.state.torsoComponent ?
-          <Torso /> :
-          null
-        }
-        {this.state.headComponent ? <Head /> : null}
+        {this.state.torsoComponent && <Torso />}
+        {this.state.headComponent && <Head />}
       </div>
     )
   }
