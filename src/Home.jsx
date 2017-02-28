@@ -38,7 +38,7 @@ class Home extends Component {
     return (
 
       <div className="home">
-        {this.props.children}
+
         <img src={maleBody}/>
         <Link to="/head"><img onClick={this._onHeadClick} src={headHead} role="presentation" height="200" width="200"/> </Link>
         <Link to="/torso"><img onClick={this._onTorsoClick} src={torsoMan} role="presentation" height="200" width="100"/> </Link>

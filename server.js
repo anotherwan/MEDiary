@@ -34,14 +34,6 @@ app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000
 }));
 
-
-// new WebpackDevServer(webpack(config), {
-//     publicPath: config.output.publicPath,
-//     watchOptions: {
-//       aggregateTimeout: 300,
-//       poll: 1000
-//     }
-//   })
 app.listen(4000, '0.0.0.0', function (err, result) {
   if (err) {
     console.log(err);
@@ -49,7 +41,6 @@ app.listen(4000, '0.0.0.0', function (err, result) {
 
   console.log('Running at http://0.0.0.0:4000');
 })
-
 
 function generateRandomID() {
   var text = "";
@@ -59,105 +50,69 @@ function generateRandomID() {
   return text;
 };
 
-
 app.post("/register", (req, res) => {
-  // console.log(req.body);
-  let userExists = false;
-  let userPassword = bcrypt.hashSync(req.body.password, 10);
-  let userID = generateRandomID();
-  let userEmail = req.body.email;
-  knex.select('*')
-    .from('users')
-    .where('users.email', req.body.email)
-    .then((results) => {
-      let user = results[0]
-      console.log(user)
-    if(req.body.email === user.email) {
-      userExists = true;
-    }
-    console.log(userExists)
-  })
-
-  if(userExists === true) {
-    res.status(400).send("Email is already in use.")
-    console.log("Email already in use")
-  }
 
   function getDrId() {
     return knex('doctors')
       .select('id')
       .where('name', 'like', 'D%');
   }
+  let userExists = false;
+  let userPassword = bcrypt.hashSync(req.body.password, 10);
+  let userID = generateRandomID();
+  let userEmail = req.body.email;
 
-  // if (userExists) {
-  //   res.status(400).send("E-mail is currently in use.")
-  // } else if (req.body.email === "" || req.body.password === "") {
-  //   res.status(400).send("E-mail and/or Password was left blank.")
-  // } else {
-  //   req.session.user_id = userID
-  //   knex('users').insert({
-  //     doctor_id: getDrId(),
-  //     name: req.body.name,
-  //     email: req.body.email,
-  //     password: userPassword,
-  //     age: req.body.age,
-  //     gender: req.body.gender,
-  //     weight: req.body.weight,
-  //     height: req.body.height
-  //   }).then((results) => {
-  //     res.json({
-  //       success: true,
-  //       mesage: 'OK'
-  //     })
-  //   })
-  // }
+  knex('users')
+    .select('email')
+    .where('email', '=', userEmail)
+    .then((response) => {
+      let user = response[0];
+
+      if (!user) {
+        knex('users').insert({
+          doctor_id: getDrId(),
+          name: req.body.name,
+          email: req.body.email,
+          password: userPassword,
+          age: req.body.age,
+          gender: req.body.gender,
+          weight: req.body.weight,
+          height: req.body.height
+        }).then((results) => {
+          res.json({
+            success: true,
+            mesage: 'OK'
+          })
+        })
+      } else if (req.body.email === "" || req.body.password === "") {
+          res.status(400).send("E-mail and/or Password was left blank.")
+      } else if (user.email === userEmail) {
+          res.status(400).send("E-mail is currently in use.")
+      }
+  });
 })
 
 
-app.post("/login", (req, res) =>{
+
+app.post("/login", (req, res) => {
   let userLoginEmail = req.body.email;
   let userLoginPassword = req.body.password;
   knex.select('*')
     .from('users')
     .where('users.email', userLoginEmail)
     .then((results) => {
-      let user = results[0];
-    if(userLoginEmail = user.email) {
-      if(bcrypt.compareSync(userLoginPassword, user.password)) {
-          req.session.user_id = user.id
+    let user = results[0];
+      if(!user) {
+        res.status(403).send("User not found.")
+        console.log("User not found")
+      } else if (userLoginEmail === user.email) {
+        // if (bcrypt.compareSync(userLoginPassword) !== user.password) {
+        //   res.status(401).send("Not the right password.")
+        //   console.log("Pass no match")
+        // }
+        res.session = user.id;
+        console.log(req.session)
       }
-    }
+
   })
 })
-
-
-// app.get("/login", (req, res) => {
-
-// })
-
-// app.post("/login", (req, res) => {
-//   let userLoginEmail === req.body.email;
-//   let userLoginPassword === req.body.password;
-
-// //fix below!
-//   for (loop through the database to find user information) {
-//     if('database name'[userID].email === userLoginEmail) {
-//       if(bcrypt.compareSync(userLoginPassword, 'database name'[userID].password)) {
-//         req.session.user_id = 'database name'[userID].id
-//         res.redirect("/")
-//         return
-//       } else {
-//         res.status(400).send("E-mail and Password do not match.")
-//       }
-//     }
-//   }
-//     return res.status(403).send("User not found")
-// });
-
-
-
-// app.get("/user", (req, res) => {
-//   if (req.session.user_id === undefined) {
-//   res.status(401).send(`Error: User not logged in <br> <br> <a href="/login"> Link to Login </a>`)
-//   }
-// })

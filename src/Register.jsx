@@ -9,38 +9,37 @@ class Register extends Component {
       email: '',
       password: '',
       age: '',
-      gender: '',
+      gender: 'male',
       weight: '',
       height: ''
     };
     this.onSubmit = this.handleSubmit.bind(this);
   }
 
-handleSubmit = (event) => {
-  event.preventDefault();
-  //let self = this;
+  handleSubmit = (event) => {
+    event.preventDefault();
 
-  fetch('http://localhost:4000/register', {
-    method: 'post',
-    mode: 'cors',
-    headers: { 'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      age: this.state.age,
-      gender: this.state.gender,
-      weight: this.state.weight,
-      height: this.state.height
-    })
-  }).then(function(res) {
-    // Check for eroros?
-    //if res.statusCode => 400
-    return res.json();
-  }).then(function(body) {
-    console.log(body);
-  });
-}
+    fetch('http://localhost:4000/register', {
+      method: 'post',
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: this.state.name,
+        email: this.state.email,
+        password: this.state.password,
+        age: this.state.age,
+        gender: this.state.gender,
+        weight: this.state.weight,
+        height: this.state.height
+      })
+    }).then(function(res) {
+      // Check for eroros?
+      //if res.statusCode => 400
+      return res.json();
+    }).then(function(body) {
+      console.log(body);
+    });
+  }
 
 
   render () {
