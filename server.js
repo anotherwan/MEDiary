@@ -79,6 +79,7 @@ app.post("/register", (req, res) => {
           weight: req.body.weight,
           height: req.body.height
         }).then((results) => {
+          req.session.user_id = userID
           res.json({
             success: true,
             mesage: 'OK'
