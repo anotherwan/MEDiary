@@ -61,12 +61,10 @@ function generateRandomID() {
 
 
 app.post("/register", (req, res) => {
-  console.log(req.body);
   let userExists = false;
   let userPassword = bcrypt.hashSync(req.body.password, 10);
   let userID = generateRandomID();
   let userEmail = req.body.email;
-
 
   function getDrId() {
     return knex('doctors')
@@ -74,40 +72,35 @@ app.post("/register", (req, res) => {
       .where('name', 'like', 'D%');
   }
 
-  // run a code that will loop through the database (check for email)
-  // if there is an user there change userExists = true
-  // so the same user cant register with the same e-mail
+  knex('users')
+    .select('email')
+    .where('email', '=', userEmail)
+    .then((response) => {
+      let user = response[0];
 
-   function emailExists(data) {
-    return knex('users')
-      .select('email')
-      .where('email', '=', data);
-  }
-
-
-
-  if (userExists) {
-    res.status(400).send("E-mail is currently in use.")
-  } else if (req.body.email === "" || req.body.password === "") {
-    res.status(400).send("E-mail and/or Password was left blank.")
-  } else {
-    req.session.user_id = userID
-    knex('users').insert({
-      doctor_id: getDrId(),
-      name: req.body.name,
-      email: req.body.email,
-      password: userPassword,
-      age: req.body.age,
-      gender: req.body.gender,
-      weight: req.body.weight,
-      height: req.body.height
-    }).then((results) => {
-      res.json({
-        success: true,
-        mesage: 'OK'
-      })
-    })
-  }
+      if (!user) {
+        req.session.user_id = userID
+        knex('users').insert({
+          doctor_id: getDrId(),
+          name: req.body.name,
+          email: req.body.email,
+          password: userPassword,
+          age: req.body.age,
+          gender: req.body.gender,
+          weight: req.body.weight,
+          height: req.body.height
+        }).then((results) => {
+          res.json({
+            success: true,
+            mesage: 'OK'
+          })
+        })
+      } else if (user.email === userEmail) {
+          res.status(400).send("E-mail is currently in use.")
+      } else if (req.body.email === "" || req.body.password === "") {
+          res.status(400).send("E-mail and/or Password was left blank.")
+      }
+  });
 })
 
 // app.post("/register", (req, res) => {
