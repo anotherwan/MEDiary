@@ -11,13 +11,19 @@ class Register extends Component {
       age: '',
       gender: 'male',
       weight: '',
-      height: ''
+      height: '',
+      reg_error: ''
     };
     this.onSubmit = this.handleSubmit.bind(this);
+
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      reg_error: ''
+    })
 
     fetch('http://localhost:4000/register', {
       method: 'post',
@@ -32,13 +38,18 @@ class Register extends Component {
         weight: this.state.weight,
         height: this.state.height
       })
-    }).then(function(res) {
-      return res.json();
-    }).then(function(body) {
-      console.log(body);
-    });
+    }).then((response) => {
+      if (response.status === 409) {
+        this.setState({
+          reg_error: 'Error: That email address in already in use.'
+        })
+      } else if (response.status === 417) {
+        this.setState({
+          reg_error: 'Error: Email and/or Password is empty.'
+        })
+      }
+    })
   }
-
 
   render () {
     return (
@@ -78,6 +89,9 @@ class Register extends Component {
           </label> <br />
             <input type="submit" value="Submit" />
         </form>
+        <div >
+            {this.state.reg_error}
+        </div>
       </div>
     )
   }

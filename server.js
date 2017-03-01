@@ -87,9 +87,9 @@ app.post("/register", (req, res) => {
           })
         })
       } else if (req.body.email === "" || req.body.password === "") {
-          res.status(400).send("E-mail and/or Password was left blank.")
+          res.status(417).send('Email and/or password is empty!')
       } else if (user.email === userEmail) {
-          res.status(400).send("E-mail is currently in use.")
+          res.status(409).send('Email in use!')
       }
   });
 })
