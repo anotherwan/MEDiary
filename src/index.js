@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
 import App from './App';
-import './index.css';
+import '../public/styles/index.css';
 
 import Home from './Home.jsx';
 import Login from './Login.jsx';
 import Nav from './Nav.jsx';
 import Register from './Register.jsx';
-import Subbody from './Subbody.jsx';
 import Torso from "./Torso.jsx";
 import Head from "./Head.jsx";
 

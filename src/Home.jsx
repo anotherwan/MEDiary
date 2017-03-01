@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router";
 import Head from "./Head.jsx";
 import Torso from "./Torso.jsx";
-import './App.css';
+import '../public/styles/App.css';
 
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
