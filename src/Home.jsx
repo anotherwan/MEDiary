@@ -19,7 +19,7 @@ class Home extends Component {
 
     return (
       <div className="home" >
-        <BodyRegions />
+        <BodyRegions svgHead={headHead} svgTorso={torsoMan} svgArms={armsArm} svgLegs={legsLeg}/>
         <BodyParts />
         <Tracker />
       </div>

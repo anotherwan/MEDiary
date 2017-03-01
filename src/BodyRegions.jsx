@@ -24,16 +24,16 @@ class BodyRegions extends Component {
       <div>
         <img src={maleBody} style={{}} />
         <Link to="/region/head">
-          <img src={headHead} style={this.bubbleStyle}/>
+          <img src={this.props.svgHead} style={this.bubbleStyle}/>
         </Link>
         <Link to="/region/torso">
-          <img src={torsoMan} style={this.bubbleStyle}/>
+          <img src={this.props.svgTorso} style={this.bubbleStyle}/>
         </Link>
         <Link to="/region/arms">
-          <img src={armsArm} style={this.bubbleStyle}/>
+          <img src={this.props.svgArms} style={this.bubbleStyle}/>
         </Link>
         <Link to="/region/legs">
-          <img src={legsLeg} style={this.bubbleStyle}/>
+          <img src={this.props.svgLegs} style={this.bubbleStyle}/>
         </Link>
       </div>
     )
