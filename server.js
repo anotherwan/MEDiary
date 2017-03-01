@@ -4,7 +4,6 @@ const PORT             = process.env.PORT || 4000;
 const ENV              = process.env.ENV || 'development';
 const webpack          = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-//const config           = require('./webpack.config');
 const express          = require("express");
 const app              = express();
 const knexConfig       = require("./knexfile");
@@ -19,10 +18,8 @@ const cors             = require('cors')
 
 
 const userRoutes = require("./routes/users");
-//const inputRoutes = require("./routes/inputs");
 
 app.use("/api/users", userRoutes(knex));
-//app.use("/api/inputs," inputRoutes(knex));
 
 app.use(cors());
 app.use(knexLogger(knex));
@@ -38,7 +35,6 @@ app.listen(4000, '0.0.0.0', function (err, result) {
   if (err) {
     console.log(err);
   }
-
   console.log('Running at http://0.0.0.0:4000');
 })
 
@@ -51,6 +47,8 @@ function generateRandomID() {
 };
 
 app.post("/register", (req, res) => {
+
+  req.session.user_id = userID;
 
   function getDrId() {
     return knex('doctors')
@@ -67,10 +65,8 @@ app.post("/register", (req, res) => {
     .where('email', '=', userEmail)
     .then((response) => {
       let user = response[0];
-
       if (!user) {
-        req.session.user_id = userID
-        console.log(req.session.user_id)
+        req.session.user_id = userID;
         knex('users').insert({
           doctor_id: getDrId(),
           name: req.body.name,
@@ -94,8 +90,6 @@ app.post("/register", (req, res) => {
   });
 })
 
-
-
 app.post("/login", (req, res) => {
   let userLoginEmail = req.body.email;
   let userLoginPassword = req.body.password;
@@ -115,6 +109,6 @@ app.post("/login", (req, res) => {
         res.session = user.id;
         console.log(res.session)
       }
-
   })
 })
+
