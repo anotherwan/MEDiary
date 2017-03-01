@@ -5,7 +5,7 @@
 //   render () {
 //     return (
 //       <div className="torso">
-//       {/* "torso" */}
+//
 //       </div>
 //     )
 //   }

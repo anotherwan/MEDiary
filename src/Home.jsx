@@ -12,31 +12,6 @@ import leg from '../public/images/leg.svg';
 
 
 class Home extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     headComponent: false,
-  //     torsoComponent: false,
-  //   };
-  //   this._onHeadClick = this._onHeadClick.bind(this);
-  //   this._onTorsoClick = this._onTorsoClick.bind(this);
-  // }
-  //
-  // _onHeadClick() {
-  //   console.log("test:", this.state)
-  //   this.setState({
-  //     headComponent: true,
-  //     torsoComponent: false,
-  //   });
-  //   console.log(this.state)
-  // }
-  //
-  // _onTorsoClick() {
-  //   this.setState({
-  //     headComponent: false,
-  //     torsoComponent: true,
-  //   });
-  // }
   bubbleStyle = {
     "border": "2px solid black",
     "border-radius": "40",
@@ -49,10 +24,18 @@ class Home extends Component {
 
       <div className="home">
         <img src={maleBody} style={{}} />
-        <img src={headHead} style={this.bubbleStyle}/>
-        <img src={torsoMan} style={this.bubbleStyle}/>
-        <img src={armsArm} style={this.bubbleStyle}/>
-        <img src={leg} style={this.bubbleStyle}/>
+        <Link to="/region/head">
+          <img src={headHead} style={this.bubbleStyle}/>
+        </Link>
+        <Link to="/region/torso">
+          <img src={torsoMan} style={this.bubbleStyle}/>
+        </Link>
+        <Link to="/region/arms">
+          <img src={armsArm} style={this.bubbleStyle}/>
+        </Link>
+        <Link to="/region/leg">
+          <img src={leg} style={this.bubbleStyle}/>
+        </Link>
       </div>
     )
   }
