@@ -10,8 +10,8 @@ import Login from './Login.jsx';
 import Nav from './Nav.jsx';
 import Register from './Register.jsx';
 import Tracker from './Tracker.jsx';
-import Torso from "./Torso.jsx";
-import Head from "./Head.jsx";
+import BodyRegions from "./BodyRegions.jsx";
+import BodyParts from './BodyParts.jsx';
 
 const main = document.getElementById('root');
 
@@ -23,8 +23,7 @@ ReactDOM.render(
 
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/head" component={Head} />
-      <Route path="/torso" component={Torso} />
+      <Route path="/region/:part" component={BodyParts} />
       <Route path="/tracker" component={Tracker} />
 
     </Route>

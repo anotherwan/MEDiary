@@ -8,7 +8,6 @@ import Footer from './Footer.jsx';
 import Nav from './Nav.jsx';
 
 
-
 class App extends Component {
 
   render() {

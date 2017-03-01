@@ -112,8 +112,8 @@ app.post("/login", (req, res) => {
         //   res.status(401).send("Not the right password.")
         //   console.log("Pass no match")
         // }
-        res.session = user.id;
-        console.log(res.session)
+        req.session.user_id = user.id;
+        console.log(req.session.user_id)
       }
 
   })
