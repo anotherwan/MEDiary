@@ -39,14 +39,27 @@ class Register extends Component {
         height: this.state.height
       })
     }).then((response) => {
-      if (response.status === 409) {
-        this.setState({
-          reg_error: 'Error: That email address in already in use.'
-        })
-      } else if (response.status === 417) {
-        this.setState({
-          reg_error: 'Error: Email and/or Password is empty.'
-        })
+      return response.json();
+    }).then((body) => {
+      console.log(body.message);
+      switch(body.message) {
+        case 'Error creating user':
+          this.setState({
+            reg_error: body.message
+          })
+          break;
+        case 'Email and/or password is empty':
+          this.setState({
+            reg_error: body.message
+          })
+          break;
+        case 'Invalid email address':
+          this.setState({
+            reg_error: body.message
+          })
+          break;
+        default:
+          localStorage.setItem('uid', body.message);
       }
     })
   }

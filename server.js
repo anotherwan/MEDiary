@@ -46,15 +46,23 @@ function generateRandomID() {
   return text;
 };
 
+function getDrId() {
+  return knex('doctors')
+    .select('id')
+    .where('name', 'like', 'D%');
+}
+
+function newUserId(email) {
+  return knex('users')
+    .select('id')
+    .where('email', '=', email)
+    .then((response) => {
+
+    })
+}
+
 app.post("/register", (req, res) => {
 
-  req.session.user_id = userID;
-
-  function getDrId() {
-    return knex('doctors')
-      .select('id')
-      .where('name', 'like', 'D%');
-  }
   let userExists = false;
   let userPassword = bcrypt.hashSync(req.body.password, 10);
   let userID = generateRandomID();
@@ -77,15 +85,26 @@ app.post("/register", (req, res) => {
           weight: req.body.weight,
           height: req.body.height
         }).then((results) => {
-          res.json({
-            success: true,
-            mesage: 'OK'
-          })
+          console.log(results);
+          console.log(results.row);
+          if (results.rowCount === 1) {
+            res.json({
+              message: userEmail
+            })
+          } else {
+            res.json({
+              message: 'Error creating user'
+            })
+          }
         })
       } else if (req.body.email === "" || req.body.password === "") {
-          res.status(417).send('Email and/or password is empty!')
+          res.json({
+            message: 'Email and/or password is empty'
+          })
       } else if (user.email === userEmail) {
-          res.status(409).send('Email in use!')
+          res.json({
+            message: 'Invalid email address'
+          })
       }
   });
 })
