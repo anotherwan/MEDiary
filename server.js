@@ -35,10 +35,8 @@ app.listen(4000, '0.0.0.0', function (err, result) {
   if (err) {
     console.log(err);
   }
-
   console.log('Running at http://0.0.0.0:4000');
 })
-
 
 function generateRandomID() {
   var text = "";
@@ -47,7 +45,6 @@ function generateRandomID() {
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   return text;
 };
-
 
 app.post("/register", (req, res) => {
   let userExists = false;
@@ -86,11 +83,7 @@ app.post("/register", (req, res) => {
           })
         })
       } else if (req.body.email === "" || req.body.password === "") {
-          res.status(400).send('Email and/or password is empty!').json({
-            success: false,
-            mesage: 'Email and/or Password empty!'
-          })
-
+          res.status(417).send('Email and/or password is empty!')
       } else if (user.email === userEmail) {
           res.status(409).send('Email in use!')
       }

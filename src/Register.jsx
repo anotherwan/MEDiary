@@ -14,19 +14,16 @@ class Register extends Component {
       height: '',
       reg_error: ''
     };
-    //this.onSubmit = this.handleSubmit.bind(this);
-    //this.setError = this.setError.bind(this);
-  }
+    this.onSubmit = this.handleSubmit.bind(this);
 
-  // setError() {
-  //   this.setState({
-  //     reg_error: 'Error: Email in use!'
-  //   })
-  // }
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
 
+    this.setState({
+      reg_error: ''
+    })
 
     fetch('http://localhost:4000/register', {
       method: 'post',
@@ -46,6 +43,10 @@ class Register extends Component {
         this.setState({
           reg_error: 'Error: That email address in already in use.'
         })
+      } else if (response.status === 417) {
+        this.setState({
+          reg_error: 'Error: Email and/or Password is empty.'
+        })
       }
     })
   }
@@ -53,7 +54,7 @@ class Register extends Component {
   render () {
     return (
       <div className="register" >
-        <form id="register" onSubmit={(e) => this.handleSubmit(e)} >
+        <form id="register" onSubmit={this.onSubmit} >
           <label>
             Name:
             <input type="text" onChange={(e) => this.setState({name: e.target.value})} value={this.state.name} />
