@@ -4,6 +4,9 @@ import { Link } from "react-router";
 import BodyParts from './BodyParts.jsx';
 
 import headHead from '../public/images/headHead.svg';
+import torsoMan from '../public/images/torsoMan.svg';
+import armsArm from '../public/images/armsArm.svg';
+import leg from '../public/images/leg.svg';
 
 class Regions extends Component {
   // constructor(props) {
