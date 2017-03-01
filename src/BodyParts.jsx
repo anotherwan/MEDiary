@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
 
+import BodyRegions from './BodyRegions.jsx';
+
 const myStyle = {
   "border": "2px solid black",
   "border-radius": "40px",
@@ -12,7 +14,7 @@ class BodyParts extends Component {
   WIDTH = 80
 
   getStyle = (left, right) => {
-    const style = Object.assign({}, myStyle);
+    let style = Object.assign({}, myStyle);
     style.left = this.props.xPosition
     style.top = this.props.yPosition
 
