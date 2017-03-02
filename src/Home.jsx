@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import { Link } from "react-router";
-import Head from "./Head.jsx";
-import Torso from "./Torso.jsx";
-// import '../public/styles/App.css';
 
-import maleBody from '../public/images/mainBodyGray.svg';
-import headHead from '../public/images/headHead.svg';
+import BodyParts from './BodyParts.jsx';
+import BodyRegions from './BodyRegions.jsx';
+import Tracker from './Tracker.jsx';
+
 import torsoMan from '../public/images/torsoMan.svg';
+import headHead from '../public/images/headHead.svg';
+import maleBody from '../public/images/mainBodyGray.svg';
 import armsArm from '../public/images/armsArm.svg';
 import leg from '../public/images/leg.svg';
-
 
 class Home extends Component {
   bubbleStyle = {
@@ -18,10 +18,8 @@ class Home extends Component {
     "height": "80",
     "width": "80"
   }
-
   render () {
     return (
-
       <div className="home">
         <img src={maleBody} style={{}} />
         <Link to="/region/head">
@@ -42,12 +40,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-// {/* <Link to="/head"><img onClick={this._onHeadClick} src={headHead} role="presentation" height="200" width="200"/> </Link> */}
-// {/* <Link to="/torso"><img onClick={this._onTorsoClick} src={torsoMan} role="presentation" height="200" width="100"/> </Link> */}
-// {/* {console.log("blah: ", this.state)} */}
-// {/* {this.state.torsoComponent ? */}
-// {/* <Torso /> : */}
-// {/* null */}
-// {/* } */}
-// {/* {this.state.headComponent ? <Head /> : null} */}

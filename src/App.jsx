@@ -6,12 +6,9 @@ import ReactDOM from 'react-dom';
 
 import '../public/styles/App.css';
 
-// Won't run with the following below because we haven't defined them yet
-
 import Home from './Home.jsx';
 import Footer from './Footer.jsx';
 import Nav from './Nav.jsx';
-
 
 
 class App extends Component {

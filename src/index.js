@@ -9,8 +9,10 @@ import Home from './Home.jsx';
 import Login from './Login.jsx';
 import Nav from './Nav.jsx';
 import Register from './Register.jsx';
-import BodyRegions from './BodyRegions.jsx'
-// import Tracker from './Tracjer.jsx'
+
+import Tracker from './Tracker.jsx';
+import BodyRegions from "./BodyRegions.jsx";
+import BodyParts from './BodyParts.jsx';
 
 
 const main = document.getElementById('root');
@@ -23,8 +25,10 @@ ReactDOM.render(
 
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/region/:part" component={BodyRegions} />
-      {/* <Route path="/tracker" component={Tracker} /> */}
+      <Route path="/region/:region" component={BodyRegions} />
+      <Route path="/tracker/new" component={Tracker} />
+      <Route path="/tracker/:id" component={Tracker} />
+      <Route path="/tracker/edit" component={Tracker} />
 
     </Route>
 

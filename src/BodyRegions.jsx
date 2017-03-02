@@ -13,21 +13,7 @@ import headEars from '../public/images/headEar.svg';
 import headMouth from '../public/images/headMouth.svg';
 import headNeck from '../public/images/headNeck.svg';
 
-class Head extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     eyeImage: false,
-  //   }
-  //   this._onEyeClick = this._onEyeClick.bind(this);
-  // }
-  //
-  // _onEyeClick() {
-  //   this.setState({
-  //     eyeImage: true,
-  //   })
-  // }
-
+class BodyRegions extends Component {
   WIDTH = 640
   HEIGHT = 640
   RADIUS = 200
@@ -43,7 +29,6 @@ class Head extends Component {
   }
 
   render () {
-
         return (
           <div>
           <div className="headBubbles" style={{"position": "relative", "width": "640", "height": "640", "margin-left": "25%"}}>
@@ -73,4 +58,4 @@ class Head extends Component {
   }
 }
 
-export default Head;
+export default BodyRegions;

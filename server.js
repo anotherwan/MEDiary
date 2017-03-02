@@ -1,10 +1,10 @@
 "use strict"
 
-const PORT             = process.env.PORT || 3000;
-
+const PORT             = process.env.PORT || 4000;
+const ENV              = process.env.ENV || 'development';
 const webpack          = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const config           = require('./webpack.config');
+//const config           = require('./webpack.config');
 const express          = require("express");
 const app              = express();
 const knexConfig       = require("./knexfile");
@@ -13,14 +13,18 @@ const knexLogger       = require('knex-logger');
 const bodyParser       = require("body-parser");
 const cookieSession    = require("cookie-session");
 const bcrypt           = require('bcrypt');
+const path             = require('path');
+const cors             = require('cors')
+
 
 
 const userRoutes = require("./routes/users");
-const inputRoutes = require("./routes/inputs");
+//const inputRoutes = require("./routes/inputs");
 
 app.use("/api/users", userRoutes(knex));
-app.use("/api/inputs," inputRoutes(knex));
+//app.use("/api/inputs," inputRoutes(knex));
 
+app.use(cors());
 app.use(knexLogger(knex));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -30,22 +34,13 @@ app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000
 }));
 
+app.listen(4000, '0.0.0.0', function (err, result) {
+  if (err) {
+    console.log(err);
+  }
 
-new WebpackDevServer(webpack(config), {
-    publicPath: config.output.publicPath,
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    }
-  })
-  .listen(3000, '0.0.0.0', function (err, result) {
-    if (err) {
-      console.log(err);
-    }
-
-    console.log('Running at http://0.0.0.0:3000');
-  });
-
+  console.log('Running at http://0.0.0.0:4000');
+})
 
 function generateRandomID() {
   var text = "";
@@ -55,76 +50,71 @@ function generateRandomID() {
   return text;
 };
 
-
-
-app.get("/", (req, res) => {
-  if(req.session.user_id) {
-    res.redirect("/user")
-  } else {
-    res.redirect("/login")
-  }
-})
-
-app.get("/register", (req, res) => {
-  if(req.session.user_id) {
-    res.redirect("/")
-  } else {
-    res.status(200).render("register")
-  }
-})
-
 app.post("/register", (req, res) => {
+
+  function getDrId() {
+    return knex('doctors')
+      .select('id')
+      .where('name', 'like', 'D%');
+  }
   let userExists = false;
   let userPassword = bcrypt.hashSync(req.body.password, 10);
   let userID = generateRandomID();
+  let userEmail = req.body.email;
 
-  // run a code that will loop through the database (check for email)
-  // if there is an user there change userExists = true
-  // so the same user cant register with the same e-mail
+  knex('users')
+    .select('email')
+    .where('email', '=', userEmail)
+    .then((response) => {
+      let user = response[0];
 
-  if (userExists) {
-    res.status(400).send("E-mail already in use.")
-  } else if (req.body.email === "" || req.body.password === "") {
-    res.status(400).send("E-mail and/or Password was left blank.")
-  } else {
-    req.session.user_id = userID
-      const newUser = {
-        id: userID,
-        email: req.body.email,
-        password: userPassword,
+      if (!user) {
+        req.session.user_id = userID
+        console.log(req.session.user_id)
+        knex('users').insert({
+          doctor_id: getDrId(),
+          name: req.body.name,
+          email: req.body.email,
+          password: userPassword,
+          age: req.body.age,
+          gender: req.body.gender,
+          weight: req.body.weight,
+          height: req.body.height
+        }).then((results) => {
+          res.json({
+            success: true,
+            mesage: 'OK'
+          })
+        })
+      } else if (req.body.email === "" || req.body.password === "") {
+          res.status(400).send("E-mail and/or Password was left blank.")
+      } else if (user.email === userEmail) {
+          res.status(400).send("E-mail is currently in use.")
       }
-  }
-  res.redirect("/user")
+  });
 })
 
 
-app.get("/login", (req, res) => {
-
-})
 
 app.post("/login", (req, res) => {
-  let userLoginEmail === req.body.email;
-  let userLoginPassword === req.body.password;
-
-//fix below!
-  for (loop through the database to find user information) {
-    if('database name'[userID].email === userLoginEmail) {
-      if(bcrypt.compareSync(userLoginPassword, 'database name'[userID].password)) {
-        req.session.user_id = 'database name'[userID].id
-        res.redirect("/")
-        return
-      } else {
-        res.status(400).send("E-mail and Password do not match.")
+  let userLoginEmail = req.body.email;
+  let userLoginPassword = req.body.password;
+  knex.select('*')
+    .from('users')
+    .where('users.email', userLoginEmail)
+    .then((results) => {
+    let user = results[0];
+      if(!user) {
+        res.status(403).send("User not found.")
+        console.log("User not found")
+      } else if (userLoginEmail === user.email) {
+        // if (bcrypt.compareSync(userLoginPassword) !== user.password) {
+        //   res.status(401).send("Not the right password.")
+        //   console.log("Pass no match")
+        // }
+        req.session.user_id = user.id;
+        console.log(req.session.user_id)
       }
-    }
-  }
-    return res.status(403).send("User not found")
-});
 
-
-
-app.get("/user", (req, res) => {
-  if (req.session.user_id === undefined) {
-  res.status(401).send(`Error: User not logged in <br> <br> <a href="/login"> Link to Login </a>`)
-  }
+  })
 })

@@ -20,7 +20,7 @@ class BodyParts extends Component {
 
     return style
   }
-
+  
   render () {
     return (
       <div>
