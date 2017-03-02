@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Link } from "react-router";
+import '../public/styles/App.css';
+// import { Link } from "react-router";
 
-import Home from './Home.jsx';
-import Footer from './Footer.jsx';
 import Nav from './Nav.jsx';
-
+// import Footer from './Footer.jsx';
+// import Home from './Home.jsx';
 
 
 
