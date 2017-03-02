@@ -23,12 +23,12 @@ class BodyParts extends Component {
 
 
   render () {
-    if (this.props.isClickable === true)
+    if (this.props.isClickable === true && localStorage.getItem('uid'))
       return (
         <div>
           <Link to={"/tracker/" + this.props.part}>
             <img
-              onclick={this.props.onClick}
+              onClick={this.props.onClick}
               src={this.props.svgSrc}
               role="presentation"
               height={this.HEIGHT}
@@ -41,7 +41,7 @@ class BodyParts extends Component {
         return (
           <div>
             <img
-              onclick={this.props.onClick}
+              onClick={this.props.onClick}
               src={this.props.svgSrc}
               role="presentation"
               height={this.HEIGHT}
