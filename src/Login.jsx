@@ -5,13 +5,18 @@ class Login extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      login_error: ''
     };
     this.onSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
+
+    this.setState({
+      login_error: ''
+    })
 
     fetch('http://localhost:4000/login', {
       method: 'post',
@@ -21,10 +26,30 @@ class Login extends Component {
         email: this.state.email,
         password: this.state.password
       })
-    }).then(function(res) {
-      return res.json();
-    }).then(function(body) {
-      console.log(body)
+    }).then((response) => {
+      return response.json();
+    }).then((body) => {
+      switch(body.message) {
+        case 'User not found':
+          this.setState({
+            login_error: body.message
+          })
+          break;
+        case 'Email and/or password cannot be empty':
+          this.setState({
+            login_error: body.message
+          })
+          break;
+        case 'Invalid email and/or password':
+          this.setState({
+            login_error: body.message
+          })
+          break;
+        default: {
+          localStorage.setItem('uid', body.message);
+          this.props.router.push('/');
+        }
+      }
     })
 
   }
@@ -32,20 +57,22 @@ class Login extends Component {
   render () {
     return (
       <div className="login">
-      <form id="login" onSubmit={this.onSubmit}>
-        <label>
-          Email:
-          <input type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
-          <br/>
-        </label>
-        <label>
-          Password:
-          <input type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
-          <br/>
-        </label>
-          <input type="submit" value="Submit" />
-      </form>
-
+        <form id="login" onSubmit={this.onSubmit}>
+          <label>
+            Email:
+            <input type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
+            <br/>
+          </label>
+          <label>
+            Password:
+            <input type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
+            <br/>
+          </label>
+            <input type="submit" value="Submit" />
+        </form>
+        <div >
+          {this.state.login_error}
+        </div>
       </div>
     )
   }

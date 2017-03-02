@@ -52,15 +52,6 @@ function getDrId() {
     .where('name', 'like', 'D%');
 }
 
-function newUserId(email) {
-  return knex('users')
-    .select('id')
-    .where('email', '=', email)
-    .then((response) => {
-
-    })
-}
-
 app.post("/register", (req, res) => {
 
   let userExists = false;
@@ -85,8 +76,6 @@ app.post("/register", (req, res) => {
           weight: req.body.weight,
           height: req.body.height
         }).then((results) => {
-          console.log(results);
-          console.log(results.row);
           if (results.rowCount === 1) {
             res.json({
               message: userEmail
@@ -110,24 +99,34 @@ app.post("/register", (req, res) => {
 })
 
 app.post("/login", (req, res) => {
+
   let userLoginEmail = req.body.email;
   let userLoginPassword = req.body.password;
-  knex.select('*')
-    .from('users')
-    .where('users.email', userLoginEmail)
+
+  knex('users')
+    .select('password')
+    .where('email', '=', userLoginEmail)
     .then((results) => {
-    let user = results[0];
+      let user = results[0];
+      console.log(user);
       if(!user) {
-        res.status(403).send("User not found.")
-        console.log("User not found")
-      } else if (userLoginEmail === user.email) {
-        // if (bcrypt.compareSync(userLoginPassword) !== user.password) {
-        //   res.status(401).send("Not the right password.")
-        //   console.log("Pass no match")
-        // }
-        req.session.user_id = user.id;
-        console.log(req.session.user_id)
+        res.json({
+          message: 'User not found'
+        })
+      } else if (!userLoginEmail || !userLoginPassword) {
+        res.json({
+          message: 'Email and/or password cannot be empty'
+        })
+
+      } else if ((bcrypt.compareSync(userLoginPassword, user.password))) {
+        res.json({
+          message: userLoginEmail
+        })
+      } else {
+        res.json({
+          message: 'Invalid email and/or password'
+        })
       }
-  })
+  });
 })
 

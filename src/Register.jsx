@@ -105,7 +105,7 @@ class Register extends Component {
             <input type="submit" value="Submit" />
         </form>
         <div >
-            {this.state.reg_error}
+          {this.state.reg_error}
         </div>
       </div>
     )
