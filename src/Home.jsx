@@ -1,25 +1,41 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from "react-router";
-
-import BodyRegions from './BodyRegions.jsx';
-import BodyParts from './BodyParts.jsx';
-import Tracker from './Tracker.jsx';
+import Head from "./Head.jsx";
+import Torso from "./Torso.jsx";
 
 
-import torsoMan from '../public/images/torsoMan.svg';
-import headHead from '../public/images/headHead.svg';
 import maleBody from '../public/images/mainBodyGray.svg';
+import headHead from '../public/images/headHead.svg';
+import torsoMan from '../public/images/torsoMan.svg';
 import armsArm from '../public/images/armsArm.svg';
-import legsLeg from '../public/images/leg.svg';
+import leg from '../public/images/leg.svg';
 
 
 class Home extends Component {
+  bubbleStyle = {
+    "border": "2px solid black",
+    "border-radius": "40",
+    "height": "80",
+    "width": "80"
+  }
 
   render () {
-
     return (
-      <div className="home" >
-        <BodyRegions svgHead={headHead} svgTorso={torsoMan} svgArms={armsArm} svgLegs={legsLeg}/>
+
+      <div className="home">
+        <img src={maleBody} style={{}} />
+        <Link to="/region/head">
+          <img src={headHead} style={this.bubbleStyle}/>
+        </Link>
+        <Link to="/region/torso">
+          <img src={torsoMan} style={this.bubbleStyle}/>
+        </Link>
+        <Link to="/region/arms">
+          <img src={armsArm} style={this.bubbleStyle}/>
+        </Link>
+        <Link to="/region/leg">
+          <img src={leg} style={this.bubbleStyle}/>
+        </Link>
       </div>
     )
   }

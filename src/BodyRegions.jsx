@@ -1,42 +1,56 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
-
-import torsoMan from '../public/images/torsoMan.svg';
-import headHead from '../public/images/headHead.svg';
-import maleBody from '../public/images/mainBodyGray.svg';
-import armsArm from '../public/images/armsArm.svg';
-import legsLeg from '../public/images/leg.svg';
+import ReactDOM from 'react-dom';
 
 import BodyParts from './BodyParts.jsx';
-import Tracker from './Tracker.jsx';
+import obj from '../obj.json';
 
+import headHead from '../public/images/headHead.svg';
+import headBrain from '../public/images/headBrain.svg';
+import headEyes from '../public/images/headEyes.svg';
+import headNose from '../public/images/headNose.svg';
+import headEars from '../public/images/headEar.svg';
+import headMouth from '../public/images/headMouth.svg';
+import headNeck from '../public/images/headNeck.svg';
 
 class BodyRegions extends Component {
-  bubbleStyle = {
-    "border": "2px solid black",
-    "border-radius": "40",
-    "height": "80",
-    "width": "80"
+
+  WIDTH = 640
+  HEIGHT = 640
+  RADIUS = 200
+
+  calculateXPosition = (i, N) => {
+    return 0.5 * this.WIDTH + this.RADIUS * Math.cos(i * 2 * Math.PI / N) - 40;
+  }
+
+//currently this function is positioning by the center point but you want the top left corner of the box so create a BOX_SIZE var and instead of doing -40, do -this.BOX_SIZE.
+
+  calculateYPosition = (i, N) => {
+    return 0.5 * this.WIDTH - this.RADIUS * Math.sin(i * 2 * Math.PI / N) - 40;
   }
 
   render () {
-    return (
-      <div>
-        <img src={maleBody} style={{}} />
-        <Link to="/region/head">
-          <img src={this.props.svgHead} style={this.bubbleStyle}/>
-        </Link>
-        <Link to="/region/torso">
-          <img src={this.props.svgTorso} style={this.bubbleStyle}/>
-        </Link>
-        <Link to="/region/arms">
-          <img src={this.props.svgArms} style={this.bubbleStyle}/>
-        </Link>
-        <Link to="/region/legs">
-          <img src={this.props.svgLegs} style={this.bubbleStyle}/>
-        </Link>
-      </div>
-    )
+
+        return (
+          <div>
+          <div className="headBubbles" style={{"position": "relative", "width": "640", "height": "640", "margin-left": "25%"}}>
+            <img src={headHead} role="presentation" height="100" width="100" style={{"border": "2px solid black", "border-radius": "50px", "position": "relative", "top": "280px"}} />
+
+            {
+              Object.keys(obj['head']['parts']).map((part, i, arr) => {
+                return <BodyParts onClick={this._onBrainClick} svgSrc={obj['head']['parts'][part].img_path} xPosition={this.calculateXPosition(i, arr.length)} yPosition={this.calculateYPosition(i, arr.length)} />
+              })
+            }
+
+          </div>
+          <div>
+            {this.props.params && this.props.params.part}
+            <Link to="/region/part">
+              <img onClick={this.props.onClick} src={this.props.svgSrc}/>
+            </Link>
+          </div>
+        </div>
+        )
   }
 }
 
