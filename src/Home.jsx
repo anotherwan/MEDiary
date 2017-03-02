@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
 
-import BodyParts from './BodyParts.jsx';
 import BodyRegions from './BodyRegions.jsx';
+import BodyParts from './BodyParts.jsx';
 import Tracker from './Tracker.jsx';
 
 
@@ -20,10 +20,7 @@ class Home extends Component {
     return (
       <div className="home" >
         <BodyRegions svgHead={headHead} svgTorso={torsoMan} svgArms={armsArm} svgLegs={legsLeg}/>
-        <BodyParts />
-        <Tracker />
       </div>
-
     )
   }
 }

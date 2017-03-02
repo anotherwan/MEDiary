@@ -23,7 +23,7 @@ ReactDOM.render(
 
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/region/:part" component={BodyParts} />
+      <Route path="/region/:region" component={BodyParts} />
       <Route path="/tracker" component={Tracker} />
 
     </Route>
