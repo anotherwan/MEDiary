@@ -8,10 +8,6 @@ import headHead from '../public/images/headHead.svg';
 
 class BodyRegions extends Component {
 
-  componentDidMount() {
-
-  }
-
 
   WIDTH = 640
   HEIGHT = 640
@@ -22,7 +18,7 @@ class BodyRegions extends Component {
   }
 
   calculateYPosition = (i, N) => {
-    console.log(this.props.location)
+
     return 0.5 * this.WIDTH - this.RADIUS * Math.sin(i * 2 * Math.PI / N) - 40;
   }
 
@@ -33,7 +29,7 @@ class BodyRegions extends Component {
         return (
           <div>
           {
-            Object.keys(obj['body']).map((region, i, arr) => {
+            Object.keys(obj['body']).map((region) => {
               return <BodyParts
                 svgSrc={obj['body']['head'].img_path}
                 role="presentation"
@@ -44,7 +40,8 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']['head']['parts']).map((part, i, arr) => {
               return <BodyParts
-                onClick={this._onClick}
+                part={obj['body']['head']['parts'][part].id}
+                onClick={this.onClick}
                 svgSrc={obj['body']['head']['parts'][part].img_path}
                 xPosition={this.calculateXPosition(i, arr.length)}
                 yPosition={this.calculateYPosition(i, arr.length)} />
@@ -67,7 +64,8 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']['torso']['parts']).map((part, i, arr) => {
               return <BodyParts
-                onClick={this._onClick}
+                part={obj['body']['torso']['parts'][part].id}
+                onClick={this.onClick}
                 svgSrc={obj['body']['torso']['parts'][part].img_path}
                 xPosition={this.calculateXPosition(i, arr.length)}
                 yPosition={this.calculateYPosition(i, arr.length)} />
@@ -90,7 +88,8 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']['legs']['parts']).map((part, i, arr) => {
               return <BodyParts
-                onClick={this._onClick}
+                part={obj['body']['legs']['parts'][part].id}
+                onClick={this.onClick}
                 svgSrc={obj['body']['legs']['parts'][part].img_path}
                 xPosition={this.calculateXPosition(i, arr.length)}
                 yPosition={this.calculateYPosition(i, arr.length)} />
@@ -104,7 +103,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']).map((region, i, arr) => {
               return <BodyParts
-                svgRegion={obj['body']['arms'].img_path}
+                svgSrc={obj['body']['arms'].img_path}
                 role="presentation"
                 height="100px"
                 width="100px"
@@ -113,7 +112,8 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']['arms']['parts']).map((part, i, arr) => {
               return <BodyParts
-                onClick={this._onClick}
+                part={obj['body']['arms']['parts'][part].id}
+                onClick={this.onClick}
                 svgSrc={obj['body']['arms']['parts'][part].img_path}
                 xPosition={this.calculateXPosition(i, arr.length)}
                 yPosition={this.calculateYPosition(i, arr.length)} />
@@ -121,7 +121,6 @@ class BodyRegions extends Component {
             </div>
           )
           break;
-
     }
 
       <div>
