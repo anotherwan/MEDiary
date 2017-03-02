@@ -11,8 +11,8 @@ class Login extends Component {
     this.onSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = (event) => {
+    event.preventDefault();
 
     this.setState({
       login_error: ''
