@@ -58,8 +58,11 @@ class Register extends Component {
             reg_error: body.message
           })
           break;
-        default:
+        default: {
           localStorage.setItem('uid', body.message);
+          this.props.router.push('/');
+        }
+          // transitionTo:('/');
       }
     })
   }
