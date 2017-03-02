@@ -112,23 +112,23 @@
       "parts": {
         "calves": {
           "id": "4a",
-          "img_path": "public/images/legsCalves.svg"
+          "img_path": "images/legsCalves.svg"
         },
         "ankle": {
           "id": "4b",
-          "img_path": "public/images/legsAnkle.svg"
+          "img_path": "images/legsAnkle.svg"
         },
         "knee": {
           "id": "4c",
-          "img_path": "public/images/legsKnee.svg"
+          "img_path": "images/legsKnee.svg"
         },
         "foot": {
           "id": "4d",
-          "img_path": "public/images/legsFoot.svg"
+          "img_path": "images/legsFoot.svg"
         },
         "toe": {
           "id": "4e",
-          "img_path": "public/images/legsFootToe.svg"
+          "img_path": "images/legsFootToe.svg"
         }
       }
     }

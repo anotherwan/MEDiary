@@ -4,8 +4,15 @@ import { Link } from "react-router";
 import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
 
+import headHead from '../public/images/headHead.svg';
 
 class BodyRegions extends Component {
+
+  componentDidMount() {
+
+  }
+
+
   WIDTH = 640
   HEIGHT = 640
   RADIUS = 200
@@ -15,26 +22,25 @@ class BodyRegions extends Component {
   }
 
   calculateYPosition = (i, N) => {
+    console.log(this.props.location)
     return 0.5 * this.WIDTH - this.RADIUS * Math.sin(i * 2 * Math.PI / N) - 40;
   }
 
-  render () {
-    return (
-      <div>
-        <div
-          className="Bubbles"
-          style={{"position": "relative", "width": "640px", "height": "640px", "marginLeft": "25%"}}>
 
+  render () {
+    switch(this.props.location.pathname) {
+      case "/region/head":
+        return (
+          <div>
           {
-            Object.keys(obj['body']).map((part, i, arr) => {
+            Object.keys(obj['body']).map((region, i, arr) => {
               return <BodyParts
-                svgSrc={obj['body'][part].img_path}
+                svgSrc={obj['body']['head'].img_path}
                 role="presentation"
                 height="100px"
                 width="100px"
                 style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
-          })}
-
+            })}
           {
             Object.keys(obj['body']['head']['parts']).map((part, i, arr) => {
               return <BodyParts
@@ -43,16 +49,87 @@ class BodyRegions extends Component {
                 xPosition={this.calculateXPosition(i, arr.length)}
                 yPosition={this.calculateYPosition(i, arr.length)} />
             })}
+          </div>
+        )
+        break;
+      case "/region/torso":
+        return (
+          <div>
+          {
+            Object.keys(obj['body']).map((region, i, arr) => {
+              return <BodyParts
+                svgSrc={obj['body']['torso'].img_path}
+                role="presentation"
+                height="100px"
+                width="100px"
+                style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+          })}
+          {
+            Object.keys(obj['body']['torso']['parts']).map((part, i, arr) => {
+              return <BodyParts
+                onClick={this._onClick}
+                svgSrc={obj['body']['torso']['parts'][part].img_path}
+                xPosition={this.calculateXPosition(i, arr.length)}
+                yPosition={this.calculateYPosition(i, arr.length)} />
+            })}
+            </div>
+          )
+          break;
+      case "/region/legs":
+        return (
+          <div>
+          {
+            Object.keys(obj['body']).map((region, i, arr) => {
+              return <BodyParts
+                svgSrc={obj['body']['legs'].img_path}
+                role="presentation"
+                height="100px"
+                width="100px"
+                style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+          })}
+          {
+            Object.keys(obj['body']['legs']['parts']).map((part, i, arr) => {
+              return <BodyParts
+                onClick={this._onClick}
+                svgSrc={obj['body']['legs']['parts'][part].img_path}
+                xPosition={this.calculateXPosition(i, arr.length)}
+                yPosition={this.calculateYPosition(i, arr.length)} />
+            })}
+            </div>
+          )
+          break;
+      case "/region/arms":
+        return (
+          <div>
+          {
+            Object.keys(obj['body']).map((region, i, arr) => {
+              return <BodyParts
+                svgRegion={obj['body']['arms'].img_path}
+                role="presentation"
+                height="100px"
+                width="100px"
+                style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+          })}
+          {
+            Object.keys(obj['body']['arms']['parts']).map((part, i, arr) => {
+              return <BodyParts
+                onClick={this._onClick}
+                svgSrc={obj['body']['arms']['parts'][part].img_path}
+                xPosition={this.calculateXPosition(i, arr.length)}
+                yPosition={this.calculateYPosition(i, arr.length)} />
+            })}
+            </div>
+          )
+          break;
 
-        </div>
+    }
+
       <div>
         {this.props.params && this.props.params.part}
-        <Link to="/region/part">
+        <Link to="/region/region">
           <img onClick={this.props.onClick} role="presentation" src={this.props.svgSrc}/>
         </Link>
       </div>
-    </div>
-    )
   }
 }
 

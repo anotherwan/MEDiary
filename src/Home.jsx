@@ -33,7 +33,7 @@ class Home extends Component {
         <Link to="/region/arms">
           <img src={armsArm} alt="Arms" style={this.bubbleStyle}/>
         </Link>
-        <Link to="/region/leg">
+        <Link to="/region/legs">
           <img src={legsLeg} alt="Legs" style={this.bubbleStyle}/>
         </Link>
 

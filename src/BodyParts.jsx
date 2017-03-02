@@ -22,6 +22,12 @@ class BodyParts extends Component {
   render () {
     return (
       <div>
+        <img
+            src={this.props.svgRegion}
+            role="presentation"
+            height={this.HEIGHT}
+            width={this.WIDTH}
+            style={this.getStyle()} />
         <Link to="/tracker">
           <img
             onClick={this.props.onClick}
