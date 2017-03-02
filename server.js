@@ -130,3 +130,8 @@ app.post("/login", (req, res) => {
   });
 })
 
+app.post('/tracker', (req, res) => {
+  let title = req.body.title;
+  let description = req.body.description;
+  let rating = req.body.rating;
+})
