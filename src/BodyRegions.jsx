@@ -1,20 +1,12 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
-import ReactDOM from 'react-dom';
 
 import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
 
 import headHead from '../public/images/headHead.svg';
-import headBrain from '../public/images/headBrain.svg';
-import headEyes from '../public/images/headEyes.svg';
-import headNose from '../public/images/headNose.svg';
-import headEars from '../public/images/headEar.svg';
-import headMouth from '../public/images/headMouth.svg';
-import headNeck from '../public/images/headNeck.svg';
 
 class BodyRegions extends Component {
-
   WIDTH = 640
   HEIGHT = 640
   RADIUS = 200
@@ -30,15 +22,20 @@ class BodyRegions extends Component {
   }
 
   render () {
-
         return (
           <div>
-          <div className="headBubbles" style={{"position": "relative", "width": "640", "height": "640", "margin-left": "25%"}}>
-            <img src={headHead} role="presentation" height="100" width="100" style={{"border": "2px solid black", "border-radius": "50px", "position": "relative", "top": "280px"}} />
+          <div className="Bubbles" style={{"position": "relative", "width": "640px", "height": "640px", "marginLeft": "25%"}}>
+
+            <img src={headHead} role="presentation" height="100px" width="100px" style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+
+            {/* {Object.keys(obj).map(()=>{
+              return <BodyParts regionSvg={obj.img_path} style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+              })
+            } */}
 
             {
               Object.keys(obj['head']['parts']).map((part, i, arr) => {
-                return <BodyParts onClick={this._onBrainClick} svgSrc={obj['head']['parts'][part].img_path} xPosition={this.calculateXPosition(i, arr.length)} yPosition={this.calculateYPosition(i, arr.length)} />
+                return <BodyParts onClick={this._onClick} svgSrc={obj['head']['parts'][part].img_path} xPosition={this.calculateXPosition(i, arr.length)} yPosition={this.calculateYPosition(i, arr.length)} />
               })
             }
 
@@ -46,7 +43,7 @@ class BodyRegions extends Component {
           <div>
             {this.props.params && this.props.params.part}
             <Link to="/region/part">
-              <img onClick={this.props.onClick} src={this.props.svgSrc}/>
+              <img onClick={this.props.onClick} role="presentation" src={this.props.svgSrc}/>
             </Link>
           </div>
         </div>

@@ -1,40 +1,37 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import Head from "./Head.jsx";
-import Torso from "./Torso.jsx";
-
 
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
 import armsArm from '../public/images/armsArm.svg';
-import leg from '../public/images/leg.svg';
+import legsLeg from '../public/images/legsLeg.svg';
 
 
 class Home extends Component {
   bubbleStyle = {
     "border": "2px solid black",
-    "border-radius": "40",
-    "height": "80",
-    "width": "80"
+    "borderRadius": "40px",
+    "height": "80px",
+    "width": "80px"
   }
 
   render () {
     return (
 
       <div className="home">
-        <img src={maleBody} style={{}} />
+        <img src={maleBody} alt="Body" />
         <Link to="/region/head">
-          <img src={headHead} style={this.bubbleStyle}/>
+          <img src={headHead} alt="Head" style={this.bubbleStyle}/>
         </Link>
         <Link to="/region/torso">
-          <img src={torsoMan} style={this.bubbleStyle}/>
+          <img src={torsoMan} alt="Torso" style={this.bubbleStyle}/>
         </Link>
         <Link to="/region/arms">
-          <img src={armsArm} style={this.bubbleStyle}/>
+          <img src={armsArm} alt="Arms" style={this.bubbleStyle}/>
         </Link>
         <Link to="/region/leg">
-          <img src={leg} style={this.bubbleStyle}/>
+          <img src={legsLeg} alt="Legs" style={this.bubbleStyle}/>
         </Link>
       </div>
     )

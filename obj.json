@@ -1,104 +1,104 @@
 {"head": {
     "id": "1",
-    "img_path": "headHead.svg",
+    "img_path": "images/headHead.svg",
     "parts": {
       "brain": {
         "id": "1a",
-        "img_path": "public/images/headBrain.svg"
+        "img_path": "images/headBrain.svg"
       },
       "eyes": {
         "id": "1b",
-        "img_path": "public/images/headEyes.svg"
+        "img_path": "images/headEyes.svg"
       },
       "nose": {
         "id": "1c",
-        "img_path": "public/images/headNose.svg"
+        "img_path": "images/headNose.svg"
       },
       "ears": {
         "id": "1d",
-        "img_path": "public/images/headEar.svg"
+        "img_path": "images/headEar.svg"
       },
       "mouth": {
         "id": "1e",
-        "img_path": "public/images/headMouth.svg"
+        "img_path": "images/headMouth.svg"
       },
       "neck": {
         "id": "1f",
-        "img_path": "public/images/headNeck.svg"
+        "img_path": "images/headNeck.svg"
       }
     }
   },
 
   "torso": {
-    "id": "2a",
-    "img_path": "torsoMan.svg",
+    "id": "2",
+    "img_path": "images/torsoMan.svg",
     "parts": {
       "back": {
         "id": "2a",
-        "img_path": "public/images/torsoBack.svg"
+        "img_path": "images/torsoBack.svg"
       },
       "buttocks": {
         "id": "2b",
-        "img_path": "public/images/torsoBackButtocks.svg"
+        "img_path": "images/torsoBackButtocks.svg"
       },
       "bladder": {
         "id": "2c",
-        "img_path": "public/images/torsoBladder.svg"
+        "img_path": "images/torsoBladder.svg"
       },
       "stomach": {
         "id": "2d",
-        "img_path": "public/images/torsoStomach.svg"
+        "img_path": "images/torsoStomach.svg"
       },
       "intestines": {
         "id": "2e",
-        "img_path": "public/images/torsoIntestines.svg"
+        "img_path": "images/torsoIntestines.svg"
       },
       "heart": {
         "id": "2f",
-        "img_path": "public/images/torsoHeart.svg"
+        "img_path": "images/torsoHeart.svg"
       },
       "lungs": {
         "id": "2g",
-        "img_path": "public/images/torsoLungs.svg"
+        "img_path": "images/torsoLungs.svg"
       },
       "torsoFemale": {
         "id": "2h",
-        "img_path": "public/images/torsoFemale.svg"
+        "img_path": "images/torsoFemale.svg"
       },
       "torsoBreastFemale": {
         "id": "2i",
-        "img_path": "public/images/torsoBreastFemale.svg"
+        "img_path": "images/torsoBreastFemale.svg"
       }
     }
   },
 
   "arms": {
     "id": "3",
-    "img_path": "armsArm.svg",
+    "img_path": "images/armsArm.svg",
     "parts": {
       "shoulder": {
         "id": "3a",
-        "img_path": "public/images/armsShoulder.svg"
+        "img_path": "images/armsShoulder.svg"
       },
       "elbow": {
         "id": "3b",
-        "img_path": "public/images/armsElbow.svg"
+        "img_path": "images/armsElbow.svg"
       },
       "hand": {
         "id": "3c",
-        "img_path": "public/images/armsHand.svg",
+        "img_path": "images/armsHand.svg",
         "parts": {
           "palm": {
             "id": "3d",
-            "img_path": "public/images/armsHandPalm.svg"
+            "img_path": "images/armsHandPalm.svg"
           },
           "finger": {
             "id": "3e",
-            "img_path": "public/images/armsHandFinger.svg"
+            "img_path": "images/armsHandFinger.svg"
           },
           "Nail": {
             "id": "3f",
-            "img_path": "public/images/armsHandFingernail.svg"
+            "img_path": "images/armsHandFingernail.svg"
           }
         }
       }
@@ -107,7 +107,7 @@
 
   "legs": {
     "id": "4",
-    "img_path": "legsLeg.svg",
+    "img_path": "images/legsLeg.svg",
     "parts": {
       "calves": {
         "id": "4a",

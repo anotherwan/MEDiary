@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
 
-import BodyRegions from './BodyRegions.jsx';
-
 const myStyle = {
   "border": "2px solid black",
-  "border-radius": "40px",
+  "borderRadius": "40px",
   "position": "absolute"
 }
 
@@ -25,7 +23,7 @@ class BodyParts extends Component {
     return (
       <div>
         <Link to="/tracker">
-          <img onClick={this.props.onClick} src={this.props.svgSrc} role="presentation" height={this.HEIGHT} width={this.WIDTH} style={this.getStyle()}/>
+          <img onClick={this.props.onClick} src={this.props.svgSrc} role="presentation" height={this.HEIGHT} width={this.WIDTH} style={this.getStyle()} />
         </Link>
       </div>
     )
