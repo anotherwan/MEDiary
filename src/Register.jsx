@@ -62,7 +62,6 @@ class Register extends Component {
           localStorage.setItem('uid', body.message);
           this.props.router.push('/');
         }
-          // transitionTo:('/');
       }
     })
   }
