@@ -22,7 +22,6 @@ ReactDOM.render(
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/region/:region" component={BodyRegions} />
-      {/* <Route path="/region/:region/part/:part" component={BodyParts} /> */}
       <Route path="/tracker" component={Tracker} />
 
     </Route>

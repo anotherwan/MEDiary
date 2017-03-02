@@ -23,7 +23,13 @@ class BodyParts extends Component {
     return (
       <div>
         <Link to="/tracker">
-          <img onClick={this.props.onClick} src={this.props.svgSrc} role="presentation" height={this.HEIGHT} width={this.WIDTH} style={this.getStyle()} />
+          <img
+            onClick={this.props.onClick}
+            src={this.props.svgSrc}
+            role="presentation"
+            height={this.HEIGHT}
+            width={this.WIDTH}
+            style={this.getStyle()} />
         </Link>
       </div>
     )
