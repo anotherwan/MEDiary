@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import { Link } from "react-router";
 
 import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
 
-import headHead from '../public/images/headHead.svg';
 
 class BodyRegions extends Component {
 
@@ -31,6 +29,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']).map((region) => {
               return <BodyParts
+                isClickable={false}
                 svgSrc={obj['body']['head'].img_path}
                 role="presentation"
                 height="100px"
@@ -40,6 +39,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']['head']['parts']).map((part, i, arr) => {
               return <BodyParts
+                isClickable={true}
                 part={obj['body']['head']['parts'][part].id}
                 onClick={this.onClick}
                 svgSrc={obj['body']['head']['parts'][part].img_path}
@@ -55,6 +55,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']).map((region, i, arr) => {
               return <BodyParts
+                isClickable={false}
                 svgSrc={obj['body']['torso'].img_path}
                 role="presentation"
                 height="100px"
@@ -64,6 +65,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']['torso']['parts']).map((part, i, arr) => {
               return <BodyParts
+                isClickable={true}
                 part={obj['body']['torso']['parts'][part].id}
                 onClick={this.onClick}
                 svgSrc={obj['body']['torso']['parts'][part].img_path}
@@ -79,6 +81,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']).map((region, i, arr) => {
               return <BodyParts
+                isClickable={false}
                 svgSrc={obj['body']['legs'].img_path}
                 role="presentation"
                 height="100px"
@@ -88,6 +91,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']['legs']['parts']).map((part, i, arr) => {
               return <BodyParts
+                isClickable={true}
                 part={obj['body']['legs']['parts'][part].id}
                 onClick={this.onClick}
                 svgSrc={obj['body']['legs']['parts'][part].img_path}
@@ -103,6 +107,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']).map((region, i, arr) => {
               return <BodyParts
+                isClickable={false}
                 svgSrc={obj['body']['arms'].img_path}
                 role="presentation"
                 height="100px"
@@ -112,6 +117,7 @@ class BodyRegions extends Component {
           {
             Object.keys(obj['body']['arms']['parts']).map((part, i, arr) => {
               return <BodyParts
+                isClickable={true}
                 part={obj['body']['arms']['parts'][part].id}
                 onClick={this.onClick}
                 svgSrc={obj['body']['arms']['parts'][part].img_path}
@@ -121,14 +127,9 @@ class BodyRegions extends Component {
             </div>
           )
           break;
+          default:
+            console.log("Nothing working")
     }
-
-      <div>
-        {this.props.params && this.props.params.part}
-        <Link to="/region/region">
-          <img onClick={this.props.onClick} role="presentation" src={this.props.svgSrc}/>
-        </Link>
-      </div>
   }
 }
 
