@@ -57,7 +57,7 @@ class Login extends Component {
   render () {
     return (
       <div className="login">
-        <form id="login" onSubmit={this.onSubmit}>
+        {/* <form id="login" onSubmit={this.onSubmit}>
           <label>
             Email:
             <input type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
@@ -72,7 +72,7 @@ class Login extends Component {
         </form>
         <div >
           {this.state.login_error}
-        </div>
+        </div> */}
       </div>
     )
   }

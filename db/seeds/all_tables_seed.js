@@ -41,9 +41,10 @@ exports.seed = function(knex, Promise) {
     }).then(function() {
         return knex('inputs').insert({
           user_id: getUId(),
-          body_part_id: 10,
+          body_part_id: '2a',
           pain_rating: 4,
-          description: 'pain in the ass',
+          title: 'butt hurt',
+          description: 'idk why but it hurts like bloody hellz!',
           date_created: '2017-02-22'
         });
     });
