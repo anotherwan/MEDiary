@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
+import { Navbar, NavItem, Modal } from 'react-materialize';
+
+import medProfile from '../public/images/medProfile.svg'
+import bandaid from '../public/images/BandaidLogo.svg'
 
 class Nav extends Component {
   constructor(props) {
@@ -16,18 +20,54 @@ class Nav extends Component {
     localStorage.setItem('uid', '');
   }
 
+  componentDidMount = () => {
+    document.getElementById('blah').click();
+  }
+
   render () {
     return (
-
-      <nav className="nav">
-        <h1> Med-Diary </h1>
-        <h4><Link to="/"><button>HOME</button></Link></h4>
-        <h4><Link to="/login"><button>LOGIN</button></Link></h4>
-        <h4><Link to="/login" onClick={this.onClick}><button>LOGOUT</button></Link></h4>
-        <h4><Link to="/register"><button>Register</button></Link></h4>
-
-      </nav>
-
+        <div className="navbar-fixed">
+        <Navbar className='teal lighten-4'>
+          <NavItem>
+            <Link to='/'>
+              <img src={bandaid} style={{'height': '60px', 'width': '60px'}}/>MEDiary
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Modal
+              header='Login'
+              fixedFooter
+              trigger={
+                <Link id="blah" to='/login'>Login</Link>
+              }>
+              <form id="login" onSubmit={this.onSubmit}>
+                <label>
+                  Email:
+                  <input type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
+                  <br/>
+                </label>
+                <label>
+                  Password:
+                  <input type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
+                  <br/>
+                </label>
+                  <input type="submit" value="Submit" />
+                  
+              </form>
+              <div >
+                {this.state.login_error}
+              </div>
+            </Modal>
+          </NavItem>
+          <NavItem>
+            <Link to='/register'> Registration</Link>
+          </NavItem>
+          <NavItem>
+            <Link to='/logout'>Logout
+          </Link>
+          </NavItem>
+        </Navbar>
+      </div>
     )
   }
 }
