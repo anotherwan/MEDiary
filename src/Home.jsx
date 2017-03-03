@@ -7,6 +7,8 @@ import torsoMan from '../public/images/torsoMan.svg';
 import armsArm from '../public/images/armsArm.svg';
 import legsLeg from '../public/images/legsLeg.svg';
 
+import '../public/styles/Home.css';
+
 import Login from './Login.jsx';
 
 class Home extends Component {
@@ -22,18 +24,19 @@ class Home extends Component {
     if(localStorage.getItem('uid'))
       return (
         <div className="home">
+
           <img src={maleBody} alt="Body" />
           <Link to="/region/head">
-            <img src={headHead} alt="Head" style={this.bubbleStyle}/>
+            <img className="body" src={headHead} alt="Head" style={this.bubbleStyle}/>
           </Link>
           <Link to="/region/torso">
-            <img src={torsoMan} alt="Torso" style={this.bubbleStyle}/>
+            <img className="body" src={torsoMan} alt="Torso" style={this.bubbleStyle}/>
           </Link>
           <Link to="/region/arms">
-            <img src={armsArm} alt="Arms" style={this.bubbleStyle}/>
+            <img className="body" src={armsArm} alt="Arms" style={this.bubbleStyle}/>
           </Link>
           <Link to="/region/legs">
-            <img src={legsLeg} alt="Legs" style={this.bubbleStyle}/>
+            <img className="body" src={legsLeg} alt="Legs" style={this.bubbleStyle}/>
           </Link>
         </div>
       )
@@ -45,3 +48,5 @@ class Home extends Component {
 }
 
 export default Home;
+
+
