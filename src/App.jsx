@@ -6,9 +6,6 @@ import Nav from './Nav.jsx';
 // import Footer from './Footer.jsx';
 // import Home from './Home.jsx';
 
-
-
-
 class App extends Component {
 
   render() {
