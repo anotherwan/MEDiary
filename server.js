@@ -52,6 +52,12 @@ function getDrId() {
     .where('name', 'like', 'D%');
 }
 
+function getUserId(email) {
+  return knex('users')
+    .select('id')
+    .where('email', '=', email);
+}
+
 app.post("/register", (req, res) => {
 
   let userExists = false;
@@ -135,10 +141,14 @@ app.post('/tracker', (req, res) => {
   let description = req.body.description;
   let rating = req.body.rating;
   let id = req.body.part
+  let email = req.body.user
 
-  console.log(title, description, rating, id);
+  console.log(title, description, rating, id, email);
+
+
 
   knex('inputs').insert({
+    user_id: getUserId(email),
     body_part_id: id,
     pain_rating: rating,
     title: title,

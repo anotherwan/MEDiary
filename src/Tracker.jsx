@@ -23,7 +23,8 @@ import React, {Component} from 'react';
         title: this.state.title,
         description: this.state.description,
         rating: this.state.rating,
-        part: this.props.params.id
+        part: this.props.params.id,
+        user: localStorage.getItem('uid')
       })
     }).then((response) => {
       return response.json();
