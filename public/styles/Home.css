@@ -14,12 +14,3 @@
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
-
-#mainbody:hover {
-  background-color: blue;
-}
-
-.body {
-  background-color: blue;
-}
-
