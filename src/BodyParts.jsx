@@ -23,19 +23,32 @@ class BodyParts extends Component {
 
 
   render () {
-    return (
-      <div>
-        <Link to={"/tracker/" + this.props.part}>
-          <img
-            onClick={this.props.onClick}
-            src={this.props.svgSrc}
-            role="presentation"
-            height={this.HEIGHT}
-            width={this.WIDTH}
-            style={this.getStyle()} />
-        </Link>
-      </div>
-    )
+    if (this.props.isClickable === true && localStorage.getItem('uid'))
+      return (
+        <div>
+          <Link to={"/tracker/" + this.props.part}>
+            <img
+              onClick={this.props.onClick}
+              src={this.props.svgSrc}
+              role="presentation"
+              height={this.HEIGHT}
+              width={this.WIDTH}
+              style={this.getStyle()} />
+          </Link>
+        </div>
+      )
+      else
+        return (
+          <div>
+            <img
+              onClick={this.props.onClick}
+              src={this.props.svgSrc}
+              role="presentation"
+              height={this.HEIGHT}
+              width={this.WIDTH}
+              style={this.getStyle()} />
+          </div>
+          )
   }
 }
 
