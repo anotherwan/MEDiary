@@ -134,4 +134,24 @@ app.post('/tracker', (req, res) => {
   let title = req.body.title;
   let description = req.body.description;
   let rating = req.body.rating;
+  let id = req.body.part
+
+  console.log(title, description, rating, id);
+
+  knex('inputs').insert({
+    body_part_id: id,
+    pain_rating: rating,
+    title: title,
+    description: description
+  }).then((results) => {
+    if (results.rowCount === 1) {
+      res.json({
+        message: 'Input created'
+      })
+    } else {
+      res.json({
+        message: 'Error storing input'
+      })
+    }
+  })
 })
