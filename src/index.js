@@ -8,7 +8,6 @@ import Register from './Register.jsx';
 import Login from './Login.jsx';
 import Home from './Home.jsx';
 import BodyRegions from "./BodyRegions.jsx";
-// import BodyParts from './BodyParts.jsx';
 import Tracker from './Tracker.jsx';
 
 const main = document.getElementById('root');
