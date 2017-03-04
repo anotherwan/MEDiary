@@ -29,12 +29,11 @@ class Home extends Component {
     if(localStorage.getItem('uid'))
       return (
         <div className="home">
-          <map id="main_head" name="body">
+          <map id="mapmainbody" name="body">
             <img id="mainbody" src={maleBody} useMap="#body" role="presentation"/>
             <Link to="/region/head">
               <img className="body" src={headHead} alt="Head" style={this.bubbleStyle}/>
-              <area id="area_head" shape="poly" coords="230,80,237,71,237,57,234,53,232,47,226,39,227,34,230,33,230,21,233,10,244,1,265,-1,281,13,282,34,284,35,285,41,280,46,276,56,274,60,275,73,281,80" href="#"
-                />
+              <area id="area_head" shape="poly" coords="230,80,237,71,237,57,234,53,232,47,226,39,227,34,230,33,230,21,233,10,244,1,265,-1,281,13,282,34,284,35,285,41,280,46,276,56,274,60,275,73,281,80" href="#"/>
             </Link>
             <Link to="/region/torso">
               <img className="body" src={torsoMan} alt="Torso" style={this.bubbleStyle}/>

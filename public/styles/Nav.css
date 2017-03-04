@@ -1,0 +1,72 @@
+.navbar {
+  height: 60px;
+  width: 100%;
+  background: #b2dfdb;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0 15px;
+  position: fixed;
+}
+
+.navbar.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar > .logo-container {
+  display: flex;
+  align-items: center;
+  flex: 0 0 100px;
+}
+
+.navbar > .logo-container > img {
+  width: 40px;
+  height: 40px;
+  padding-right: 15px;
+}
+
+.navbar > .logo-container > h5 {
+  color: white;
+}
+
+.navbar > .nav-list-wrapper {
+  flex: 1 1 auto;
+  align-self: stretch;
+}
+
+.navbar > .nav-list-wrapper > ul.nav-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  margin: 0;
+  height: 100%;
+  list-style: none;
+}
+
+.navbar > .nav-list-wrapper > ul.nav-list > li {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  transition: all 300ms ease-in-out;
+}
+.navbar > .nav-list-wrapper > ul.nav-list > li:hover {
+  background: rgba(200, 200, 200, 0.5);
+}
+
+.navbar > .nav-list-wrapper > ul.nav-list a {
+  color: white;
+  align-items: center;
+}
+
+.navbar > .nav-list-wrapper > ul.nav-list > li > img {
+  width: 40px;
+  height: 40px;
+  padding-right: 15px;
+}
+
+.navbar > .nav-list-wrapper > ul.nav-list > li > h6 {
+  color: white
+}
