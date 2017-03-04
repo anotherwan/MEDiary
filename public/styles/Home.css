@@ -1,4 +1,5 @@
-.body {
+
+.bodypart {
   -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
        -o-transition: all 0.5s ease;
@@ -6,7 +7,7 @@
           transition: all 0.5s ease;
 }
 
-.body:hover {
+.bodypart:hover {
   border-radius: 50%;
   -webkit-transform: rotate(360deg);
      -moz-transform: rotate(360deg);
@@ -15,3 +16,29 @@
           transform: rotate(360deg);
 }
 
+
+div .home {
+  border: red solid 1px;
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+}
+
+.male-body {
+  border: red solid 1px;
+
+  /*margin: 10px 0px;*/
+}
+
+.line {
+  border-bottom: solid black 2px;
+  width: 100px;
+  flex-wrap: nowrap;
+  flex-grow:2;
+}
+
+.m5 {
+  border: red solid 1px;
+  margin: 10px;
+  align-items: center;
+}
