@@ -1,75 +1,113 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
-import { Navbar, NavItem, Modal } from 'react-materialize';
+import { Modal } from 'react-materialize';
 
 import medProfile from '../public/images/medProfile.svg'
 import bandaid from '../public/images/BandaidLogo.svg'
 
+import Register from "./Register"
+import Login from "./Login"
+
+import "../public/styles/Nav.css"
+
 class Nav extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-
-    this.onClick = this.handleLogout.bind(this);
-  }
-
 
   handleLogout = (event) => {
     localStorage.setItem('uid', '');
   }
 
-  componentDidMount = () => {
-    document.getElementById('blah').click();
-  }
-
-  render () {
+  render() {
     return (
-        <div className="navbar-fixed">
-        <Navbar className='teal lighten-4'>
-          <NavItem>
-            <Link to='/'>
-              <img src={bandaid} style={{'height': '60px', 'width': '60px'}}/>MEDiary
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Modal
-              header='Login'
-              fixedFooter
-              trigger={
-                <Link id="blah" to='/login'>Login</Link>
-              }>
-              <form id="login" onSubmit={this.onSubmit}>
-                <label>
-                  Email:
-                  <input type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
-                  <br/>
-                </label>
-                <label>
-                  Password:
-                  <input type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
-                  <br/>
-                </label>
-                  <input type="submit" value="Submit" />
-                  
-              </form>
-              <div >
-                {this.state.login_error}
-              </div>
-            </Modal>
-          </NavItem>
-          <NavItem>
-            <Link to='/register'> Registration</Link>
-          </NavItem>
-          <NavItem>
-            <Link to='/logout'>Logout
-          </Link>
-          </NavItem>
-        </Navbar>
+
+      <div className="navbar fixed-top">
+        <div className="logo-container">
+          <img src={bandaid} alt="bandaid" />
+            <h5>MEDiary</h5>
+        </div>
+        <div className="nav-list-wrapper">
+          <ul className="nav-list">
+            <li>
+              <Modal
+                header='Register'
+                fixedFooter
+                trigger={
+                  <Link to='/register'>Registration</Link>
+                }>
+                <Register />
+              </Modal>
+            </li>
+            <li>
+              <Modal
+                header='Login'
+                fixedFooter
+                trigger={
+                  <Link to='/login'>Login</Link>
+                }>
+                <Login />
+              </Modal>
+            </li>
+            <li>
+              <img src={medProfile} alt="Profile" />
+              <h6>Profile</h6>
+            </li>
+            <li>
+              <Link to='/logout'>Logout</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     )
   }
+
+//   render () {
+//     return (
+//       <div className="navbar-fixed">
+//         <Navbar brand={
+//           <div className="logo" style={{
+//             display: "flex",
+//             alignItems: "center"
+//           }}>
+//             <img src={bandaid} style={{
+//               height: 40,
+//               width: 40,
+//               paddingRight: 10
+//             }}/>
+//             MEDiary
+//           </div>
+//         } right>
+//         <NavItem>
+//
+//         </NavItem>
+//
+//
+//         </Navbar>
+//         {/* <Navbar className='teal lighten-4'>
+//           <NavItem>
+//             <Link to='/'>
+//
+//             </Link>
+//           </NavItem>
+//
+//           <NavItem>
+//             <Modal
+//               header='Register'
+//               fixedFooter
+//               trigger={
+//                 <Link to='/register'>Registration</Link>
+//               }>
+//
+//               <Register />
+//             </Modal>
+//           </NavItem>
+//           <NavItem>
+//             <Link to='/logout'>Logout
+//           </Link>
+//           </NavItem>
+//         </Navbar> */}
+//       </div>
+//     )
+//   }
+// }
 }
 
 export default Nav;

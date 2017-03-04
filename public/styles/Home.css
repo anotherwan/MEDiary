@@ -1,0 +1,25 @@
+div .home {
+  border: red solid 1px;
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+}
+
+.male-body {
+  border: red solid 1px;
+  height: 380px;
+  /*margin: 10px 0px;*/
+}
+
+.line {
+  border-bottom: solid black 2px;
+  width: 100px;
+  flex-wrap: nowrap;
+  flex-grow:2;
+}
+
+.m5 {
+  border: red solid 1px;
+  margin: 10px;
+  align-items: center;
+}
