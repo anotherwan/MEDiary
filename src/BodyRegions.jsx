@@ -4,7 +4,6 @@ import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
 
 class BodyRegions extends Component {
-
   WIDTH = 640
   HEIGHT = 640
   RADIUS = 200

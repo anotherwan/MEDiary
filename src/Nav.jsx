@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
-import { Modal } from 'react-materialize';
 
 import medProfile from '../public/images/medProfile.svg'
 import bandaid from '../public/images/BandaidLogo.svg'
