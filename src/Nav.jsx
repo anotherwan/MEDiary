@@ -58,56 +58,6 @@ class Nav extends Component {
       </div>
     )
   }
-
-//   render () {
-//     return (
-//       <div className="navbar-fixed">
-//         <Navbar brand={
-//           <div className="logo" style={{
-//             display: "flex",
-//             alignItems: "center"
-//           }}>
-//             <img src={bandaid} style={{
-//               height: 40,
-//               width: 40,
-//               paddingRight: 10
-//             }}/>
-//             MEDiary
-//           </div>
-//         } right>
-//         <NavItem>
-//
-//         </NavItem>
-//
-//
-//         </Navbar>
-//         {/* <Navbar className='teal lighten-4'>
-//           <NavItem>
-//             <Link to='/'>
-//
-//             </Link>
-//           </NavItem>
-//
-//           <NavItem>
-//             <Modal
-//               header='Register'
-//               fixedFooter
-//               trigger={
-//                 <Link to='/register'>Registration</Link>
-//               }>
-//
-//               <Register />
-//             </Modal>
-//           </NavItem>
-//           <NavItem>
-//             <Link to='/logout'>Logout
-//           </Link>
-//           </NavItem>
-//         </Navbar> */}
-//       </div>
-//     )
-//   }
-// }
 }
 
 export default Nav;
