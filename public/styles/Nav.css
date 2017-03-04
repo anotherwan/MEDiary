@@ -6,6 +6,7 @@
   flex-wrap: nowrap;
   align-items: center;
   padding: 0 15px;
+  position: fixed;
 }
 
 .navbar.fixed-top {

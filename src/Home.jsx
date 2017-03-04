@@ -27,7 +27,7 @@ class Home extends Component {
             <Row style={{'margin':'0px'}}>
                 <Col m={4} >
                   <Row></Row>
-                  <img src={maleBody} alt="Body" className="male-body" />
+                  <img src={maleBody} alt="Body" style={{'height': '380px'}} />
                 </Col>
                 <Col m={2} className='m5' s={3}>
                   {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Head</h6></div> */}
@@ -57,7 +57,9 @@ class Home extends Component {
       </div>
       )
     // } else {
-    //   return null
+    //   return (
+    //     <Login />
+    //   )
     // }
   }
 }

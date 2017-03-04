@@ -11,6 +11,10 @@ import Login from "./Login"
 import "../public/styles/Nav.css"
 
 class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.handleLogout.bind(this);
+  }
 
   handleLogout = (event) => {
     localStorage.setItem('uid', '');
@@ -27,31 +31,17 @@ class Nav extends Component {
         <div className="nav-list-wrapper">
           <ul className="nav-list">
             <li>
-              <Modal
-                header='Register'
-                fixedFooter
-                trigger={
-                  <Link to='/register'>Registration</Link>
-                }>
-                <Register />
-              </Modal>
+              <Link to='/register'>Registration</Link>
             </li>
             <li>
-              <Modal
-                header='Login'
-                fixedFooter
-                trigger={
-                  <Link to='/login'>Login</Link>
-                }>
-                <Login />
-              </Modal>
+              <Link to='/login'>Login</Link>
             </li>
             <li>
               <img src={medProfile} alt="Profile" />
               <h6>Profile</h6>
             </li>
             <li>
-              <Link to='/logout'>Logout</Link>
+              <Link to='/login' onClick={this.onClick}>Logout</Link>
             </li>
           </ul>
         </div>
