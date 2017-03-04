@@ -23,7 +23,7 @@ class BodyParts extends Component {
 
 
   render () {
-    if (this.props.isClickable === true && localStorage.getItem('uid'))
+    // if (this.props.isClickable === true && localStorage.getItem('uid'))
       return (
         <div>
           <Link to={"/tracker/" + this.props.part}>
@@ -37,18 +37,18 @@ class BodyParts extends Component {
           </Link>
         </div>
       )
-      else
-        return (
-          <div>
-            <img
-              onClick={this.props.onClick}
-              src={this.props.svgSrc}
-              role="presentation"
-              height={this.HEIGHT}
-              width={this.WIDTH}
-              style={this.getStyle()} />
-          </div>
-          )
+      // else
+      //   return (
+      //     <div>
+      //       <img
+      //         onClick={this.props.onClick}
+      //         src={this.props.svgSrc}
+      //         role="presentation"
+      //         height={this.HEIGHT}
+      //         width={this.WIDTH}
+      //         style={this.getStyle()} />
+      //     </div>
+      //     )
   }
 }
 

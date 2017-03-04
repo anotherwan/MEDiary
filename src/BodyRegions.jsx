@@ -3,10 +3,7 @@ import React, {Component} from 'react';
 import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
 
-
 class BodyRegions extends Component {
-
-
   WIDTH = 640
   HEIGHT = 640
   RADIUS = 200
@@ -16,13 +13,11 @@ class BodyRegions extends Component {
   }
 
   calculateYPosition = (i, N) => {
-
     return 0.5 * this.WIDTH - this.RADIUS * Math.sin(i * 2 * Math.PI / N) - 40;
   }
 
-
   render () {
-    if(localStorage.getItem('uid'))
+    // if(localStorage.getItem('uid'))
       switch(this.props.location.pathname) {
         case "/region/head":
           return (
@@ -128,8 +123,8 @@ class BodyRegions extends Component {
               </div>
             )
             break;
-            default:
-              console.log("Nothing working")
+        default:
+          console.log("Nothing working")
     }
   }
 }
