@@ -14,7 +14,6 @@ class App extends Component {
         <Nav />
         {this.props.children}
       </div>
-
     );
   }
 }

@@ -1,17 +1,33 @@
-.body {
-  -webkit-transition: all 0.5s ease;
-     -moz-transition: all 0.5s ease;
-       -o-transition: all 0.5s ease;
-      -ms-transition: all 0.5s ease;
-          transition: all 0.5s ease;
+
+.region-bubbles {
+  transition: all 0.5s ease;
 }
 
-.body:hover {
+.region-bubbles:hover {
   border-radius: 50%;
-  -webkit-transform: rotate(360deg);
-     -moz-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+div .home {
+  margin-top: 59px;
+  width: 100%;
+  display: flex;
+}
+
+.male-body {
+  height: 380px;
+  margin: 5px 0px;
+}
+
+/*.line {
+  border-bottom: solid black 2px;
+  width: 100px;
+  flex-wrap: nowrap;
+  flex-grow:2;
+}*/
+
+.row .col.m5 {
+  align-items: center;
+  margin-left: 10px
 }
 

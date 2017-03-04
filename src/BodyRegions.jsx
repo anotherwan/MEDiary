@@ -1,59 +1,47 @@
 import React, {Component} from 'react';
-
 import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
 
-
 class BodyRegions extends Component {
-
-
   WIDTH = 640
   HEIGHT = 640
   RADIUS = 200
-  RegionX = 280
-  RegionY = 280
 
   calculateXPosition = (i, N) => {
     return 0.5 * this.WIDTH + this.RADIUS * Math.cos(i * 2 * Math.PI / N) - 40;
   }
 
   calculateYPosition = (i, N) => {
-
     return 0.5 * this.WIDTH - this.RADIUS * Math.sin(i * 2 * Math.PI / N) - 40;
   }
 
-
   render () {
-    if(localStorage.getItem('uid'))
+    // if(localStorage.getItem('uid'))
       switch(this.props.location.pathname) {
         case "/region/head":
           return (
             <div>
             {
-              Object.keys(obj['body']).map((region, i) => {
+              Object.keys(obj['body']).map((region) => {
                 return <BodyParts
-                  key={i}
                   isClickable={false}
                   svgSrc={obj['body']['head'].img_path}
                   role="presentation"
                   height="100px"
                   width="100px"
-                  xPosition={this.RegionX}
-                  yPosition={this.RegionY} />
-              })
-            }
+                  style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+              })}
+
             {
               Object.keys(obj['body']['head']['parts']).map((part, i, arr) => {
                 return <BodyParts
-                  key={i}
                   isClickable={true}
                   part={obj['body']['head']['parts'][part].id}
                   onClick={this.onClick}
                   svgSrc={obj['body']['head']['parts'][part].img_path}
                   xPosition={this.calculateXPosition(i, arr.length)}
                   yPosition={this.calculateYPosition(i, arr.length)} />
-              })
-            }
+              })}
             </div>
           )
           break;
@@ -68,8 +56,7 @@ class BodyRegions extends Component {
                   role="presentation"
                   height="100px"
                   width="100px"
-                  xPosition={this.RegionX}
-                  yPosition={this.RegionY} />
+                  style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
             })}
             {
               Object.keys(obj['body']['torso']['parts']).map((part, i, arr) => {
@@ -95,9 +82,9 @@ class BodyRegions extends Component {
                   role="presentation"
                   height="100px"
                   width="100px"
-                  xPosition={this.RegionX}
-                  yPosition={this.RegionY} />
+                  style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
             })}
+
             {
               Object.keys(obj['body']['legs']['parts']).map((part, i, arr) => {
                 return <BodyParts
@@ -122,9 +109,9 @@ class BodyRegions extends Component {
                   role="presentation"
                   height="100px"
                   width="100px"
-                  xPosition={this.RegionX}
-                  yPosition={this.RegionY} />
+                  style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
             })}
+
             {
               Object.keys(obj['body']['arms']['parts']).map((part, i, arr) => {
                 return <BodyParts
@@ -138,8 +125,8 @@ class BodyRegions extends Component {
               </div>
             )
             break;
-            default:
-              console.log("Nothing working")
+        default:
+          console.log("Nothing working")
     }
   }
 }
