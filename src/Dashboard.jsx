@@ -10,7 +10,6 @@ class Dashboard extends Component {
     }
 
     this.onSubmit = this.getStats.bind(this);
-    this.data = this.statsData.bind(this);
   }
 
 
@@ -33,11 +32,6 @@ class Dashboard extends Component {
         painItems: body.data
       })
     })
-  }
-
-  statsData = () => {
-    let data = this.state.painItems;
-    return (<span>data</span>)
   }
 
   render() {
