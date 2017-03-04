@@ -58,7 +58,6 @@ function getUserId(email) {
 
 app.post('/dashboard', (req, res)=> {
   let email = req.body.user;
-  console.log(email);
 
   knex('inputs')
     .select('users.name', 'inputs.description', 'inputs.date_created', 'inputs.body_part_id', 'inputs.pain_rating', 'inputs.title')

@@ -27,9 +27,9 @@ class Dashboard extends Component {
     }).then((response) => {
       return response.json();
     }).then((body) => {
-      console.log(body);
-      console.log(body.data.length);
+      console.log(body.data[0].name);
       this.setState({
+        user: body.data[0].name,
         painItems: body.data
       })
     })
@@ -49,14 +49,14 @@ class Dashboard extends Component {
         </form>
         <div>
           Some Stats:
+          {this.state.user}<br />
           {this.state.painItems.map((obj, index) => {
             return (
               <span key={index}>
-                <span>{obj.name}</span>
-                <span>{obj.title}</span>
-                <span>{obj.description}</span>
-                <span>{obj.pain_rating}</span>
-                <span>{obj.date_created}</span>
+                <span>{obj.title}<br /></span>
+                <span>{obj.description}<br /></span>
+                <span>{obj.pain_rating}<br /></span>
+                <span>{obj.date_created}<br /></span>
               </span>
             )
           })}
