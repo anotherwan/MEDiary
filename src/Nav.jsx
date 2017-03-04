@@ -25,7 +25,7 @@ class Nav extends Component {
         <h4><Link to="/login"><button>LOGIN</button></Link></h4>
         <h4><Link to="/login" onClick={this.onClick}><button>LOGOUT</button></Link></h4>
         <h4><Link to="/register"><button>Register</button></Link></h4>
-
+        <h4><Link to="/dashboard"><button>Dashboard</button></Link></h4>
       </nav>
 
     )
