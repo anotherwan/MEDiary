@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router";
+  import { Link } from "react-router";
 import {Row, Col } from "react-materialize"
 
 import maleBody from '../public/images/mainBodyGray.svg';
