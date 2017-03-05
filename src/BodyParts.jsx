@@ -27,6 +27,7 @@ class BodyParts extends Component {
     if (this.props.isClickable === true && localStorage.getItem('uid'))
       return (
         <div className="parts-container">
+        <div>
           <Link to={"/tracker/" + this.props.part}>
             <img
               onClick={this.props.onClick}
@@ -36,6 +37,7 @@ class BodyParts extends Component {
               width={this.WIDTH}
               style={this.getStyle()} />
           </Link>
+        </div>
         </div>
       )
       else
@@ -49,7 +51,7 @@ class BodyParts extends Component {
               width={this.WIDTH}
               style={this.getStyle()} />
           </div>
-          )
+        )
   }
 }
 

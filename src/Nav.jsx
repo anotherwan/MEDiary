@@ -4,9 +4,6 @@ import { Link } from "react-router";
 import medProfile from '../public/images/medProfile.svg'
 import bandaid from '../public/images/BandaidLogo.svg'
 
-import Register from "./Register"
-import Login from "./Login"
-
 import "../public/styles/Nav.css"
 
 class Nav extends Component {

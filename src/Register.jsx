@@ -75,15 +75,15 @@ class Register extends Component {
       <Row></Row>
       <Row></Row>
       <Row></Row>
-        <Row>
-          <Col m={12}>
-            <Breadcrumb class="teal lighten-2">
-              <Link to="/">
-                <MenuItem>Home</MenuItem>
-              </Link>
-              <MenuItem>Registration</MenuItem>
-            </Breadcrumb>
-          </Col>
+          <Row>
+            <Col m={12}>
+              <Breadcrumb class="teal lighten-2">
+                <Link to="/">
+                  <MenuItem>Home</MenuItem>
+                </Link>
+                <MenuItem>Registration</MenuItem>
+              </Breadcrumb>
+            </Col>
           <form id="register" onSubmit={this.onSubmit} >
             <Row>
               <Col m={10} offset="m3">

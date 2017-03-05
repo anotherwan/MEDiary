@@ -86,6 +86,10 @@ class Login extends Component {
               <Col m={10} offset="m3">
                 <Button m={6} waves="light" type="submit" value="Submit">Submit</Button>
               </Col>
+          <Row></Row>
+          <Row></Row>
+          <Row></Row>
+
           </form>
           <div >
             {this.state.login_error}

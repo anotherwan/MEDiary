@@ -43,12 +43,7 @@ import obj from '../obj.json';
   render () {
     return (
       <div name="tracker">
-      <Row></Row>
-      <Row></Row>
-      <Row></Row>
-      <Row></Row>
         <Row>
-
           {
             Object.keys(obj['body']['head']['parts']).map((val, index) => {
             if (obj['body']['head']['parts'][val].id === this.props.params.id)

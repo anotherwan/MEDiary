@@ -18,14 +18,15 @@ class BodyRegions extends Component {
   }
 
   render () {
-    // if(localStorage.getItem('uid'))
+    if(localStorage.getItem('uid'))
       switch(this.props.location.pathname) {
         case "/region/head":
           return (
+            <div className="head">
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
             <div>
-            <Row></Row>
-            <Row></Row>
-            <Row></Row>
             {
               Object.keys(obj['body']).map((region) => {
                 return <BodyParts
@@ -47,6 +48,7 @@ class BodyRegions extends Component {
                   xPosition={this.calculateXPosition(i, arr.length)}
                   yPosition={this.calculateYPosition(i, arr.length)} />
               })}
+            </div>
             </div>
           )
           break;
