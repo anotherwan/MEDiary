@@ -9,7 +9,8 @@ import armsArm from '../public/images/armsArm.svg';
 import legsLeg from '../public/images/legsLeg.svg';
 
 import Login from './Login.jsx';
-import '../public/styles/Home.css'
+
+import '../public/styles/Home.css';
 
 class Home extends Component {
   bubbleStyle = {

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
+
 import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
 
@@ -21,6 +23,9 @@ class BodyRegions extends Component {
         case "/region/head":
           return (
             <div>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
             {
               Object.keys(obj['body']).map((region) => {
                 return <BodyParts
@@ -48,6 +53,9 @@ class BodyRegions extends Component {
         case "/region/torso":
           return (
             <div>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
@@ -58,6 +66,7 @@ class BodyRegions extends Component {
                   width="100px"
                   style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
             })}
+
             {
               Object.keys(obj['body']['torso']['parts']).map((part, i, arr) => {
                 return <BodyParts
@@ -74,6 +83,9 @@ class BodyRegions extends Component {
         case "/region/legs":
           return (
             <div>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
@@ -101,6 +113,9 @@ class BodyRegions extends Component {
         case "/region/arms":
           return (
             <div>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
