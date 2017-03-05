@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
 import { Link } from "react-router";
+import './BodyParts.jsx';
+import obj from '../obj.json';
 
  class Tracker extends Component {
 
@@ -10,7 +12,10 @@ import { Link } from "react-router";
       title: '',
       description: '',
       rating: ''
+
     }
+    console.log(this.props)
+
     this.onSubmit = this.handleSubmit.bind(this);
   }
 
@@ -43,16 +48,52 @@ import { Link } from "react-router";
       <Row></Row>
       <Row></Row>
         <Row>
-          <Col m={12}>
-            <Breadcrumb class="teal lighten-2">
-              <Link to="/">
-                <MenuItem>Home</MenuItem>
-              </Link>
-              <Link to={"/tracker/" + this.props.part}>
-                <MenuItem>{this.props.part}</MenuItem>
-              </Link>
-            </Breadcrumb>
-          </Col>
+
+          {
+            Object.keys(obj['body']['head']['parts']).map((val, index) => {
+            if (obj['body']['head']['parts'][val].id === this.props.params.id)
+              return <img
+                src={obj['body']['head']['parts'][val].img_path}
+                role="presentation"
+                height="100px"
+                width="100px"
+                style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}}/>
+            })
+          }
+          {
+            Object.keys(obj['body']['torso']['parts']).map((val, index) => {
+            if (obj['body']['torso']['parts'][val].id === this.props.params.id)
+              return <img
+                src={obj['body']['torso']['parts'][val].img_path}
+                role="presentation"
+                height="100px"
+                width="100px"
+                style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}}/>
+            })
+          }
+          {
+            Object.keys(obj['body']['arms']['parts']).map((val, index) => {
+            if (obj['body']['arms']['parts'][val].id === this.props.params.id)
+              return <img
+                src={obj['body']['arms']['parts'][val].img_path}
+                role="presentation"
+                height="100px"
+                width="100px"
+                style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}}/>
+            })
+          }
+          {
+            Object.keys(obj['body']['legs']['parts']).map((val, index) => {
+            if (obj['body']['legs']['parts'][val].id === this.props.params.id)
+              return <img
+                src={obj['body']['legs']['parts'][val].img_path}
+                role="presentation"
+                height="100px"
+                width="100px"
+                style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}}/>
+            })
+          }
+
           <form id="submitDescription" onSubmit={this.onSubmit}>
             <Row>
               <Col m={10} offset="m3">
@@ -83,7 +124,7 @@ import { Link } from "react-router";
               </Col>
             </Row>
             <Col m={10} offset="m3">
-              <Button m={6} waves="light" type="submit" value="Submit">Submit</Button>
+              <Button waves="light" type="submit" value="Submit">Submit</Button>
             </Col>
           </form>
         </Row>
