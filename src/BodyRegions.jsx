@@ -14,12 +14,11 @@ class BodyRegions extends Component {
   }
 
   calculateYPosition = (i, N) => {
-    console.log(this.props.location)
     return 0.5 * this.WIDTH - this.RADIUS * Math.sin(i * 2 * Math.PI / N) - 40;
   }
 
   render () {
-    if(localStorage.getItem('uid'))
+    // if(localStorage.getItem('uid'))
       switch(this.props.location.pathname) {
         case "/region/head":
           return (
@@ -37,6 +36,7 @@ class BodyRegions extends Component {
                   width="100px"
                   style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
               })}
+
             {
               Object.keys(obj['body']['head']['parts']).map((part, i, arr) => {
                 return <BodyParts
@@ -56,7 +56,6 @@ class BodyRegions extends Component {
             <Row></Row>
             <Row></Row>
             <Row></Row>
-
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
@@ -67,6 +66,7 @@ class BodyRegions extends Component {
                   width="100px"
                   style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
             })}
+
             {
               Object.keys(obj['body']['torso']['parts']).map((part, i, arr) => {
                 return <BodyParts
@@ -86,7 +86,6 @@ class BodyRegions extends Component {
             <Row></Row>
             <Row></Row>
             <Row></Row>
-
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
@@ -97,6 +96,7 @@ class BodyRegions extends Component {
                   width="100px"
                   style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
             })}
+
             {
               Object.keys(obj['body']['legs']['parts']).map((part, i, arr) => {
                 return <BodyParts
@@ -126,6 +126,7 @@ class BodyRegions extends Component {
                   width="100px"
                   style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
             })}
+
             {
               Object.keys(obj['body']['arms']['parts']).map((part, i, arr) => {
                 return <BodyParts
