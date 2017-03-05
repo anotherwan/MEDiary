@@ -20,8 +20,6 @@ class BodyParts extends Component {
     return style
   }
 
-
-
   render () {
     // if (this.props.isClickable === true && localStorage.getItem('uid'))
       return (

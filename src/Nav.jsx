@@ -21,11 +21,12 @@ class Nav extends Component {
 
   render() {
     return (
-
       <div className="navbar fixed-top">
         <div className="logo-container">
-          <img src={bandaid} alt="bandaid" />
-            <h5>MEDiary</h5>
+        <Link className="bandaid" to="/">
+          <img src={bandaid} alt="bandaid" height="40" width="40"/>
+        </Link>
+          <h5>MEDiary</h5>
         </div>
         <div className="nav-list-wrapper">
           <ul className="nav-list">

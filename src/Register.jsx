@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
+import { Link } from "react-router";
 
 class Register extends Component {
 
@@ -69,44 +71,66 @@ class Register extends Component {
   render () {
     return (
       <div className="register" >
-        <form id="register" onSubmit={this.onSubmit} >
-          <label>
-            Name:
-            <input type="text" onChange={(e) => this.setState({name: e.target.value})} value={this.state.name} />
-          </label><br/>
-          <label>
-            E-mail:
-            <input type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
-          </label><br/>
-          <label>
-            Password:
-            <input type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
-          </label><br/>
-          <label>
-            Age:
-            <input type="number" onChange={(e) => this.setState({age: e.target.value})} value={this.state.age}/>
-          </label> <br />
-          <label>
-            Gender:
-            <select name="gender" onChange={(e) => this.setState({gender: e.target.value})} value={this.state.gender}>
-            //make starting value blank and in db contrain to have value
-              <option value="male"> Male </option>
-              <option value="female"> Female </option>
-            </select>
-          </label><br />
-          <label>
-            Weight:
-            <input type="number" onChange={(e) => this.setState({weight: e.target.value})} value={this.state.weight}/>
-          </label> <br />
-          <label>
-            Height:
-            <input type="text" onChange={(e) => this.setState({height: e.target.value})} value={this.state.height}/>
-          </label> <br />
-            <input type="submit" value="Submit" />
-        </form>
-        <div >
-          {this.state.reg_error}
-        </div>
+      <Row></Row>
+      <Row></Row>
+      <Row></Row>
+      <Row></Row>
+        <Row>
+          <Col m={12}>
+            <Breadcrumb class="teal lighten-2">
+              <Link to="/">
+                <MenuItem>Home</MenuItem>
+              </Link>
+              <MenuItem>Registration</MenuItem>
+            </Breadcrumb>
+          </Col>
+          <form id="register" onSubmit={this.onSubmit} >
+            <Row>
+              <Col m={10} offset="m3">
+                <Input m={6} label="Name" type="text" onChange={(e) => this.setState({name: e.target.value})} value={this.state.name} />
+              </Col>
+            </Row>
+            <Row>
+              <Col m={10} offset="m3">
+                <Input m={6} label="Email" type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
+              </Col>
+            </Row>
+            <Row>
+              <Col m={10} offset="m3">
+                <Input m={6} label="Password" type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
+              </Col>
+            </Row>
+            <Row>
+              <Col m={10} offset="m3">
+                <Input m={6} label="Age" type="number" onChange={(e) => this.setState({age: e.target.value})} value={this.state.age}/>
+              </Col>
+            </Row>
+            <Row>
+              <Col m={10} offset="m3">
+                <Input m={6} type='select' label="Gender" name="gender" onChange={(e) => this.setState({gender: e.target.value})} value={this.state.gender}>
+                  <option value="male"> Male </option>
+                  <option value="female"> Female </option>
+                </Input>
+              </Col>
+            </Row>
+            <Row>
+              <Col m={10} offset="m3">
+                <Input m={6} label="Weight" type="number" onChange={(e) => this.setState({weight: e.target.value})} value={this.state.weight}/>
+              </Col>
+            </Row>
+            <Row>
+              <Col m={10} offset="m3">
+                <Input m={6} label="Height" type="text" onChange={(e) => this.setState({height: e.target.value})} value={this.state.height}/>
+              </Col>
+            </Row>
+              <Col m={10} offset="m3">
+                <Button m={6} waves="light" type="submit" value="Submit">Submit</Button>
+              </Col>
+          </form>
+          <div >
+            {this.state.reg_error}
+          </div>
+        </Row>
       </div>
     )
   }
