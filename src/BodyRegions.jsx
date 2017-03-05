@@ -6,6 +6,9 @@ class BodyRegions extends Component {
   WIDTH = 640
   HEIGHT = 640
   RADIUS = 200
+  RegionX = 280
+  RegionY = 280
+  HeadRotation = 150
 
   calculateXPosition = (i, N) => {
     return 0.5 * this.WIDTH + this.RADIUS * Math.cos(i * 2 * Math.PI / N) - 40;
@@ -22,26 +25,34 @@ class BodyRegions extends Component {
           return (
             <div>
             {
-              Object.keys(obj['body']).map((region) => {
+              Object.keys(obj['body']).map((region, i) => {
                 return <BodyParts
+                  key={i}
                   isClickable={false}
                   svgSrc={obj['body']['head'].img_path}
                   role="presentation"
                   height="100px"
                   width="100px"
-                  style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+                  xPosition={this.RegionX}
+                  yPosition={this.RegionY} />
               })}
 
             {
               Object.keys(obj['body']['head']['parts']).map((part, i, arr) => {
+                this.HeadRotation -= 60
+
                 return <BodyParts
+                  key={i}
+                  rotation={this.HeadRotation}
                   isClickable={true}
                   part={obj['body']['head']['parts'][part].id}
                   onClick={this.onClick}
                   svgSrc={obj['body']['head']['parts'][part].img_path}
                   xPosition={this.calculateXPosition(i, arr.length)}
                   yPosition={this.calculateYPosition(i, arr.length)} />
-              })}
+              })
+            }
+
             </div>
           )
           break;
@@ -51,12 +62,14 @@ class BodyRegions extends Component {
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
+                  key={i}
                   isClickable={false}
                   svgSrc={obj['body']['torso'].img_path}
                   role="presentation"
                   height="100px"
                   width="100px"
-                  style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+                  xPosition={this.RegionX}
+                  yPosition={this.RegionY} />
             })}
             {
               Object.keys(obj['body']['torso']['parts']).map((part, i, arr) => {
@@ -82,7 +95,8 @@ class BodyRegions extends Component {
                   role="presentation"
                   height="100px"
                   width="100px"
-                  style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+                  xPosition={this.RegionX}
+                  yPosition={this.RegionY} />
             })}
 
             {
@@ -109,7 +123,8 @@ class BodyRegions extends Component {
                   role="presentation"
                   height="100px"
                   width="100px"
-                  style={{"border": "2px solid black", "borderRadius": "50px", "position": "relative", "top": "280px"}} />
+                  xPosition={this.RegionX}
+                  yPosition={this.RegionY} />
             })}
 
             {
