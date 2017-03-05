@@ -13,11 +13,11 @@ import '../public/styles/Home.css'
 
 class Home extends Component {
   bubbleStyle = {
-    "border": "2px solid black",
+    "border": "2px solid #b2dfdb",
     "borderRadius": "40px",
     "height": "80px",
-    "width": "80px"
-  }
+    "width": "80px",
+    "background-color": "#F7F7F7"  }
 
   render () {
     // if (localStorage.getItem('uid')) {

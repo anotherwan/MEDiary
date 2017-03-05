@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
 
+// import '../public/styles/BodyParts.css'
+
 const myStyle = {
-  "border": "2px solid black",
+  "border": "2px solid #b2Dfdb",
   "borderRadius": "40px",
   "position": "absolute"
 }
@@ -25,7 +27,7 @@ class BodyParts extends Component {
   render () {
     // if (this.props.isClickable === true && localStorage.getItem('uid'))
       return (
-        <div>
+        <div className="parts-container">
           <Link to={"/tracker/" + this.props.part}>
             <img
               onClick={this.props.onClick}

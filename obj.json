@@ -1,5 +1,5 @@
-{"body":
-  {"head": {
+{"body": {
+    "head": {
       "id": "1",
       "img_path": "images/headHead.svg",
       "parts": {
@@ -61,14 +61,6 @@
         "lungs": {
           "id": "2g",
           "img_path": "images/torsoLungs.svg"
-        },
-        "torsoFemale": {
-          "id": "2h",
-          "img_path": "images/torsoFemale.svg"
-        },
-        "torsoBreastFemale": {
-          "id": "2i",
-          "img_path": "images/torsoBreastFemale.svg"
         }
       }
     },
@@ -87,21 +79,19 @@
         },
         "hand": {
           "id": "3c",
-          "img_path": "images/armsHand.svg",
-          "parts": {
-            "palm": {
-              "id": "3d",
-              "img_path": "images/armsHandPalm.svg"
-            },
-            "finger": {
-              "id": "3e",
-              "img_path": "images/armsHandFinger.svg"
-            },
-            "Nail": {
-              "id": "3f",
-              "img_path": "images/armsHandFingernail.svg"
-            }
-          }
+          "img_path": "images/armsHand.svg"
+        },
+        "palm": {
+          "id": "3d",
+          "img_path": "images/armsHandPalm.svg"
+        },
+        "finger": {
+          "id": "3e",
+          "img_path": "images/armsHandFinger.svg"
+        },
+        "nail": {
+          "id": "3f",
+          "img_path": "images/armsHandFingernail.svg"
         }
       }
     },
