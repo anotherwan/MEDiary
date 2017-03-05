@@ -13,7 +13,9 @@ import '../public/styles/Home.css'
 
 class Home extends Component {
   bubbleStyle = {
-    "border": "2px solid #b2dfdb",
+    // "border": "2px solid #b2dfdb",
+    // "border": "2px solid #ef9e8f",
+    "border": "2px solid #f0bc62",
     "borderRadius": "40px",
     "height": "80px",
     "width": "80px",
