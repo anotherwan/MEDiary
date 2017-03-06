@@ -8,7 +8,10 @@ class BodyRegions extends Component {
   RADIUS = 200
   RegionX = 280
   RegionY = 280
-  HeadRotation = 150
+  HeadRotation = 0
+  TorsoRotation = 0
+  ArmRotation = 0
+  LegRotation = 162
 
   calculateXPosition = (i, N) => {
     return 0.5 * this.WIDTH + this.RADIUS * Math.cos(i * 2 * Math.PI / N) - 40;
@@ -39,7 +42,12 @@ class BodyRegions extends Component {
 
             {
               Object.keys(obj['body']['head']['parts']).map((part, i, arr) => {
-                this.HeadRotation -= 60
+                const parts = arr.length;
+                const deg = 360/parts;
+                const start = deg + 90;
+
+                this.HeadRotation = start
+                this.HeadRotation -= deg
 
                 return <BodyParts
                   key={i}
@@ -61,6 +69,7 @@ class BodyRegions extends Component {
             <div>
             {
               Object.keys(obj['body']).map((region, i, arr) => {
+
                 return <BodyParts
                   key={i}
                   isClickable={false}
@@ -73,7 +82,16 @@ class BodyRegions extends Component {
             })}
             {
               Object.keys(obj['body']['torso']['parts']).map((part, i, arr) => {
+                const parts = arr.length;
+                const deg = 360/parts;
+                const start = deg + 90;
+
+                this.TorsoRotation = start
+                this.TorsoRotation -= deg
+
                 return <BodyParts
+                  key={i}
+                  rotation={this.TorsoRotation}
                   isClickable={true}
                   part={obj['body']['torso']['parts'][part].id}
                   onClick={this.onClick}
@@ -90,6 +108,7 @@ class BodyRegions extends Component {
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
+                  key={i}
                   isClickable={false}
                   svgSrc={obj['body']['legs'].img_path}
                   role="presentation"
@@ -101,7 +120,16 @@ class BodyRegions extends Component {
 
             {
               Object.keys(obj['body']['legs']['parts']).map((part, i, arr) => {
+                const parts = arr.length;
+                const deg = 360/parts;
+                const start = deg + 90;
+
+                this.LegRotation = start
+                this.LegRotation -= deg
+
                 return <BodyParts
+                  key={i}
+                  rotation={this.LegRotation}
                   isClickable={true}
                   part={obj['body']['legs']['parts'][part].id}
                   onClick={this.onClick}
@@ -118,6 +146,7 @@ class BodyRegions extends Component {
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
+                  key={i}
                   isClickable={false}
                   svgSrc={obj['body']['arms'].img_path}
                   role="presentation"
@@ -129,7 +158,16 @@ class BodyRegions extends Component {
 
             {
               Object.keys(obj['body']['arms']['parts']).map((part, i, arr) => {
+                const parts = arr.length;
+                const deg = 360/parts;
+                const start = deg + 90;
+
+                this.ArmRotation = start
+                this.ArmRotation -= deg
+
                 return <BodyParts
+                  key={i}
+                  rotation={this.ArmRotation}
                   isClickable={true}
                   part={obj['body']['arms']['parts'][part].id}
                   onClick={this.onClick}

@@ -18,7 +18,7 @@ const divStyle = {
 class BodyParts extends Component {
   HEIGHT = 80
   WIDTH = 80
-  Rotate = 'rotate(' + this.props.rotation + 'deg) translate(0px, 40px)';
+  TransRotate = 'rotate(' + this.props.rotation + 'deg) translate(0px, 40px)';
   Origin = '0% 0%';
 
   getStyle = (left, right) => {
@@ -33,7 +33,7 @@ class BodyParts extends Component {
     let style = Object.assign({}, divStyle);
     style.left = this.props.xPosition + 40;
     style.top = this.props.yPosition + 40;
-    style.transform = this.Rotate;
+    style.transform = this.TransRotate;
     style.transformOrigin = this.Origin;
     return style
   }
