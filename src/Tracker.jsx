@@ -12,16 +12,13 @@ import obj from '../obj.json';
       title: '',
       description: '',
       rating: ''
-
     }
     console.log(this.props)
-
     this.onSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-
     fetch('http://localhost:4000/tracker', {
       method: 'post',
       mode: 'cors',
@@ -109,11 +106,11 @@ import obj from '../obj.json';
               </Col>
                 </form>
                 <form className="rating" name="rating" onChange={(e) => this.setState({rating: e.target.value})} value={this.state.rating} >
-              <Col m={8} offset="m4">
+              <Col m={4} offset="m4">
                 <p> Please select a rating from 1 to 5 </p>
               </Col>
               <Row>
-                <Col m={8} offset="m3">
+                <Col m={10} offset="m4">
                   <Input name="rating" type="radio" value="1" label="1" className="with-gap" htmlFor="star1" title="Sucks big time - 1 star"/>
                   <Input name="rating" type="radio" value="2" label="2" className="with-gap" htmlFor="star2" title="Kinda bad - 2 stars"/>
                   <Input name="rating" type="radio" value="3" label="3" className="with-gap" htmlFor="star3" title="Meh - 3 stars"/>
