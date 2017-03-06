@@ -46,7 +46,8 @@ class Dashboard extends Component {
                 <span>Title: {obj.title}<br /></span>
                 <span>Body Part: {
                                     Object.keys(Body['body']).map((region, i) => {
-                                      return (region.id)
+                                      console.log(region === 'head');
+                                      return (region);
                                     })
                                  }<br /></span>
                 <span>Desctiption: {obj.description}<br /></span>
