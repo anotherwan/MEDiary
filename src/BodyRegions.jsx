@@ -3,11 +3,13 @@ import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
 
 import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
+import '../public/styles/BodyRegion.css';
+
 
 class BodyRegions extends Component {
   WIDTH = 640
-  HEIGHT = 640
-  RADIUS = 200
+  HEIGHT = 466
+  RADIUS = 100
 
   calculateXPosition = (i, N) => {
     return 0.5 * this.WIDTH + this.RADIUS * Math.cos(i * 2 * Math.PI / N) - 40;
@@ -23,10 +25,6 @@ class BodyRegions extends Component {
         case "/region/head":
           return (
             <div className="head">
-            <Row></Row>
-            <Row></Row>
-            <Row></Row>
-            <div>
             {
               Object.keys(obj['body']).map((region) => {
                 return <BodyParts
@@ -49,15 +47,11 @@ class BodyRegions extends Component {
                   yPosition={this.calculateYPosition(i, arr.length)} />
               })}
             </div>
-            </div>
           )
           break;
         case "/region/torso":
           return (
-            <div>
-            <Row></Row>
-            <Row></Row>
-            <Row></Row>
+            <div className="torso">
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
@@ -84,10 +78,7 @@ class BodyRegions extends Component {
             break;
         case "/region/legs":
           return (
-            <div>
-            <Row></Row>
-            <Row></Row>
-            <Row></Row>
+            <div className="legs">
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts
@@ -114,10 +105,7 @@ class BodyRegions extends Component {
             break;
         case "/region/arms":
           return (
-            <div>
-            <Row></Row>
-            <Row></Row>
-            <Row></Row>
+            <div className="arms">
             {
               Object.keys(obj['body']).map((region, i, arr) => {
                 return <BodyParts

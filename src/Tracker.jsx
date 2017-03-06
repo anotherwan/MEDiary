@@ -99,7 +99,7 @@ import obj from '../obj.json';
             <Row>
               <Col m={10} offset="m3">
                 <Input m={6} label="Description" type="textarea"
-                  placeholder="Describe your pain" wrap="soft" maxLength="140" name="description"
+                  wrap="soft" maxLength="140" name="description"
                   onChange={(e) => this.setState({description: e.target.value})} value={this.state.description} />
               </Col>
             </Row>
