@@ -14,13 +14,12 @@ import Foot from './Foot.jsx';
 
 class Home extends Component {
   bubbleStyle = {
-    // "border": "2px solid #b2dfdb",
-    // "border": "2px solid #ef9e8f",
-    "border": "2px solid #f0bc62",
+    "border": "2px solid #ef9e8f",
     "borderRadius": "40px",
     "height": "80px",
     "width": "80px",
-    "background-color": "#F7F7F7"  }
+    "background-color": "#F7F7F7"
+  }
 
   render () {
     if (localStorage.getItem('uid')) {
