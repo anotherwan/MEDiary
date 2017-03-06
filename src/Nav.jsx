@@ -43,7 +43,9 @@ class Nav extends Component {
         <div className="nav-list-wrapper">
           <ul className="nav-list">
             <li>
-              <Link to='/register'>Registration</Link>
+              {localStorage.getItem('uid') === '' &&
+                <Link to='/register'>Registration</Link>
+              }
             </li>
             <li>
               <img src={medProfile} alt="Profile" />
