@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Body from '../obj.json';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -43,6 +44,11 @@ class Dashboard extends Component {
             return (
               <span key={index}>
                 <span>Title: {obj.title}<br /></span>
+                <span>Body Part: {
+                                    Object.keys(Body['body']).map((region, i) => {
+                                      return (region.id)
+                                    })
+                                 }<br /></span>
                 <span>Desctiption: {obj.description}<br /></span>
                 <span>Pain Rating: {obj.pain_rating}<br /></span>
                 <span>Date Logged: {this.formatDate(obj.date_created)}<br /></span>
