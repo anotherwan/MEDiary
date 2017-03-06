@@ -17,33 +17,49 @@ class Nav extends Component {
   }
 
   render() {
-    return (
-      <div className="navbar fixed-top">
-        <div className="logo-container">
-        <Link className="bandaid" to="/">
-          <img src={bandaid} alt="bandaid" height="40" width="40"/>
-        </Link>
-          <h5>MEDiary</h5>
+    if (localStorage.getItem('uid'))
+      return (
+        <div className="navbar fixed-top">
+          <div className="logo-container">
+          <Link className="bandaid" to="/">
+            <img src={bandaid} alt="bandaid" height="40" width="40"/>
+          </Link>
+            <h5>MEDiary</h5>
+          </div>
+          <div className="nav-list-wrapper">
+            <ul className="nav-list">
+              <li>
+                <img src={medProfile} alt="Profile" />
+                <h6>Profile</h6>
+              </li>
+              <li>
+                <Link to='/login' onClick={this.onClick}>Logout</Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="nav-list-wrapper">
-          <ul className="nav-list">
-            <li>
-              <Link to='/register'>Registration</Link>
-            </li>
-            <li>
-              <Link to='/login'>Login</Link>
-            </li>
-            <li>
-              <img src={medProfile} alt="Profile" />
-              <h6>Profile</h6>
-            </li>
-            <li>
-              <Link to='/login' onClick={this.onClick}>Logout</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
     )
+      else
+      return (
+        <div className="navbar fixed-top">
+          <div className="logo-container">
+          <Link className="bandaid" to="/">
+            <img src={bandaid} alt="bandaid" height="40" width="40"/>
+          </Link>
+            <h5>MEDiary</h5>
+          </div>
+          <div className="nav-list-wrapper">
+            <ul className="nav-list">
+              <li>
+                <Link to='/register'>Registration</Link>
+              </li>
+              <li>
+                <Link to='/login'>Login</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        )
   }
 }
 

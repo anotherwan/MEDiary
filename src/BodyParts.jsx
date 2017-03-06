@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Link } from "react-router";
 import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
 
-// import '../public/styles/BodyParts.css'
+import '../public/styles/BodyParts.css'
 
 const myStyle = {
   "border": "2px solid #b2Dfdb",

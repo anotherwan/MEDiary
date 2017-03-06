@@ -100,13 +100,13 @@
       "id": "4",
       "img_path": "images/legsLeg.svg",
       "parts": {
-        "calves": {
-          "id": "4a",
-          "img_path": "images/legsCalves.svg"
-        },
         "ankle": {
-          "id": "4b",
+          "id": "4a",
           "img_path": "images/legsAnkle.svg"
+        },
+        "calves": {
+          "id": "4b",
+          "img_path": "images/legsCalf.svg"
         },
         "knee": {
           "id": "4c",

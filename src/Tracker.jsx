@@ -3,6 +3,7 @@ import {Row, Col, Input, Button, Card} from "react-materialize";
 import { Link } from "react-router";
 import './BodyParts.jsx';
 import obj from '../obj.json';
+import '../public/styles/BodyParts.css'
 
  class Tracker extends Component {
 

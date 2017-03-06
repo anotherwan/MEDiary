@@ -13,7 +13,6 @@ class App extends Component {
       <div className="App">
         <Nav />
         {this.props.children}
-        <Foot />
       </div>
     );
   }
