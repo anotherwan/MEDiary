@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import {Row, Col } from "react-materialize"
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
 import armsArm from '../public/images/armsArm.svg';
 import legsLeg from '../public/images/legsLeg.svg';
+import bandaid from '../public/images/BandaidLogo.svg'
+import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
 
 import Login from './Login.jsx';
 
@@ -56,6 +57,10 @@ class Home extends Component {
               </Link>
             </Col>
           </Row>
+            <Button floating fab='vertical' floating icon='list' faicon='fa fa-plus' className='red' large style={{bottom: '45px', right: '24px'}}>
+              <Button floating icon='contacts' className='green'/>
+              <Button floating icon='star' className='blue'/>
+            </Button>
         </div>
       )
     } else {
