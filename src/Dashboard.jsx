@@ -6,10 +6,11 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       user: '',
-      itemNumber: 0,
       painItems: []
     }
   }
+
+  BodyPart = ''
 
   componentDidMount() {
 
@@ -46,10 +47,18 @@ class Dashboard extends Component {
                 <span>Title: {obj.title}<br /></span>
                 <span>Body Part: {
                                     Object.keys(Body['body']).map((region, i) => {
-                                      console.log(region === 'head');
-                                      return (region);
+                                      const regId = obj.body_part_id.slice(0, 1);
+                                      const partId = obj.body_part_id;
+                                      if (Body['body'][region]['id'] === regId) {
+                                        Object.keys(Body['body'][region]['parts']).map((part, i) =>{
+                                          if (Body['body'][region]['parts'][part]['id'] === partId) {
+                                            this.BodyPart = part
+                                          }
+                                        })
+                                      }
                                     })
-                                 }<br /></span>
+                                 }
+                                 {this.BodyPart}<br /></span>
                 <span>Desctiption: {obj.description}<br /></span>
                 <span>Pain Rating: {obj.pain_rating}<br /></span>
                 <span>Date Logged: {this.formatDate(obj.date_created)}<br /></span>
