@@ -15,7 +15,7 @@ import Foot from './Foot.jsx';
 
 class Home extends Component {
   bubbleStyle = {
-    "border": "2px solid #ef9e8f",
+    "border": "2px solid #e36352",
     "borderRadius": "40px",
     "height": "80px",
     "width": "80px",

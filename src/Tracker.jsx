@@ -51,7 +51,7 @@ import '../public/styles/BodyParts.css'
         </Row>
         <Row>
           <Col m={8} offset="m2">
-            <Card className="teal lighten-5">
+            <Card className="blue-grey lighten-5">
               <Col m={1}>
               {
                 Object.keys(obj['body']['head']['parts']).map((val, index) => {
@@ -61,7 +61,7 @@ import '../public/styles/BodyParts.css'
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #ef9e8f", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "background-color": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
                 })
               }
               {
@@ -72,7 +72,7 @@ import '../public/styles/BodyParts.css'
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #ef9e8f", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "background-color": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
                 })
               }
               {
@@ -83,7 +83,7 @@ import '../public/styles/BodyParts.css'
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #ef9e8f", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "background-color": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
                 })
               }
               {
@@ -94,7 +94,7 @@ import '../public/styles/BodyParts.css'
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #ef9e8f", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "background-color": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
                 })
               }
               </Col>
@@ -108,7 +108,7 @@ import '../public/styles/BodyParts.css'
                 </form>
                 <form className="rating" name="rating" onChange={(e) => this.setState({rating: e.target.value})} value={this.state.rating} >
               <Col m={4} offset="m4">
-                <p> Please select a rating from 1 to 5 </p>
+                <p> Please select a pain rating from 1 to 5 </p>
               </Col>
               <Row>
                 <Col m={10} offset="m4">

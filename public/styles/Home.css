@@ -9,9 +9,7 @@
 
 div .home {
   margin-top: 59px;
-  min-height: 73.8vh;
   display: flex;
-
 }
 
 .male-body {
@@ -25,4 +23,3 @@ div .home {
   flex-wrap: nowrap;
   flex-grow:2;
 }*/
-

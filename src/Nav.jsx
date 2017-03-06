@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
 
-import medProfile from '../public/images/medProfile.svg'
-import bandaid from '../public/images/BandaidLogo.svg'
+import medProfile from '../public/images/medProfile.svg';
+import bandaid from '../public/images/BandaidLogo.svg';
 
-import "../public/styles/Nav.css"
+import '../public/styles/Nav.css';
+import LoginDisplay from './LoginDisplay.jsx';
 
 class Nav extends Component {
   constructor(props) {
@@ -28,9 +29,14 @@ class Nav extends Component {
           </div>
           <div className="nav-list-wrapper">
             <ul className="nav-list">
+              <div>
+                <LoginDisplay />
+              </div>
               <li>
-                <img src={medProfile} alt="Profile" />
-                <h6>Profile</h6>
+                <Link to='/profile'>
+                  <img src={medProfile} alt="Profile" height="40" width="40" />
+                </Link>
+                <Link to='/profile'>Profile</Link>
               </li>
               <li>
                 <Link to='/login' onClick={this.onClick}>Logout</Link>
@@ -50,6 +56,9 @@ class Nav extends Component {
           </div>
           <div className="nav-list-wrapper">
             <ul className="nav-list">
+              <div>
+                <LoginDisplay />
+              </div>
               <li>
                 <Link to='/register'>Registration</Link>
               </li>
