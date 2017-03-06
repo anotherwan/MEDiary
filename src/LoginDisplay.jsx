@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 
 class LoginDisplay extends Component {
 
@@ -9,7 +8,7 @@ class LoginDisplay extends Component {
     if (user) {
       return (<p> &nbsp;&nbsp;&nbsp;&nbsp; Welcome {user}</p>)
     } else {
-      return (<Link to='/login'>LogIn</Link>)
+      return (<p> &nbsp;&nbsp;&nbsp;&nbsp; Welcome Guest!</p>)
     }
   }
 }

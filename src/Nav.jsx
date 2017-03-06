@@ -50,7 +50,11 @@ class Nav extends Component {
               <h6>Profile</h6>
             </li>
             <li>
-              <Link to='/login' onClick={this.onClick}>Logout</Link>
+              {localStorage.getItem('uid') === '' ?
+                <Link to='/login'>LogIn</Link>
+                :
+                <Link to='/login' onClick={this.onClick}>LogOut</Link>
+              }
             </li>
           </ul>
         </div>
