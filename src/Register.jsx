@@ -78,7 +78,7 @@ class Register extends Component {
         </Row>
         <Row>
           <Col m={8} offset="m2">
-            <Card className="teal lighten-5">
+            <Card className="blue-grey lighten-5">
               <form id="register" onSubmit={this.onSubmit} >
             <Row>
               <Col m={5} offset="m1">

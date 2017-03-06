@@ -7,7 +7,9 @@ import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
 const myStyle = {
   "border": "2px solid #e36352",
   "borderRadius": "40px",
-  "position": "absolute"
+  "position": "absolute",
+  "background-color": "#F7F7F7",
+  "marginLeft": "25%"
 }
 
 const lineStyle = {
@@ -15,7 +17,7 @@ const lineStyle = {
   "height": "120px",
   "backgroundColor": "#ef9e8f",
   "position": "absolute",
-  "margin": "0 0"
+  "marginLeft": "25%"
 }
 
 class BodyParts extends Component {

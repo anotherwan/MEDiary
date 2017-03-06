@@ -9,14 +9,7 @@
 
 div .home {
   margin-top: 59px;
-<<<<<<< HEAD
-  width: 100%;
-=======
-  min-height: 73.8vh;
->>>>>>> 3fb347e7f283bb33322fa051ceed05e89c97cafa
   display: flex;
-  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZTBmMmYxIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlLXdpZHRoPSIwLjIiIHN0cm9rZT0iIzk3YjNjOCI+PC9wYXRoPgo8L3N2Zz4=");
-  background-repeat: repeat;
 }
 
 .male-body {

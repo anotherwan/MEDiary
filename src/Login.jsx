@@ -70,7 +70,7 @@ class Login extends Component {
         </Row>
         <Row>
           <Col m={8} offset="m2">
-            <Card className="teal lighten-5">
+            <Card className="blue-grey lighten-5">
               <form id="login" onSubmit={this.onSubmit}>
                 <Row></Row>
                 <Row>

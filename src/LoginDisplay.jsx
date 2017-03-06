@@ -6,9 +6,9 @@ class LoginDisplay extends Component {
     const user = localStorage.getItem('uid');
 
     if (user) {
-      return (<p style={{"color": "white"}}> &nbsp;&nbsp;&nbsp;&nbsp; Welcome {user}</p>)
+      return (<p style={{"color": "black"}}> &nbsp;&nbsp;&nbsp;&nbsp; Welcome, {user}</p>)
     } else {
-      return (<p style={{"color": "white"}}> &nbsp;&nbsp;&nbsp;&nbsp; Welcome Guest!</p>)
+      return (<p style={{"color": "black"}}> &nbsp;&nbsp;&nbsp;&nbsp; Please Register or Login!</p>)
     }
   }
 }
