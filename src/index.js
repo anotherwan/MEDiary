@@ -17,13 +17,14 @@ ReactDOM.render(
   <Router history={hashHistory}>
 
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
 
+      <IndexRoute component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/region/:region" component={BodyRegions} />
       <Route path="/tracker/:id" component={Tracker} />
       <Route path="/dashboard" component={Dashboard} />
+
     </Route>
 
   </Router>,
