@@ -26,7 +26,6 @@ class Dashboard extends Component {
     }).then((response) => {
       return response.json();
     }).then((body) => {
-      console.log(body.data[0].name);
       this.setState({
         user: body.data[0].name,
         painItems: body.data

@@ -8,10 +8,7 @@ class BodyRegions extends Component {
   RADIUS = 200
   RegionX = 280
   RegionY = 280
-  HeadRotation = 0
-  TorsoRotation = 0
-  ArmRotation = 0
-  LegRotation = 162
+  Rotation = 0
 
   calculateXPosition = (i, N) => {
     return 0.5 * this.WIDTH + this.RADIUS * Math.cos(i * 2 * Math.PI / N) - 40;
@@ -46,12 +43,11 @@ class BodyRegions extends Component {
                 const deg = 360/parts;
                 const start = deg + 90;
 
-                this.HeadRotation = start
-                this.HeadRotation -= deg
+                this.Rotation = start - (deg * (i + 1))
 
                 return <BodyParts
                   key={i}
-                  rotation={this.HeadRotation}
+                  rotation={this.Rotation}
                   isClickable={true}
                   part={obj['body']['head']['parts'][part].id}
                   onClick={this.onClick}
@@ -86,12 +82,11 @@ class BodyRegions extends Component {
                 const deg = 360/parts;
                 const start = deg + 90;
 
-                this.TorsoRotation = start
-                this.TorsoRotation -= deg
+                this.Rotation = start - (deg * (i + 1))
 
                 return <BodyParts
                   key={i}
-                  rotation={this.TorsoRotation}
+                  rotation={this.Rotation}
                   isClickable={true}
                   part={obj['body']['torso']['parts'][part].id}
                   onClick={this.onClick}
@@ -124,12 +119,11 @@ class BodyRegions extends Component {
                 const deg = 360/parts;
                 const start = deg + 90;
 
-                this.LegRotation = start
-                this.LegRotation -= deg
+                this.Rotation = start - (deg * (i + 1))
 
                 return <BodyParts
                   key={i}
-                  rotation={this.LegRotation}
+                  rotation={this.Rotation}
                   isClickable={true}
                   part={obj['body']['legs']['parts'][part].id}
                   onClick={this.onClick}
@@ -162,12 +156,11 @@ class BodyRegions extends Component {
                 const deg = 360/parts;
                 const start = deg + 90;
 
-                this.ArmRotation = start
-                this.ArmRotation -= deg
+                this.Rotation = start - (deg * (i + 1))
 
                 return <BodyParts
                   key={i}
-                  rotation={this.ArmRotation}
+                  rotation={this.Rotation}
                   isClickable={true}
                   part={obj['body']['arms']['parts'][part].id}
                   onClick={this.onClick}

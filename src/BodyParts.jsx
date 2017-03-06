@@ -22,7 +22,6 @@ class BodyParts extends Component {
   Origin = '0% 0%';
 
   getStyle = (left, right) => {
-    console.log(this.props.location);
     let style = Object.assign({}, myStyle);
     style.left = this.props.xPosition
     style.top = this.props.yPosition
