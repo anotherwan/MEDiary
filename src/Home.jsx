@@ -9,6 +9,7 @@ import armsArm from '../public/images/armsArm.svg';
 import legsLeg from '../public/images/legsLeg.svg';
 
 import Login from './Login.jsx';
+import Dashboard from './Dashboard.jsx';
 import '../public/styles/Home.css'
 
 class Home extends Component {
@@ -23,6 +24,7 @@ class Home extends Component {
     // if (localStorage.getItem('uid')) {
       return (
         <div className="home">
+          <Dashboard />
             <Row style={{'margin':'0px'}}>
                 <Col m={4} >
                   <Row></Row>
