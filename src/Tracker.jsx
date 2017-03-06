@@ -60,7 +60,7 @@ import obj from '../obj.json';
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #ef9e8f", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "borderRadius": "50px", "top": "280px"}}/>
                 })
               }
               {
@@ -71,7 +71,7 @@ import obj from '../obj.json';
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #ef9e8f", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "borderRadius": "50px", "top": "280px"}}/>
                 })
               }
               {
@@ -82,7 +82,7 @@ import obj from '../obj.json';
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #ef9e8f", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "borderRadius": "50px", "top": "280px"}}/>
                 })
               }
               {
@@ -93,7 +93,7 @@ import obj from '../obj.json';
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #ef9e8f", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "borderRadius": "50px", "top": "280px"}}/>
                 })
               }
               </Col>

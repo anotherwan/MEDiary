@@ -5,28 +5,44 @@ import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
 // import '../public/styles/BodyParts.css'
 
 const myStyle = {
-  "border": "2px solid #b2Dfdb",
+  "border": "2px solid #e36352",
   "borderRadius": "40px",
   "position": "absolute"
+}
+
+const lineStyle = {
+  "width": "2px",
+  "height": "120px",
+  "backgroundColor": "#ef9e8f",
+  "position": "absolute",
+  "margin": "0 0"
 }
 
 class BodyParts extends Component {
   HEIGHT = 80
   WIDTH = 80
+  TransRotate = 'rotate(' + this.props.rotation + 'deg) translate(0px, 40px)';
+  Origin = '0% 0%';
 
   getStyle = (left, right) => {
     let style = Object.assign({}, myStyle);
     style.left = this.props.xPosition
     style.top = this.props.yPosition
+    return style
+  }
 
-    console.log(this.props.part)
+  getLineStyle = () => {
+    let style = Object.assign({}, lineStyle);
+    style.left = this.props.xPosition + 40;
+    style.top = this.props.yPosition + 40;
+    style.transform = this.TransRotate;
+    style.transformOrigin = this.Origin;
     return style
   }
 
   render () {
-    if (this.props.isClickable === true && localStorage.getItem('uid'))
+    if (this.props.isClickable === true && localStorage.getItem('uid')) {
       return (
-        <div className="parts-container">
         <div>
           <Link to={"/tracker/" + this.props.part}>
             <img
@@ -37,10 +53,10 @@ class BodyParts extends Component {
               width={this.WIDTH}
               style={this.getStyle()} />
           </Link>
-        </div>
+          <div style={this.getLineStyle()}></div>
         </div>
       )
-      else
+      } else {
         return (
           <div>
             <img
@@ -52,6 +68,7 @@ class BodyParts extends Component {
               style={this.getStyle()} />
           </div>
         )
+      }
   }
 }
 

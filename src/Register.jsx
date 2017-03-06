@@ -40,7 +40,6 @@ class Register extends Component {
     }).then((response) => {
       return response.json();
     }).then((body) => {
-      console.log(body.message);
       switch(body.message) {
         case 'Error creating user':
           this.setState({
