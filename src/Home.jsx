@@ -5,13 +5,12 @@ import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
 import armsArm from '../public/images/armsArm.svg';
 import legsLeg from '../public/images/legsLeg.svg';
-import bandaid from '../public/images/BandaidLogo.svg'
-import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
+import bandaid from '../public/images/BandaidLogo.svg';
 
+import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
 import Login from './Login.jsx';
 
 import '../public/styles/Home.css';
-import Foot from './Foot.jsx';
 
 class Home extends Component {
   bubbleStyle = {
@@ -20,6 +19,20 @@ class Home extends Component {
     "height": "80px",
     "width": "80px",
     "background-color": "#F7F7F7"
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showAboutUs: false,
+    };
+    this.AboutUs = this.AboutUs.bind(this);
+  }
+
+  AboutUs () {
+    this.setState({
+      showAboutUs: true,
+    })
   }
 
   render () {
@@ -57,10 +70,6 @@ class Home extends Component {
               </Link>
             </Col>
           </Row>
-            <Button floating fab='vertical' floating icon='list' faicon='fa fa-plus' className='red' large style={{bottom: '45px', right: '24px'}}>
-              <Button floating icon='contacts' className='green'/>
-              <Button floating icon='star' className='blue'/>
-            </Button>
         </div>
       )
     } else {
