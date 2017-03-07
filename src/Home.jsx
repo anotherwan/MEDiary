@@ -12,7 +12,6 @@ import Login from './Login.jsx';
 
 import Dashboard from './Dashboard.jsx';
 import '../public/styles/Home.css'
->>>>>>> b24fb59ce639c99f60f47d95802d296cc125fc8a
 
 class Home extends Component {
   bubbleStyle = {
