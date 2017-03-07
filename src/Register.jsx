@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Row, Col, Input, Button, Card } from "react-materialize";
-import { Link } from "react-router";
 
 class Register extends Component {
   constructor(props) {

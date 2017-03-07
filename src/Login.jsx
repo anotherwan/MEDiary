@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Row, Col, Input, Button, Card} from "react-materialize";
-import { Link } from "react-router";
 
 import "../public/styles/Nav.css"
 
@@ -86,7 +85,7 @@ class Login extends Component {
                 </Row>
                 <Row>
                   <Col m={5} offset="m5">
-                    <Button m={2} waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>
+                    <Button waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>
                   </Col>
                 </Row>
               </form>
