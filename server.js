@@ -56,7 +56,7 @@ app.post('/profile', (req, res) => {
   let email = req.body.user;
 
   knex('users')
-    .select('*')
+    .select('name', 'age', 'gender', 'height', 'weight')
     .where('email', '=', email)
     .then((response) => {
       res.json({

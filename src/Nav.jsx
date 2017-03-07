@@ -39,7 +39,7 @@ class Nav extends Component {
             </li>
             <li>
               <img src={medProfile} alt="Profile" />
-              <h6>Profile</h6>
+              <Link to='/profile'><h6>Profile</h6></Link>
             </li>
             <li>
               {localStorage.getItem('uid') === '' ?
