@@ -49,9 +49,9 @@ class Nav extends Component {
       return (
         <div className="navbar fixed-top">
           <div className="logo-container">
-          <Link className="bandaid" to="/">
-            <img src={bandaid} alt="bandaid" height="40" width="40"/>
-          </Link>
+            <Link className="bandaid" to="/">
+              <img src={bandaid} alt="bandaid" height="40" width="40"/>
+            </Link>
             <h5>MEDiary</h5>
           </div>
           <div className="nav-list-wrapper">
@@ -68,7 +68,7 @@ class Nav extends Component {
             </ul>
           </div>
         </div>
-        )
+      )
   }
 }
 

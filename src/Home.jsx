@@ -20,6 +20,20 @@ class Home extends Component {
     "backgroundColor": "#F7F7F7"
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showAboutUs: false,
+    };
+    this.AboutUs = this.AboutUs.bind(this);
+  }
+
+  AboutUs () {
+    this.setState({
+      showAboutUs: true,
+    })
+  }
+
   render () {
     if (localStorage.getItem('uid')) {
       return (

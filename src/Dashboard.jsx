@@ -54,12 +54,14 @@ class Dashboard extends Component {
                                           if (Body['body'][region]['parts'][part]['id'] === partId) {
                                             this.BodyPart = part
                                           }
+                                            return null;
                                         })
                                       }
+                                      return null;
                                     })
                                  }
                                  {this.BodyPart}<br /></span>
-                <span>Desctiption: {obj.description}<br /></span>
+                <span>Description: {obj.description}<br /></span>
                 <span>Pain Rating: {obj.pain_rating}<br /></span>
                 <span>Date Logged: {this.formatDate(obj.date_created)}<br /></span>
                 <br/>

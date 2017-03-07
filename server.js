@@ -15,10 +15,6 @@ const bcrypt           = require('bcrypt');
 const path             = require('path');
 const cors             = require('cors')
 
-// const userRoutes = require("./routes/users");
-
-// app.use("/api/users", userRoutes(knex));
-
 app.use(cors());
 app.use(knexLogger(knex));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -56,6 +52,19 @@ function getUserId(email) {
     .where('email', '=', email);
 }
 
+app.post('/profile', (req, res) => {
+  let email = req.body.user;
+
+  knex('users')
+    .select('name', 'age', 'gender', 'height', 'weight')
+    .where('email', '=', email)
+    .then((response) => {
+      res.json({
+        data: response
+      });
+    })
+})
+
 app.post('/dashboard', (req, res)=> {
   let email = req.body.user;
 
@@ -63,7 +72,6 @@ app.post('/dashboard', (req, res)=> {
     .select('users.name', 'inputs.description', 'inputs.date_created', 'inputs.body_part_id', 'inputs.pain_rating', 'inputs.title')
     .join('users', 'inputs.user_id', 'users.id')
     .then((response) => {
-      console.log(response);
       res.json({
         data: response
       });

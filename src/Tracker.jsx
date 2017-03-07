@@ -30,7 +30,7 @@ import obj from '../obj.json';
     }).then((response) => {
       return response.json();
     }).then((body) => {
-      console.log(body);
+      this.props.router.push('/');
     })
   }
 
@@ -53,44 +53,52 @@ import obj from '../obj.json';
                 Object.keys(obj['body']['head']['parts']).map((val, index) => {
                 if (obj['body']['head']['parts'][val].id === this.props.params.id)
                   return <img
+                    key={index}
                     src={obj['body']['head']['parts'][val].img_path}
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #e36352", "background-color": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "backgroundColor": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
+                return null;
                 })
               }
               {
                 Object.keys(obj['body']['torso']['parts']).map((val, index) => {
                 if (obj['body']['torso']['parts'][val].id === this.props.params.id)
                   return <img
+                    key={index}
                     src={obj['body']['torso']['parts'][val].img_path}
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #e36352", "background-color": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "backgroundColor": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
+                return null;
                 })
               }
               {
                 Object.keys(obj['body']['arms']['parts']).map((val, index) => {
                 if (obj['body']['arms']['parts'][val].id === this.props.params.id)
                   return <img
+                    key={index}
                     src={obj['body']['arms']['parts'][val].img_path}
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #e36352", "background-color": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "backgroundColor": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
+                return null;
                 })
               }
               {
                 Object.keys(obj['body']['legs']['parts']).map((val, index) => {
                 if (obj['body']['legs']['parts'][val].id === this.props.params.id)
                   return <img
+                    key={index}
                     src={obj['body']['legs']['parts'][val].img_path}
                     role="presentation"
                     height="100px"
                     width="100px"
-                    style={{"border": "2px solid #e36352", "background-color": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
+                    style={{"border": "2px solid #e36352", "backgroundColor": "#F7F7F7", "borderRadius": "50px", "top": "280px"}}/>
+                return null;
                 })
               }
               </Col>

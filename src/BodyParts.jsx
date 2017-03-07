@@ -5,7 +5,7 @@ const myStyle = {
   "border": "2px solid #e36352",
   "borderRadius": "40px",
   "position": "absolute",
-  "background-color": "#F7F7F7",
+  "backgroundColor": "#F7F7F7",
   "marginLeft": "25%"
 }
 
