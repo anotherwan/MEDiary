@@ -17,7 +17,21 @@ class Home extends Component {
     "borderRadius": "40px",
     "height": "80px",
     "width": "80px",
-    "background-color": "#F7F7F7"
+    "backgroundColor": "#F7F7F7"
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showAboutUs: false,
+    };
+    this.AboutUs = this.AboutUs.bind(this);
+  }
+
+  AboutUs () {
+    this.setState({
+      showAboutUs: true,
+    })
   }
 
   render () {

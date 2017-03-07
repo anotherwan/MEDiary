@@ -54,8 +54,10 @@ class Dashboard extends Component {
                                           if (Body['body'][region]['parts'][part]['id'] === partId) {
                                             this.BodyPart = part
                                           }
+                                            return null;
                                         })
                                       }
+                                      return null;
                                     })
                                  }
                                  {this.BodyPart}<br /></span>

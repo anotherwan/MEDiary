@@ -10,8 +10,7 @@ import Home from './Home.jsx';
 import Profile from './Profile.jsx';
 import BodyRegions from "./BodyRegions.jsx";
 import Tracker from './Tracker.jsx';
-import AboutUs from './AboutUs.jsx';
-import Profile from './Profile.jsx';
+
 
 const main = document.getElementById('root');
 
@@ -24,7 +23,6 @@ ReactDOM.render(
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <Route path="/profile" componenet={Profile} />
-      <Route path="/aboutUs" component={AboutUs} />
       <Route path="/region/:region" component={BodyRegions} />
       <Route path="/tracker/:id" component={Tracker} />
     </Route>
