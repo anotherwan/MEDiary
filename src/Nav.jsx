@@ -11,22 +11,12 @@ import "../public/styles/Nav.css";
 class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoggedIn: null
-    }
+
     this.onClick = this.handleLogout.bind(this);
   }
 
   handleLogout = (event) => {
     localStorage.setItem('uid', '');
-  }
-
-  loggedIn = () => {
-    this.setState({isLoggedIn: true})
-  }
-
-  loggedOut = () => {
-    this.setState({isLoggedIn: false})
   }
 
   render() {
