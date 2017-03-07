@@ -10,7 +10,9 @@ import bandaid from '../public/images/BandaidLogo.svg';
 import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
 import Login from './Login.jsx';
 
-import '../public/styles/Home.css';
+import Dashboard from './Dashboard.jsx';
+import '../public/styles/Home.css'
+>>>>>>> b24fb59ce639c99f60f47d95802d296cc125fc8a
 
 class Home extends Component {
   bubbleStyle = {
@@ -39,6 +41,7 @@ class Home extends Component {
     if (localStorage.getItem('uid')) {
       return (
         <div className="home">
+          <Dashboard />
           <Row style={{'margin':'0px'}}>
             <Col m={4} offset="m4">
               <Row></Row>

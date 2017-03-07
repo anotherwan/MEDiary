@@ -8,7 +8,7 @@ class LoginDisplay extends Component {
     if (user) {
       return (<p style={{"color": "black"}}> &nbsp;&nbsp;&nbsp;&nbsp; Welcome, {user}</p>)
     } else {
-      return (<p style={{"color": "black"}}> &nbsp;&nbsp;&nbsp;&nbsp; Please Register or Login!</p>)
+      return (<p style={{"color": "#e36352"}}> &nbsp;&nbsp;&nbsp;&nbsp; Please Register or Login!</p>)
     }
   }
 }
