@@ -1,18 +1,23 @@
 import React, {Component} from 'react';
 import { Link } from "react-router";
+import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
+
+// import '../public/styles/BodyParts.css'
 
 const myStyle = {
-  "border": "2px solid black",
+  "border": "2px solid #e36352",
   "borderRadius": "40px",
-  "position": "absolute"
+  "position": "absolute",
+  "background-color": "#F7F7F7",
+  "marginLeft": "25%"
 }
 
-const divStyle = {
+const lineStyle = {
   "width": "2px",
   "height": "120px",
-  "backgroundColor": "black",
+  "backgroundColor": "#ef9e8f",
   "position": "absolute",
-  "margin": "0 0"
+  "marginLeft": "25%"
 }
 
 class BodyParts extends Component {
@@ -28,8 +33,8 @@ class BodyParts extends Component {
     return style
   }
 
-  getDivStyle = () => {
-    let style = Object.assign({}, divStyle);
+  getLineStyle = () => {
+    let style = Object.assign({}, lineStyle);
     style.left = this.props.xPosition + 40;
     style.top = this.props.yPosition + 40;
     style.transform = this.TransRotate;
@@ -50,7 +55,7 @@ class BodyParts extends Component {
               width={this.WIDTH}
               style={this.getStyle()} />
           </Link>
-          <div style={this.getDivStyle()}></div>
+          <div style={this.getLineStyle()}></div>
         </div>
       )
       } else {

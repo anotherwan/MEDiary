@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import { Row, Col } from 'react-materialize';
-
+import {Row, Col } from "react-materialize"
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
@@ -14,54 +13,56 @@ import '../public/styles/Home.css'
 
 class Home extends Component {
   bubbleStyle = {
-    "border": "2px solid black",
+    "border": "2px solid #e36352",
     "borderRadius": "40px",
     "height": "80px",
-    "width": "80px"
+    "width": "80px",
+    "background-color": "#F7F7F7"
   }
 
   render () {
-    // if (localStorage.getItem('uid')) {
+    if (localStorage.getItem('uid')) {
       return (
         <div className="home">
           <Dashboard />
-            <Row style={{'margin':'0px'}}>
-                <Col m={4} >
-                  <Row></Row>
-                  <img src={maleBody} alt="Body" style={{'height': '380px'}} />
-                </Col>
-                <Col m={2} className='m5' s={3}>
-                  {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Head</h6></div> */}
-                  <Link to="/region/head">
-                    <img className="region-bubbles" src={headHead} alt="Head" style={this.bubbleStyle}/>
-                  </Link>
-                </Col>
-                <Col m={2} className='m5' s={3}>
-                  {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Torso</h6></div> */}
-                  <Link to="/region/torso">
-                    <img className="region-bubbles" src={torsoMan} alt="Torso" style={this.bubbleStyle}/>
-                  </Link>
-                </Col>
-                <Col m={2} className='m5' s={3}>
-                  {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Arms</h6></div> */}
-                  <Link to="/region/arms">
-                    <img className="region-bubbles" src={armsArm} alt="Arms" style={this.bubbleStyle}/>
-                  </Link>
-                </Col>
-                <Col m={2} className='m5' s={3}>
-                  {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Legs</h6></div> */}
-                  <Link to="/region/legs">
-                    <img className="region-bubbles" src={legsLeg} alt="Legs" style={this.bubbleStyle}/>
-                  </Link>
-                </Col>
+          <Row style={{'margin':'0px'}}>
+            <Col m={4} offset="m4">
+              <Row></Row>
+              <img src={maleBody} alt="Body" style={{'height': '380px'}} />
+            </Col>
+            <Col m={2} offset='m2' s={3}>
+            <Row></Row>
+              {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Head</h6></div> */}
+              <Link to="/region/head">
+                <img className="region-bubbles" src={headHead} alt="Head" style={this.bubbleStyle}/>
+              </Link>
+            </Col>
+            <Col m={2} offset='m2' s={3}>
+              {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Torso</h6></div> */}
+              <Link to="/region/torso">
+                <img className="region-bubbles" src={torsoMan} alt="Torso" style={this.bubbleStyle}/>
+              </Link>
+            </Col>
+            <Col m={2} offset='m2' s={3}>
+              {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Arms</h6></div> */}
+              <Link to="/region/arms">
+                <img className="region-bubbles" src={armsArm} alt="Arms" style={this.bubbleStyle}/>
+              </Link>
+            </Col>
+            <Col m={2} offset='m2' s={3}>
+              {/* <div style={{'borderBottom':'solid black 2px', 'width': '100px'}}><h6>Legs</h6></div> */}
+              <Link to="/region/legs">
+                <img className="region-bubbles" src={legsLeg} alt="Legs" style={this.bubbleStyle}/>
+              </Link>
+            </Col>
           </Row>
-      </div>
+        </div>
       )
-    // } else {
-    //   return (
-    //     <Login />
-    //   )
-    // }
+    } else {
+      return (
+        <Login />
+      )
+    }
   }
 }
 

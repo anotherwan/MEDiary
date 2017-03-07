@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import {Row, Col, Input, Button, Card} from "react-materialize";
+import { Link } from "react-router";
+
+import "../public/styles/Nav.css"
 
 class Login extends Component {
   constructor(props) {
@@ -51,28 +55,47 @@ class Login extends Component {
         }
       }
     })
-
   }
-
   render () {
     return (
-      <div className="login">
-        <form id="login" onSubmit={this.onSubmit}>
-          <label>
-            Email:
-            <input type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
-            <br/>
-          </label>
-          <label>
-            Password:
-            <input type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
-            <br/>
-          </label>
-            <input type="submit" value="Submit" />
-        </form>
-        <div >
-          {this.state.login_error}
-        </div>
+      <div className="login" >
+        <Row></Row>
+        <Row></Row>
+        <Row></Row>
+        <Row></Row>
+        <Row>
+          <Col m={10} offset="m1" className="red lighten-2">
+              <h5 className="white-text">Login</h5>
+          </Col>
+        </Row>
+        <Row>
+          <Col m={8} offset="m2">
+            <Card className="blue-grey lighten-5">
+              <form id="login" onSubmit={this.onSubmit}>
+                <Row></Row>
+                <Row>
+                  <Col m={8} offset="m2">
+                    <Input m={12} label="Email" type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}/>
+                  </Col>
+                </Row>
+                <Row></Row>
+                <Row>
+                  <Col m={8} offset="m2">
+                    <Input m={12} label="Password" type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col m={5} offset="m5">
+                    <Button m={2} waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>
+                  </Col>
+                </Row>
+              </form>
+            </Card>
+          </Col>
+        </Row>
+          <div >
+            {this.state.login_error}
+          </div>
       </div>
     )
   }

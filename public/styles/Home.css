@@ -1,4 +1,3 @@
-
 .region-bubbles {
   transition: all 0.5s ease;
 }
@@ -10,7 +9,6 @@
 
 div .home {
   margin-top: 59px;
-  width: 100%;
   display: flex;
 }
 
@@ -25,9 +23,3 @@ div .home {
   flex-wrap: nowrap;
   flex-grow:2;
 }*/
-
-.row .col.m5 {
-  align-items: center;
-  margin-left: 10px
-}
-
