@@ -90,7 +90,7 @@ class Home extends Component {
               </Slide>
               <Slide
                 src="http://www.myelomacrowd.org/wp-content/uploads/2015/04/photodune-10386015-happy-male-doctor-discussing-with-senior-patient-at-table-in-clinic-l.jpg"
-                className="black"
+
                 title="Communicate Easier and Faster"
                 placement="left">
               </Slide>
