@@ -58,12 +58,9 @@ class Login extends Component {
   render () {
     return (
       <div className="login" >
-        <Row></Row>
-        <Row></Row>
-        <Row></Row>
-        <Row></Row>
+        <br></br><br></br><br></br><br></br>
         <Row>
-          <Col m={10} offset="m1" className="red lighten-2">
+          <Col m={10} offset="m1" className="red lighten-2 z-depth-1">
               <h5 className="white-text">Login</h5>
           </Col>
         </Row>
