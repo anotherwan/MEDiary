@@ -79,7 +79,7 @@ app.post('/dashboard', (req, res)=> {
   let email = req.body.user;
 
   knex('inputs')
-    .select('users.name', 'inputs.description', 'inputs.date_created', 'inputs.body_part_id', 'inputs.pain_rating', 'inputs.title')
+    .select('inputs.date_created', 'inputs.body_part_id')
     .join('users', 'inputs.user_id', 'users.id')
     .where('users.email', '=', email)
     .then((response) => {
