@@ -1,26 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Welcome to MEDiary!
 
-Welcome to MEDiary.
+MEDiary is a health logger for users to pinpoint occurring pain on the body and record it in a visual that they can share with their doctors.
 
-I project by Stephanie Wan, Parshant Micoo and Kapish Kochhar.
+A project by Stephanie Wan, Parshant Micoo and Kapish Kochhar.
 
 Create a repository and clone this repository.
 
-1. `npm install`
-  All the necessary files and libraries needed for this project.
+1. `npm install` all the necessary files and libraries needed for this project.
 
-2. Create an `.env` file that has your personal information that mimics the look of our `env.example` file.
+2. Create a `.env` file that has your personal information that mimics the look of the `env.example` file.
 
-3. The project does use a local database currently with future plans to make this separate from running it on localhost.
+3. Presently, the project uses a local database and runs on localhost.
 
   `knex migrate:latest`
     Migrate all the necessary tables required to run the app effectively.
 
   `knex seed:run`
-    (Seed your database with our information if you'd life)
+    (Optionally seed your database with our information)
 
-4. The following porject utilizes two servers. One for the front end routes and another for the database, back-end routes.
-  Open two terminals and run the following on their own respective terminal.
+4. This project utilizes two servers. One for the front end routes and another for the database/back-end routes.
+  Open two terminals and run the following on their own respective terminals.
 
   4a. `npm start`
     This will run the react (front-end) server. Running on port `http://localhost:3000`
@@ -28,4 +27,4 @@ Create a repository and clone this repository.
   4b. `node server.js`
     This will run the express (back-end) server. Running on `http://0.0.0.0:4000`
 
-5. Visit `http://localhost:3000` to check our app!
+5. Go to `http://localhost:3000` to check our app!

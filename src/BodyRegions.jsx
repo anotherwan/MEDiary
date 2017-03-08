@@ -61,7 +61,6 @@ class BodyRegions extends Component {
 
             </div>
           )
-          break;
         case "/region/torso":
           return (
             <div className="torso">
@@ -99,7 +98,6 @@ class BodyRegions extends Component {
               })}
               </div>
             )
-            break;
         case "/region/legs":
           return (
             <div className="legs">
@@ -136,7 +134,6 @@ class BodyRegions extends Component {
               })}
               </div>
             )
-            break;
         case "/region/arms":
           return (
             <div className="arms">
@@ -173,7 +170,6 @@ class BodyRegions extends Component {
               })}
               </div>
             )
-            break;
         default:
           console.log("Nothing working")
     }
