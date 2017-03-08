@@ -112,53 +112,40 @@ formatDate = (date) => {
           </Col>
         </Row>
         <Row>
-          <Col m={8} offset="m3">
+          <Col m={6} offset="m3">
             {this.state.painItems.map((obj, index) => {
               return (
-                <Table>
-                  <thead>
-                    <tr>
-                      <th data-field="inputs"> Pain Point </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Title:</td>
-                      <td>{obj.title}</td>
-                    </tr>
-                    <tr>
-                      <td>Body Part:</td>
-                      <td>{
-                            Object.keys(Body['body']).filter((region, i) => {
-                              const regId = obj.body_part_id.slice(0, 1);
-                              const partId = obj.body_part_id;
-                              if (Body['body'][region]['id'] === regId) {
-                                Object.keys(Body['body'][region]['parts']).filter((part, i) => {
-                                  if (Body['body'][region]['parts'][part]['id'] === partId) {
-                                    this.BodyPart = part
-                                  }
-                                    return null;
-                                })
-                              }
+
+                <Collapsible popout>
+                  <CollapsibleItem header={obj.title}>
+                    <Row>
+                    {
+                      Object.keys(Body['body']).filter((region, i) => {
+                        const regId = obj.body_part_id.slice(0, 1);
+                        const partId = obj.body_part_id;
+                        if (Body['body'][region]['id'] === regId) {
+                          Object.keys(Body['body'][region]['parts']).filter((part, i) => {
+                            if (Body['body'][region]['parts'][part]['id'] === partId) {
+                              this.BodyPart = part
+                            }
                               return null;
-                            })
-                         }
-                         {this.BodyPart}</td>
-                    </tr>
-                    <tr>
-                      <td>Description</td>
-                      <td>{obj.description}</td>
-                    </tr>
-                    <tr>
-                      <td>Pain Rating:</td>
-                      <td>{obj.pain_rating}</td>
-                    </tr>
-                    <tr>
-                      <td>Date Logged</td>
-                      <td>{this.formatDate(obj.date_created)}</td>
-                    </tr>
-                  </tbody>
-                </Table>
+                          })
+                        }
+                        return null;
+                      })
+                   }
+                   {this.BodyPart}
+                   </Row>
+                   <Row>
+                   {obj.description}
+                   </Row>
+                   <Row>
+                   {obj.pain_rating}
+                   </Row>
+                  </CollapsibleItem>
+                </Collapsible>
+
+
               )
             })}
           </Col>
