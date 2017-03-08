@@ -1,12 +1,15 @@
+
 import React, {Component} from 'react';
 import { Link } from "react-router";
+import '../public/styles/BodyRegion.css';
 
 const myStyle = {
   "border": "2px solid #e36352",
   "borderRadius": "40px",
   "position": "absolute",
   "backgroundColor": "#F7F7F7",
-  "marginLeft": "25%"
+  "marginLeft": "25%",
+  "marginTop": "8%"
 }
 
 const lineStyle = {
@@ -14,7 +17,8 @@ const lineStyle = {
   "height": "120px",
   "backgroundColor": "#ef9e8f",
   "position": "absolute",
-  "marginLeft": "25%"
+  "marginLeft": "25%",
+  "marginTop": "8%"
 }
 
 class BodyParts extends Component {
@@ -42,7 +46,7 @@ class BodyParts extends Component {
   render () {
     if (this.props.isClickable === true && localStorage.getItem('uid')) {
       return (
-        <div>
+        <div className="part">
           <Link to={"/tracker/" + this.props.part}>
             <img
               onClick={this.props.onClick}

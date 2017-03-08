@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Body from '../obj.json';
+import Graph from './Graph.jsx'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -40,7 +41,8 @@ class Dashboard extends Component {
 
     return (
       <div>
-        <div style={{"position": "absolute", "top": "130px"}}>
+        <Graph />
+        {/* <div style={{"position": "absolute", "top": "130px"}}>
           Name: {this.state.user}<br />
           {this.state.painItems.map((obj, index) => {
             return (
@@ -69,7 +71,7 @@ class Dashboard extends Component {
               </span>
             )
           })}
-        </div>
+        </div> */}
       </div>
     )
   }

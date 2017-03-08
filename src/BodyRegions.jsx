@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {Row, Col, Input, Button, Breadcrumb, MenuItem} from "react-materialize";
-
 import BodyParts from './BodyParts.jsx';
 import obj from '../obj.json';
 import '../public/styles/BodyRegion.css';

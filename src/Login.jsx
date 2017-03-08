@@ -85,7 +85,7 @@ class Login extends Component {
                 </Row>
                 <Row>
                   <Col m={5} offset="m5">
-                    <Button m={2} waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>
+                    <Button waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>
                   </Col>
                 </Row>
               </form>
