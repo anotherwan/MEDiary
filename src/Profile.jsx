@@ -116,12 +116,13 @@ formatDate = (date) => {
             <h5 className="white-text"><Icon left className='white-text'>view_list</Icon>Logs</h5>
           </Col>
           <Col m={8} offset="m2">
+            <br></br>
             {this.state.painItems.map((obj, index) => {
               return (
                 <Collapsible popout>
                   <CollapsibleItem header={obj.title} className="grey lighten-5 z-depth-1">
                     <Row>
-                      <b> Where does hurt? </b> <br/>
+                      <b> Pain Location </b> <br/>
                         {
                           Object.keys(Body['body']).filter((region, i) => {
                             const regId = obj.body_part_id.slice(0, 1);
@@ -144,7 +145,7 @@ formatDate = (date) => {
                       {obj.description}
                     </Row>
                     <Row>
-                      <b><Icon left className='red-text'>stars</Icon> Pain rating out of 5 </b> <br/>
+                      <b><Icon left className='red-text'>stars</Icon> Pain rating out of 5: </b> <br/>
                       {obj.pain_rating}
                     </Row>
                   </CollapsibleItem>
