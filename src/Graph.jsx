@@ -48,7 +48,7 @@ class Graph extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 8,
           pointHitRadius: 10,
-          data: [1, 4, 7, 4, 6, 0, 8, 7, 3, 6, 0, 0]
+          data: this.props.torsoData
         },
         {
           label: 'Arm Pains',
@@ -69,7 +69,7 @@ class Graph extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 8,
           pointHitRadius: 10,
-          data: [5, 3, 2, 6, 8, 9, 1, 0, 0, 2, 4, 5]
+          data: this.props.armsData
         },
         {
           label: 'Leg Pains',
@@ -90,7 +90,7 @@ class Graph extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 8,
           pointHitRadius: 10,
-          data: [4, 3, 6, 8, 9, 2, 5, 9, 10, 1, 0, 2]
+          data: this.props.legsData
         }
 
       ]
