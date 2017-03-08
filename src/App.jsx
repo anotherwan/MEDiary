@@ -33,7 +33,7 @@ class App extends Component {
             trigger={
               <Button floating icon='star' className='blue'/>
             }>
-            People we wanna thank in here
+            Icons made by Freepik from www.flaticon.com
           </Modal>
         </Button>
       </div>
