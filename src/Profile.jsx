@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Collapsible, CollapsibleItem, Icon, Chip} from "react-materialize";
+import {Row, Col, Collapsible, CollapsibleItem, Icon} from "react-materialize";
 import Body from '../obj.json';
 
 
@@ -119,7 +119,7 @@ formatDate = (date) => {
             {this.state.painItems.map((obj, index) => {
               return (
                 <Collapsible popout>
-                  <CollapsibleItem header={obj.title} className="grey lighten-5 z-depth-1">
+                  <CollapsibleItem header={obj.title} className="grey lighten-5 z-depth-1" icon='swap_vert'>
                     <Row>
                       <b> Where does hurt? </b> <br/>
                         {
