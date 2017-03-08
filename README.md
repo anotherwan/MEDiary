@@ -9,20 +9,7 @@ Create a repository and clone this repository.
 1. npm install
   All the necessary files and libraries needed for this project.
 
-2. Create an .env file that has your personal information that mimics the look of our env.example file....
-
-DB_HOST=localhost
-
-DB_USER=username_here
-
-DB_PASS=password_here
-
-DB_NAME=final
-
-DB_SSL=0
-
-DB_PORT=5432
-
+2. Create an .env file that has your personal information that mimics the look of our env.example file.
 
 3. The project does use a local database currently with future plans to make this separate from running it on localhost.
 
