@@ -43,7 +43,7 @@ function generateRandomID() {
 function getDrId() {
   return knex('doctors')
     .select('id')
-    .where('name', 'like', 'D%');
+    .where('name', 'like', 'James%');
 }
 
 function getUserId(email) {
@@ -56,7 +56,7 @@ app.post('/profile', (req, res) => {
   let email = req.body.user;
 
   knex('users')
-    .select('name', 'age', 'gender', 'height', 'weight')
+    .select('name', 'age', 'gender', 'weight', 'height_feet', 'height_inches', 'allergies', 'medication', 'conditions')
     .where('email', '=', email)
     .then((response) => {
       res.json({
@@ -71,6 +71,7 @@ app.post('/dashboard', (req, res)=> {
   knex('inputs')
     .select('users.name', 'inputs.description', 'inputs.date_created', 'inputs.body_part_id', 'inputs.pain_rating', 'inputs.title')
     .join('users', 'inputs.user_id', 'users.id')
+    .where('users.email', '=', email)
     .then((response) => {
       res.json({
         data: response
@@ -101,7 +102,11 @@ app.post("/register", (req, res) => {
           age: req.body.age,
           gender: req.body.gender,
           weight: req.body.weight,
-          height: req.body.height
+          height_feet: req.body.heightFeet,
+          height_inches: req.body.heightInches,
+          allergies: req.body.allergies,
+          medication: req.body.medication,
+          conditions: req.body.conditions
         }).then((results) => {
           if (results.rowCount === 1) {
             res.json({

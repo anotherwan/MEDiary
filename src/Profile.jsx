@@ -8,7 +8,6 @@ class Profile extends Component {
     }
   }
 
-
   componentDidMount() {
 
     fetch('http://localhost:4000/profile', {
@@ -38,15 +37,18 @@ class Profile extends Component {
               <span>Name: {obj.name}<br /></span>
               <span>Age: {obj.age}<br /></span>
               <span>Gender: {obj.gender}<br /></span>
-              <span>Height: {obj.height}<br /></span>
               <span>Weight: {obj.weight}<br /></span>
-          </span>
+              <span>Height: {obj.height_feet} ft, {obj.height_inches} inches<br /></span>
+              <span>Allergies: {obj.allergies}<br /></span>
+              <span>Current Prescriptions: {obj.medication}<br /></span>
+              <span>Existing Medical Conditions: {obj.conditions}<br /></span>
+            </span>
           )
-        })}
+          })
+        }
       </div>
     )
   }
-
 }
 
 export default Profile;
