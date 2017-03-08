@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Input, Button, Breadcrumb, tbody, Footer, Table, thead, tr, th} from "react-materialize";
+import {Row, Col, Collapsible, CollapsibleItem, Icon} from "react-materialize";
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -31,14 +31,49 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <Row></Row>
-        <Row></Row>
-        <Row></Row>
-        <Row></Row>
-        <Row></Row>
-        <Row></Row>
-          <Row m={6} >
-            <Col m={6} offset="m3" className="z-depth-1">
+        <br></br><br></br><br></br><br></br><br></br><br></br>
+        <Row>
+          <Col m={10} offset="m1" className="red lighten-2 z-depth-1">
+              <h5 className="white-text"><Icon left className='white-text'>assignment_ind</Icon>User Profile</h5>
+          </Col>
+        </Row>
+        <Row>
+          <Col m={8} offset="m2">
+            {this.state.profile.map((obj, index ) => {
+              return (
+                <Collapsible popout>
+                  <CollapsibleItem header="Full Name" className="grey lighten-5 z-depth-1" icon='perm_identity'>
+                    {obj.name}
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                  <CollapsibleItem header="Email" className="grey lighten-5 z-depth-1" icon='email'>
+                    {obj.email}
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                  <CollapsibleItem header="Age" className="grey lighten-5 z-depth-1" icon='query_builder'>
+                    {obj.age}
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                  <CollapsibleItem header="Gender" className="grey lighten-5 z-depth-1" icon='label_outline'>
+                    {obj.gender}
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                  <CollapsibleItem header="Weight" className="grey lighten-5 z-depth-1" icon='label'>
+                    {obj.weight}
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                  <CollapsibleItem header="Height" className="grey lighten-5 z-depth-1" icon='swap_vert'>
+                    {obj.height}
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                </Collapsible>
+              )
+            })}
+          </Col>
+        </Row>
+
+          {/* <Row m={6} >
+            <Col m={6} offset="m3" className="blue-grey lighten-5 z-depth-1">
               <div >About you</div>
               {this.state.profile.map((obj, index ) => {
                 return (
@@ -75,7 +110,7 @@ class Profile extends Component {
                 )
               })}
             </Col>
-          </Row>
+          </Row> */}
       </div>
     )
   }
@@ -83,4 +118,3 @@ class Profile extends Component {
 }
 
 export default Profile;
-
