@@ -11,7 +11,11 @@ class Register extends Component {
       age: '',
       gender: 'male',
       weight: '',
-      height: '',
+      heightFeet: '5',
+      heightInches: '5',
+      allergies: '',
+      medication: '',
+      conditions: '',
       reg_error: ''
     };
     this.onSubmit = this.handleSubmit.bind(this);
@@ -34,11 +38,16 @@ class Register extends Component {
         age: this.state.age,
         gender: this.state.gender,
         weight: this.state.weight,
-        height: this.state.height
+        heightFeet: this.state.heightFeet,
+        heightInches: this.state.heightInches,
+        allergies: this.state.allergies,
+        medication: this.state.medication,
+        conditions: this.state.conditions
       })
     }).then((response) => {
       return response.json();
     }).then((body) => {
+      console.log(body);
       switch(body.message) {
         case 'Error creating user':
           this.setState({
@@ -101,8 +110,35 @@ class Register extends Component {
               <Col m={5} offset="m1">
                 <Input m={10} label="Weight in Pounds" type="number" onChange={(e) => this.setState({weight: e.target.value})} value={this.state.weight}/>
               </Col>
-              <Col m={5}>
-                <Input m={10} label="Height in Inches" type="text" onChange={(e) => this.setState({height: e.target.value})} value={this.state.height}/>
+              <Col m={2}>
+                <Input m={5} label="Height" type="select" onChange={(e) => this.setState({heightFeet: e.target.value})} value={this.state.heightFeet}>
+                  <option value="4"> 4 </option>
+                  <option value="5"> 5 </option>
+                  <option value="6"> 6 </option>
+                  <option value="7"> 7 </option>
+                </Input>
+                <Input m={5} type="select" onChange={(e) => this.setState({heightInches: e.target.value})} value={this.state.heightInches}>
+                  <option value="1"> 1 </option>
+                  <option value="2"> 2 </option>
+                  <option value="3"> 3 </option>
+                  <option value="4"> 4 </option>
+                  <option value="5"> 5 </option>
+                  <option value="6"> 6 </option>
+                  <option value="7"> 7 </option>
+                  <option value="8"> 8 </option>
+                  <option value="9"> 9 </option>
+                  <option value="10"> 10 </option>
+                  <option value="11"> 11 </option>
+                </Input>
+              </Col>
+              <Col m={3}>
+                <Input m={10} label="Allergies" type="text" onChange={(e) => this.setState({allergies: e.target.value})} value={this.state.allergies} />
+              </Col>
+              <Col m={5} offset="m1">
+                <Input m={10} label="Medication" type="text" onChange={(e) => this.setState({medication: e.target.value})} value={this.state.medication} />
+              </Col>
+              <Col m={6}>
+                <Input m={9} label="Medical Conditions" type="text" onChange={(e) => this.setState({conditions: e.target.value})} value={this.state.conditions} />
               </Col>
               <Col m={5} offset="m5">
                 <Button m={2} waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>

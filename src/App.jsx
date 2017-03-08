@@ -33,7 +33,7 @@ class App extends Component {
               </Col>
             </Row>
             <Row>
-              <Col m={2} offset="m1">
+              <Col m={2}>
                 <h5>Stephanie Wan</h5>
               </Col>
               <Col m={2} offset="m2">
@@ -45,13 +45,13 @@ class App extends Component {
             </Row>
             <Row>
               <Col m={3} offset="m1">
-                <p>Kogi sriracha celiac, hot chicken narwhal lumbersexual chambray chartreuse austin. Yr knausgaard gentrify distillery, air plant neutra literally skateboard. Raclette craft beer air plant, umami occupy selvage narwhal schlitz copper mug austin tacos brooklyn seitan flannel. </p>
+                <p>Kogi sriracha celiac, hot chicken narwhal lumbersexual chambray chartreuse austin. Yr knausgaard gentrify distillery, air plant neutra literally skateboard. </p>
               </Col>
               <Col m={3} offset="m1">
-                <p>Knausgaard chartreuse tacos crucifix. Sartorial +1 chia lumbersexual, banh mi swag artisan kombucha cold-pressed man bun af man braid. Intelligentsia yr health goth, jean shorts drinking vinegar sriracha prism selvage sustainable asymmetrical plaid kogi irony taxidermy.</p>
+                <p>Knausgaard chartreuse tacos crucifix. Sartorial +1 chia lumbersexual, banh mi swag artisan kombucha cold-pressed man bun af man braid.</p>
               </Col>
               <Col m={3} offset="m1">
-                <p>Everyday carry jean shorts messenger bag locavore, taxidermy kogi quinoa yr franzen before they sold out fanny pack flexitarian fap semiotics. Raw denim cardigan whatever messenger bag iceland etsy tacos flexitarian pabst banjo thundercats yr, snackwave yuccie. </p>
+                <p>Everyday carry jean shorts messenger bag locavore, taxidermy kogi quinoa yr franzen before they sold out fanny pack flexitarian fap semiotics.</p>
               </Col>
             </Row>
           </Modal>
@@ -63,7 +63,7 @@ class App extends Component {
             }>
             <h5>All of Lighthouse Labs mentors and staff!</h5>
             <br></br>
-            && All icons made by Freepik from www.flaticon.com
+            All icons made by Freepik from www.flaticon.com
           </Modal>
         </Button>
       </div>

@@ -8,7 +8,6 @@ class Profile extends Component {
     }
   }
 
-
   componentDidMount() {
 
     fetch('http://localhost:4000/profile', {
@@ -99,11 +98,23 @@ class Profile extends Component {
                       </tr>
                       <tr>
                         <td>Height</td>
-                        <td>{obj.height}</td>
+                        <td>{obj.height_feet} ft, {obj.height_inches} inches</td>
                       </tr>
                       <tr>
                         <td>Weight</td>
                         <td>{obj.weight}</td>
+                      </tr>
+                      <tr>
+                        <td>Allergies</td>
+                        <td>{obj.allergies}</td>
+                      </tr>
+                      <tr>
+                        <td>Prescriptions</td>
+                        <td>{obj.medication}</td>
+                      </tr>
+                      <tr>
+                        <td>Medical Conditions</td>
+                        <td>{obj.conditions}</td>
                       </tr>
                     </tbody>
                   </Table>
@@ -114,7 +125,6 @@ class Profile extends Component {
       </div>
     )
   }
-
 }
 
 export default Profile;
