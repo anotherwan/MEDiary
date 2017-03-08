@@ -119,7 +119,7 @@ formatDate = (date) => {
             {this.state.painItems.map((obj, index) => {
               return (
                 <Collapsible popout>
-                  <CollapsibleItem header={obj.title} className="grey lighten-5 z-depth-1" icon='swap_vert'>
+                  <CollapsibleItem header={obj.title} className="grey lighten-5 z-depth-1">
                     <Row>
                       <b> Where does hurt? </b> <br/>
                         {
