@@ -149,8 +149,6 @@ formatDate = (date) => {
                     </Row>
                   </CollapsibleItem>
                 </Collapsible>
-
-
               )
             })}
           </Col>

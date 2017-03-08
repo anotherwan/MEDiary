@@ -65,6 +65,7 @@ app.post('/profile', (req, res) => {
       });
     })
 
+
   // knex('users')
   //   .select('name', 'age', 'gender', 'weight', 'height_feet', 'height_inches', 'allergies', 'medication', 'conditions')
   //   .where('email', '=', email)
