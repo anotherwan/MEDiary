@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
-import {Row, Col, Collapsible, CollapsibleItem, Icon} from "react-materialize";
+import {Row, Col, Collapsible, CollapsibleItem, Icon, Table, thead, tr, th, tbody, td} from "react-materialize";
+import Body from '../obj.json';
+
+
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      profile: []
+      profile: [],
+      user: '',
+      painItems: []
     }
   }
 
@@ -25,7 +30,30 @@ class Profile extends Component {
           profile: body.data
         })
       })
+
+    fetch('http://localhost:4000/dashboard', {
+      method: 'post',
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        user: localStorage.getItem('uid')
+      })
+    }).then((response) => {
+      return response.json();
+    }).then((body) => {
+      console.log(body);
+      this.setState({
+        user: body.data[0].name,
+        painItems: body.data
+      })
+    })
   }
+
+formatDate = (date) => {
+  return (date.slice(0, 10));
+}
+
+
 
   render() {
     return (
@@ -62,69 +90,110 @@ class Profile extends Component {
                     <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
                   </CollapsibleItem>
                   <CollapsibleItem header="Height" className="grey lighten-5 z-depth-1" icon='swap_vert'>
-                    {obj.height}
+                    {obj.height_feet} ft, {obj.height_inches} inches
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                  <CollapsibleItem header="Allergies" className="grey lighten-5 z-depth-1" icon='swap_vert'>
+                    {obj.allergies}
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                  <CollapsibleItem header="Prescriptions" className="grey lighten-5 z-depth-1" icon='swap_vert'>
+                    {obj.medication}
+                    <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
+                  </CollapsibleItem>
+                  <CollapsibleItem header="Medical Conditions" className="grey lighten-5 z-depth-1" icon='swap_vert'>
+                    {obj.conditions}
                     <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
                   </CollapsibleItem>
                 </Collapsible>
+
               )
             })}
           </Col>
         </Row>
-
-          {/* <Row m={6} >
-            <Col m={6} offset="m3" className="blue-grey lighten-5 z-depth-1">
-              <div >About you</div>
-              {this.state.profile.map((obj, index ) => {
-                return (
-                  <Table className="bordered" >
+          {this.state.painItems.map((obj, index) => {
+            return (
+              <Row>
+                <Col m={8} offset="m2">
+                  <Table>
                     <thead>
                       <tr>
-                        <th data-field="entry"/>
-                        <th data-field="userentry"/>
+                        <th data-field="inputs"> Pain Point </th>
                       </tr>
                     </thead>
+
                     <tbody>
                       <tr>
-                        <td>Name</td>
-                        <td>{obj.name}</td>
+                        <td>Title:</td>
+                        <td>{obj.title}</td>
                       </tr>
                       <tr>
-                        <td>Age</td>
-                        <td>{obj.age}</td>
+                        <td>Body Part:</td>
+                        <td>{
+                              Object.keys(Body['body']).filter((region, i) => {
+                                const regId = obj.body_part_id.slice(0, 1);
+                                const partId = obj.body_part_id;
+                                if (Body['body'][region]['id'] === regId) {
+                                  Object.keys(Body['body'][region]['parts']).filter((part, i) =>{
+                                    if (Body['body'][region]['parts'][part]['id'] === partId) {
+                                      this.BodyPart = part
+                                    }
+                                      return null;
+                                  })
+                                }
+                                return null;
+                              })
+                           }
+                           {this.BodyPart}</td>
                       </tr>
                       <tr>
-                        <td>Gender</td>
-                        <td>{obj.gender}</td>
+                        <td>Description</td>
+                        <td>{obj.description}</td>
                       </tr>
                       <tr>
-                        <td>Height</td>
-                        <td>{obj.height_feet} ft, {obj.height_inches} inches</td>
+                        <td>Pain Rating:</td>
+                        <td>{obj.pain_rating}</td>
                       </tr>
                       <tr>
-                        <td>Weight</td>
-                        <td>{obj.weight}</td>
-                      </tr>
-                      <tr>
-                        <td>Allergies</td>
-                        <td>{obj.allergies}</td>
-                      </tr>
-                      <tr>
-                        <td>Prescriptions</td>
-                        <td>{obj.medication}</td>
-                      </tr>
-                      <tr>
-                        <td>Medical Conditions</td>
-                        <td>{obj.conditions}</td>
+                        <td>Date Logged</td>
+                        <td>{this.formatDate(obj.date_created)}</td>
                       </tr>
                     </tbody>
                   </Table>
-                )
-              })}
-            </Col>
-          </Row> */}
+
+                </Col>
+              </Row>
+            )
+          })}
       </div>
     )
   }
 }
 
 export default Profile;
+
+
+
+                // <span key={index}>
+                //   <span>Title: {obj.title}<br /></span>
+                //   <span>Body Part: {
+                //                       Object.keys(Body['body']).map((region, i) => {
+                //                         const regId = obj.body_part_id.slice(0, 1);
+                //                         const partId = obj.body_part_id;
+                //                         if (Body['body'][region]['id'] === regId) {
+                //                           Object.keys(Body['body'][region]['parts']).map((part, i) =>{
+                //                             if (Body['body'][region]['parts'][part]['id'] === partId) {
+                //                               this.BodyPart = part
+                //                             }
+                //                               return null;
+                //                           })
+                //                         }
+                //                         return null;
+                //                       })
+                //                    }
+                //                    {this.BodyPart}<br /></span>
+                //   <span>Description: {obj.description}<br /></span>
+                //   <span>Pain Rating: {obj.pain_rating}<br /></span>
+                //   <span>Date Logged: {this.formatDate(obj.date_created)}<br /></span>
+                //   <br/>
+                // </span>
