@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import {Row, Col, Button, Slider, Slide } from "react-materialize"
+import {Row, Col, Slider, Slide } from "react-materialize"
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
