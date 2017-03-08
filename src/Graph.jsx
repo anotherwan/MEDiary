@@ -104,11 +104,12 @@ class Graph extends Component {
               <p>Monthly Number of Pain Occurances by Body Regions</p>
               <Line
                 data={this.myData}
-                width="500px"
-                height="300px"
+                width={500}
+                height={300}
                 options={{
                   mainAspectRatio: false
                 }}
+                redraw
               />
             </Card>
           </Col>

@@ -138,6 +138,7 @@ class Dashboard extends Component {
                 this.HeadData.splice(9, 1, this.OctHead)
                 this.HeadData.splice(10, 1, this.NovHead)
                 this.HeadData.splice(11, 1, this.DecHead)
+
               } else if (obj.body_part_id.slice(0, 1) === "2") {
 
                   if (obj.date_created.slice(5, 7) === "01") {
@@ -259,6 +260,7 @@ class Dashboard extends Component {
                 this.LegsData.splice(10, 1, this.NovLegs)
                 this.LegsData.splice(11, 1, this.DecLegs)
               }
+              return null;
             }))
           }
         </span>

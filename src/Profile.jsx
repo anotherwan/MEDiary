@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Collapsible, CollapsibleItem, Icon, Chip} from "react-materialize";
+import {Row, Col, Collapsible, CollapsibleItem, Icon} from "react-materialize";
 import Body from '../obj.json';
 
 
