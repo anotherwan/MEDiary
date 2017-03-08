@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import {Row, Col, Button, Slider, Slide } from "react-materialize"
+import {Row, Col, Slider, Slide } from "react-materialize"
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
 import armsArm from '../public/images/armsArm.svg';
 import legsLeg from '../public/images/legsLeg.svg';
 import anklePain from '../public/images/anklepain.jpg';
-import docPat from '../public/images/doctorpatient.jpg';
 
 import Dashboard from './Dashboard.jsx';
 import '../public/styles/Home.css'

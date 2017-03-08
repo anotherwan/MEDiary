@@ -53,12 +53,13 @@ formatDate = (date) => {
   return (date.slice(0, 10));
 }
 
-
-
   render() {
     return (
       <div>
-        <br></br><br></br><br></br><br></br><br></br><br></br>
+        <Row></Row>
+        <Row></Row>
+        <Row></Row>
+        <Row></Row>
         <Row>
           <Col m={10} offset="m1" className="red lighten-2 z-depth-1">
               <h5 className="white-text"><Icon left className='white-text'>assignment_ind</Icon>User Profile</h5>
@@ -106,94 +107,65 @@ formatDate = (date) => {
                     <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
                   </CollapsibleItem>
                 </Collapsible>
-
               )
             })}
           </Col>
         </Row>
-          {this.state.painItems.map((obj, index) => {
-            return (
-              <Row>
-                <Col m={8} offset="m2">
-                  <Table>
-                    <thead>
-                      <tr>
-                        <th data-field="inputs"> Pain Point </th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr>
-                        <td>Title:</td>
-                        <td>{obj.title}</td>
-                      </tr>
-                      <tr>
-                        <td>Body Part:</td>
-                        <td>{
-                              Object.keys(Body['body']).filter((region, i) => {
-                                const regId = obj.body_part_id.slice(0, 1);
-                                const partId = obj.body_part_id;
-                                if (Body['body'][region]['id'] === regId) {
-                                  Object.keys(Body['body'][region]['parts']).filter((part, i) =>{
-                                    if (Body['body'][region]['parts'][part]['id'] === partId) {
-                                      this.BodyPart = part
-                                    }
-                                      return null;
-                                  })
-                                }
-                                return null;
-                              })
-                           }
-                           {this.BodyPart}</td>
-                      </tr>
-                      <tr>
-                        <td>Description</td>
-                        <td>{obj.description}</td>
-                      </tr>
-                      <tr>
-                        <td>Pain Rating:</td>
-                        <td>{obj.pain_rating}</td>
-                      </tr>
-                      <tr>
-                        <td>Date Logged</td>
-                        <td>{this.formatDate(obj.date_created)}</td>
-                      </tr>
-                    </tbody>
-                  </Table>
-
-                </Col>
-              </Row>
-            )
-          })}
+        <Row>
+          <Col m={8} offset="m3">
+            {this.state.painItems.map((obj, index) => {
+              return (
+                <Table>
+                  <thead>
+                    <tr>
+                      <th data-field="inputs"> Pain Point </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Title:</td>
+                      <td>{obj.title}</td>
+                    </tr>
+                    <tr>
+                      <td>Body Part:</td>
+                      <td>{
+                            Object.keys(Body['body']).filter((region, i) => {
+                              const regId = obj.body_part_id.slice(0, 1);
+                              const partId = obj.body_part_id;
+                              if (Body['body'][region]['id'] === regId) {
+                                Object.keys(Body['body'][region]['parts']).filter((part, i) => {
+                                  if (Body['body'][region]['parts'][part]['id'] === partId) {
+                                    this.BodyPart = part
+                                  }
+                                    return null;
+                                })
+                              }
+                              return null;
+                            })
+                         }
+                         {this.BodyPart}</td>
+                    </tr>
+                    <tr>
+                      <td>Description</td>
+                      <td>{obj.description}</td>
+                    </tr>
+                    <tr>
+                      <td>Pain Rating:</td>
+                      <td>{obj.pain_rating}</td>
+                    </tr>
+                    <tr>
+                      <td>Date Logged</td>
+                      <td>{this.formatDate(obj.date_created)}</td>
+                    </tr>
+                  </tbody>
+                </Table>
+              )
+            })}
+          </Col>
+        </Row>
       </div>
     )
   }
 }
 
 export default Profile;
-
-
-
-                // <span key={index}>
-                //   <span>Title: {obj.title}<br /></span>
-                //   <span>Body Part: {
-                //                       Object.keys(Body['body']).map((region, i) => {
-                //                         const regId = obj.body_part_id.slice(0, 1);
-                //                         const partId = obj.body_part_id;
-                //                         if (Body['body'][region]['id'] === regId) {
-                //                           Object.keys(Body['body'][region]['parts']).map((part, i) =>{
-                //                             if (Body['body'][region]['parts'][part]['id'] === partId) {
-                //                               this.BodyPart = part
-                //                             }
-                //                               return null;
-                //                           })
-                //                         }
-                //                         return null;
-                //                       })
-                //                    }
-                //                    {this.BodyPart}<br /></span>
-                //   <span>Description: {obj.description}<br /></span>
-                //   <span>Pain Rating: {obj.pain_rating}<br /></span>
-                //   <span>Date Logged: {this.formatDate(obj.date_created)}<br /></span>
-                //   <br/>
-                // </span>

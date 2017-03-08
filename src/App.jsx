@@ -23,13 +23,13 @@ class App extends Component {
             }>
             <Row>
               <Col m={3} offset="m1">
-                <img src={steph} height="180px" borderRadius="50%"/>
+                <img src={steph} height="180px" borderRadius="50%" role="presentation"/>
               </Col>
               <Col m={3} offset="m1">
-                <img src={parshant} height="180px" borderRadius="50%"/>
+                <img src={parshant} height="180px" borderRadius="50%" role="presentation"/>
               </Col>
               <Col m={3} offset="m1">
-                <img src={kapish} height="180px" borderRadius="50%"/>
+                <img src={kapish} height="180px" borderRadius="50%" role="presentation"/>
               </Col>
             </Row>
             <Row>
