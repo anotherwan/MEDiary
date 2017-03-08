@@ -22,7 +22,7 @@ ReactDOM.render(
       <IndexRoute component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/profile" componenet={Profile} />
+      <Route path="/profile" component={Profile} />
       <Route path="/region/:region" component={BodyRegions} />
       <Route path="/tracker/:id" component={Tracker} />
     </Route>

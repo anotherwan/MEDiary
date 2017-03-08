@@ -1,5 +1,7 @@
+
 import React, {Component} from 'react';
 import { Link } from "react-router";
+import '../public/styles/BodyRegion.css';
 
 const myStyle = {
   "border": "2px solid #e36352",
@@ -42,7 +44,7 @@ class BodyParts extends Component {
   render () {
     if (this.props.isClickable === true && localStorage.getItem('uid')) {
       return (
-        <div>
+        <div className="part">
           <Link to={"/tracker/" + this.props.part}>
             <img
               onClick={this.props.onClick}
