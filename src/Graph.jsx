@@ -3,6 +3,8 @@ import {Line} from 'react-chartjs-2';
 import {Row, Col, Card} from "react-materialize";
 
 class Graph extends Component {
+
+
   myData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       datasets: [
@@ -25,7 +27,7 @@ class Graph extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 8,
           pointHitRadius: 10,
-          data: [10, 5, 0, 3, 8, 14, 18, 19, 8, 5, 2, 1]
+          data: this.props.headData
         },
         {
           label: 'Torso Pains',
