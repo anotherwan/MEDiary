@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Collapsible, CollapsibleItem, Icon, Table, thead, tr, th, tbody, td} from "react-materialize";
+import {Row, Col, Collapsible, CollapsibleItem, Icon, Chip} from "react-materialize";
 import Body from '../obj.json';
 
 
@@ -112,36 +112,41 @@ formatDate = (date) => {
           </Col>
         </Row>
         <Row>
+          <Col m={6} offset="m3" className='red lighten-2 z-depth-1'>
+            <h5 className="white-text"> Logs </h5>
+          </Col>
           <Col m={6} offset="m3">
             {this.state.painItems.map((obj, index) => {
               return (
-
                 <Collapsible popout>
-                  <CollapsibleItem header={obj.title}>
+                  <CollapsibleItem header={obj.title} className="grey lighten-5 z-depth-1">
                     <Row>
-                    {
-                      Object.keys(Body['body']).filter((region, i) => {
-                        const regId = obj.body_part_id.slice(0, 1);
-                        const partId = obj.body_part_id;
-                        if (Body['body'][region]['id'] === regId) {
-                          Object.keys(Body['body'][region]['parts']).filter((part, i) => {
-                            if (Body['body'][region]['parts'][part]['id'] === partId) {
-                              this.BodyPart = part
+                      <b> Where does hurt? </b> <br/>
+                        {
+                          Object.keys(Body['body']).filter((region, i) => {
+                            const regId = obj.body_part_id.slice(0, 1);
+                            const partId = obj.body_part_id;
+                            if (Body['body'][region]['id'] === regId) {
+                              Object.keys(Body['body'][region]['parts']).filter((part, i) => {
+                                if (Body['body'][region]['parts'][part]['id'] === partId) {
+                                  this.BodyPart = part
+                                }
+                                  return null;
+                              })
                             }
-                              return null;
+                            return null;
                           })
-                        }
-                        return null;
-                      })
-                   }
-                   {this.BodyPart}
-                   </Row>
-                   <Row>
-                   {obj.description}
-                   </Row>
-                   <Row>
-                   {obj.pain_rating}
-                   </Row>
+                       }
+                       {this.BodyPart}
+                    </Row>
+                    <Row>
+                      <b> Description of pain </b> <br/>
+                      {obj.description}
+                    </Row>
+                    <Row>
+                      <b> Pain rating out of 5 </b> <br/>
+                      {obj.pain_rating}
+                    </Row>
                   </CollapsibleItem>
                 </Collapsible>
 
