@@ -111,7 +111,7 @@ import obj from '../obj.json';
                     <Input m={12} label="Description" type="textarea" wrap="soft" maxLength="140" name="description" onChange={(e) =>  this.setState({description: e.target.value})} value={this.state.description}/>
                   </Col>
                   <Row>
-                    <Col m={4} offset="m4">
+                    <Col m={5} offset="m4">
                       <h6> Please select a pain rating from 1 to 5: </h6>
                     </Col>
                   </Row>
@@ -122,8 +122,10 @@ import obj from '../obj.json';
                     <Input name="rating" type="radio" value="1" label="1 - Minimal Pain" className="with-gap"  title="1 - Minimal Pain"/>
                     <Input name="rating" type="radio" value="2" label="2 - Mild Pain" className="with-gap" title="2 - Mild Pain"/>
                     <Input name="rating" type="radio" value="3" label="3 - Moderate Pain" className="with-gap" title="3 - Moderate Pain"/>
+                  <Col m={10} offset="m2">
                     <Input name="rating" type="radio" value="4" label="4 - Severe Pain" className="with-gap" title="4 - Severe Pain"/>
                     <Input name="rating" type="radio" value="5" label="5 - Extreme Pain" className="with-gap"  title="5 - Extreme Pain"/>
+                  </Col>
                   </form>
                 </Col>
               </Row>

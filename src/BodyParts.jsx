@@ -9,7 +9,7 @@ const myStyle = {
   "position": "absolute",
   "backgroundColor": "#F7F7F7",
   "marginLeft": "25%",
-  "marginTop": "8%"
+  "marginTop": "1%"
 }
 
 const lineStyle = {
@@ -18,7 +18,7 @@ const lineStyle = {
   "backgroundColor": "#ef9e8f",
   "position": "absolute",
   "marginLeft": "25%",
-  "marginTop": "8%"
+  "marginTop": "1%"
 }
 
 class BodyParts extends Component {
