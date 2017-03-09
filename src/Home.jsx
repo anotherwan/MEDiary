@@ -92,7 +92,7 @@ class Home extends Component {
     } else {
       return (
         <div>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          <br></br><br></br><br></br><br></br><br></br>
             <Slider>
               <Slide
                 Col={8} offset="m2"
