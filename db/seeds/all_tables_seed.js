@@ -69,5 +69,2120 @@ exports.seed = function(knex, Promise) {
           description: 'Very intense migraine that lasted all day.',
           date_created: '2017-01-20'
         });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'migraine',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 2,
+          title: 'shoudler blade',
+          description: 'Shoulder blade hurts',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3c',
+          pain_rating: 2,
+          title: 'palm',
+          description: 'smacked a bug off the wall',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 1,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3e',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3e',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3e',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3e',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '2a',
+          pain_rating: 5,
+          title: 'finger',
+          description: 'sprain on my finger',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '1a',
+          pain_rating: 5,
+          title: 'headache',
+          description: 'Very intense migraine that lasted all day.',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '3a',
+          pain_rating: 5,
+          title: 'Shoudler blade',
+          description: 'Hurt real abd',
+          date_created: '2017-12-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-01-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-02-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-03-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-04-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-05-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-06-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-07-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-08-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-09-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-10-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-11-20'
+        });
+    }).then(function() {
+        return knex('inputs').insert({
+          user_id: getUId(),
+          body_part_id: '4c',
+          pain_rating: 5,
+          title: 'knees',
+          description: 'Patella',
+          date_created: '2017-12-20'
+        });
     })
 };
