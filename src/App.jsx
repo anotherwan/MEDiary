@@ -21,7 +21,7 @@ class App extends Component {
               <Button floating icon='contacts' className='blue lighten-2'/>
             }>
             <Row>
-              <Col m={3} offset="m1">
+              <Col m={3}>
                 <img src={steph} height="180px"/>
               </Col>
               <Col m={3} offset="m1">
@@ -61,7 +61,7 @@ class App extends Component {
               <Button floating icon='star' className='amber accent-4'/>
             }>
             <h5>All of Lighthouse Labs mentors and staff!</h5>
-            <p>Icons made by Freepik from www.flaticon.com</p>
+            <p>All icons and images made by Freepik from www.flaticon.com</p>
           </Modal>
         </Button>
       </div>

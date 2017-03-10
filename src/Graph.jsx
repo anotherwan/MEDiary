@@ -98,7 +98,7 @@ class Graph extends Component {
   render() {
     return (
         <Row>
-          <br></br><br></br><br></br><br></br><br></br><br></br>
+          <br></br><br></br>
            <Col offset="m1">
             <Card className="blue-grey lighten-5" title='Dashboard'>
               <p>Monthly Number of Pain Occurances by Body Regions</p>
