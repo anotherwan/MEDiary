@@ -45,13 +45,13 @@ class Home extends Component {
           <Dashboard />
           <Row>
             <Col m={3} offset="m1">
-              <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <br></br><br></br><br></br>
               <img src={maleBody} alt="Body" style={{'height': '380px'}} />
             </Col>
           </Row>
           <Row>
             <Col m={4}>
-              <br></br><br></br><br></br><br></br><br></br><br></br>
+              <br></br><br></br><br></br>
               <Link to="/region/head">
                 <img className="region-bubbles" src={headHead} alt="Head" style={this.bubbleStyle}/>
               </Link>
@@ -74,7 +74,7 @@ class Home extends Component {
           </Row>
           <Row>
             <Col m={4}>
-              <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <br></br><br></br><br></br>
               <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Head</h6></div>
 
               <br></br><br></br><br></br>
@@ -92,7 +92,7 @@ class Home extends Component {
     } else {
       return (
         <div>
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          <br></br><br></br><br></br><br></br><br></br>
             <Slider>
               <Slide
                 Col={8} offset="m2"

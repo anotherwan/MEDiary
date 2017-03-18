@@ -110,26 +110,32 @@ import obj from '../obj.json';
                   <Col m={8} offset="m1">
                     <Input m={12} label="Description" type="textarea" wrap="soft" maxLength="140" name="description" onChange={(e) =>  this.setState({description: e.target.value})} value={this.state.description}/>
                   </Col>
-                  <Col m={4} offset="m4">
-                    <p> Please select a pain rating from 1 to 5 </p>
+                  <Row>
+                    <Col m={5} offset="m4">
+                      <h6> Please select a pain rating from 1 to 5: </h6>
+                    </Col>
+                  </Row>
+                </form>
+              <Row>
+                <Col m={10} offset="m2">
+                  <form className="rating" name="rating" onChange={(e) => this.setState({rating: e.target.value})} value={this.state.rating} >
+                    <Input name="rating" type="radio" value="1" label="1 - Minimal Pain" className="with-gap"  title="1 - Minimal Pain"/>
+                    <Input name="rating" type="radio" value="2" label="2 - Mild Pain" className="with-gap" title="2 - Mild Pain"/>
+                    <Input name="rating" type="radio" value="3" label="3 - Moderate Pain" className="with-gap" title="3 - Moderate Pain"/>
+                  <Col m={10} offset="m2">
+                    <Input name="rating" type="radio" value="4" label="4 - Severe Pain" className="with-gap" title="4 - Severe Pain"/>
+                    <Input name="rating" type="radio" value="5" label="5 - Extreme Pain" className="with-gap"  title="5 - Extreme Pain"/>
                   </Col>
+                  </form>
+                </Col>
+              </Row>
+              <form id="submitDescription" onSubmit={this.onSubmit}>
                 <Row>
                   <Col m={4} offset="m5">
                     <Button waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>
                   </Col>
                 </Row>
-                </form>
-              <Row>
-                <Col m={10} offset="m4">
-                  <form className="rating" name="rating" onChange={(e) => this.setState({rating: e.target.value})} value={this.state.rating} >
-                    <Input name="rating" type="radio" value="1" label="1" className="with-gap" htmlFor="star1" title="Sucks big time - 1 star"/>
-                    <Input name="rating" type="radio" value="2" label="2" className="with-gap" htmlFor="star2" title="Kinda bad - 2 stars"/>
-                    <Input name="rating" type="radio" value="3" label="3" className="with-gap" htmlFor="star3" title="Meh - 3 stars"/>
-                    <Input name="rating" type="radio" value="4" label="4" className="with-gap" htmlFor="star4" title="Pretty good - 4 stars"/>
-                    <Input name="rating" type="radio" value="5" label="5" className="with-gap" htmlFor="star5" title="Awesome - 5 stars"/>
-                  </form>
-                </Col>
-              </Row>
+              </form>
             </Card>
           </Col>
         </Row>
