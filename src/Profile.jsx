@@ -98,12 +98,12 @@ class Profile extends Component {
         <Row></Row>
         <Row></Row>
         <Row>
-          <Col m={8} offset="m2" className="red lighten-2 z-depth-1">
+          <Col m={8} s={10} offset="m2 s1" className="red lighten-2 z-depth-1">
               <h5 className="white-text"><Icon left className='white-text'>assignment_ind</Icon>User Profile</h5>
           </Col>
         </Row>
         <Row>
-          <Col m={8} offset="m2">
+          <Col m={8} s={10} offset="m2 s1">
             {this.state.profile.map((obj, index ) => {
               return (
                 <Collapsible key={index} popout>
@@ -148,7 +148,8 @@ class Profile extends Component {
             })}
           </Col>
           <Row>
-            <Col m={1} offset="m5">
+            <Row></Row>
+            <Col m={1} s={1} offset="m5 s4" >
               <form id="submitDescription" onSubmit={this.onSubmit}>
                 <Modal
                   id="email-modal"
@@ -165,10 +166,10 @@ class Profile extends Component {
           </Row>
         </Row>
         <Row>
-          <Col m={8} offset="m2" className='red lighten-2 z-depth-1'>
+          <Col m={8} s={10} offset="m2 s1" className='red lighten-2 z-depth-1'>
             <h5 className="white-text"><Icon left className='white-text'>view_list</Icon>Logs</h5>
           </Col>
-          <Col m={8} offset="m2">
+          <Col m={8} s={8} offset="m2 s2">
             <br></br>
             {this.state.painItems.map((obj, index) => {
               return (

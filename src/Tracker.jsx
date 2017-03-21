@@ -42,14 +42,14 @@ import obj from '../obj.json';
         <Row></Row>
         <Row></Row>
         <Row>
-          <Col m={10} offset="m1" className="red lighten-2">
+          <Col l={10} m={10} s={10} offset="l1 m1 s1" className="red lighten-2">
             <h5 className="white-text">Tracker</h5>
           </Col>
         </Row>
         <Row>
-          <Col m={8} offset="m2">
+          <Col l={8} m={8} s={10} offset="l2 m2 s1">
             <Card className="blue-grey lighten-5">
-              <Col m={1}>
+              <Col l={1} m={1} s={1} offset="s3">
               {
                 Object.keys(obj['body']['head']['parts']).map((val, index) => {
                 if (obj['body']['head']['parts'][val].id === this.props.params.id)
@@ -104,34 +104,42 @@ import obj from '../obj.json';
               }
               </Col>
                 <form id="submitDescription" onSubmit={this.onSubmit}>
-                  <Col m={8} offset="m1">
-                    <Input m={12} label="Title" type="text" name="title" onChange={(e) => this.setState({title: e.target.value})} value={this.state.title}/>
+                  <Col l={8} m={8} s={12} offset="l2 m2">
+                    <Input m={12} s={12} label="Title" type="text" name="title" onChange={(e) => this.setState({title: e.target.value})} value={this.state.title}/>
                   </Col>
-                  <Col m={8} offset="m1">
-                    <Input m={12} label="Description" type="textarea" wrap="soft" maxLength="140" name="description" onChange={(e) =>  this.setState({description: e.target.value})} value={this.state.description}/>
+                  <Col l={8} m={8} s={12} offset="l2 m2">
+                    <Input m={12} s={12} label="Description" type="textarea" wrap="soft" maxLength="140" name="description" onChange={(e) =>  this.setState({description: e.target.value})} value={this.state.description}/>
                   </Col>
                   <Row>
-                    <Col m={5} offset="m4">
+                    <Col l={6} m={8} s={10} offset="l3 m2 s1">
                       <h6> Please select a pain rating from 1 to 5: </h6>
                     </Col>
                   </Row>
                 </form>
               <Row>
-                <Col m={10} offset="m2">
+                <Col l={10} m={10} s={12} offset="l3 m2">
                   <form className="rating" name="rating" onChange={(e) => this.setState({rating: e.target.value})} value={this.state.rating} >
-                    <Input name="rating" type="radio" value="1" label="1 - Minimal Pain" className="with-gap"  title="1 - Minimal Pain"/>
-                    <Input name="rating" type="radio" value="2" label="2 - Mild Pain" className="with-gap" title="2 - Mild Pain"/>
-                    <Input name="rating" type="radio" value="3" label="3 - Moderate Pain" className="with-gap" title="3 - Moderate Pain"/>
-                  <Col m={10} offset="m2">
-                    <Input name="rating" type="radio" value="4" label="4 - Severe Pain" className="with-gap" title="4 - Severe Pain"/>
-                    <Input name="rating" type="radio" value="5" label="5 - Extreme Pain" className="with-gap"  title="5 - Extreme Pain"/>
-                  </Col>
+                <Col m={10} s={12} offset="m1">
+                  <Input name="rating" type="radio" value="1" label="1 - Minimal Pain" className="with-gap"  title="1 - Minimal Pain"/>
+                </Col>
+                <Col m={10} s={12} offset="m1">
+                  <Input name="rating" type="radio" value="2" label="2 - Mild Pain" className="with-gap" title="2 - Mild Pain"/>
+                </Col>
+                <Col m={10} s={12} offset="m1">
+                  <Input name="rating" type="radio" value="3" label="3 - Moderate Pain" className="with-gap" title="3 - Moderate Pain"/>
+                </Col>
+                <Col m={10} s={12} offset="m1">
+                  <Input name="rating" type="radio" value="4" label="4 - Severe Pain" className="with-gap" title="4 - Severe Pain"/>
+                </Col>
+                <Col m={10} s={12} offset="m1">
+                  <Input name="rating" type="radio" value="5" label="5 - Extreme Pain" className="with-gap"  title="5 - Extreme Pain"/>
+                </Col>
                   </form>
                 </Col>
               </Row>
               <form id="submitDescription" onSubmit={this.onSubmit}>
                 <Row>
-                  <Col m={4} offset="m5">
+                  <Col l={4} m={4} s={4} offset="l5 m4 s3">
                     <Button waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>
                   </Col>
                 </Row>
