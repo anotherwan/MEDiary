@@ -70,13 +70,12 @@ class Dashboard extends Component {
 
   componentDidMount() {
 
-    fetch('http://localhost:4000/dashboard', {
-      method: 'post',
+    const user = localStorage.getItem('uid');
+
+    fetch('http://localhost:4000/dashboard/' + user, {
+      method: 'get',
       mode: 'cors',
       headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        user: localStorage.getItem('uid')
-      })
     }).then((response) => {
       return response.json();
     }).then((body) => {

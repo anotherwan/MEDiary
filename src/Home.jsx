@@ -95,7 +95,6 @@ class Home extends Component {
           <br></br><br></br><br></br><br></br><br></br>
             <Slider>
               <Slide
-                Col={8} offset="m2"
                 placement="right"
                 src={torsoPain}
                 title="Track Your Pains">
@@ -111,7 +110,7 @@ class Home extends Component {
                 src={doctor8}
                 alignment="left"
                 title="Share">
-                <h5>With Doctors</h5>
+                With Doctors
               </Slide>
               <Slide
                 src={better3}

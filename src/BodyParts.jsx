@@ -29,14 +29,14 @@ class BodyParts extends Component {
 
   getStyle = (left, right) => {
     let style = Object.assign({}, myStyle);
-    style.left = this.props.xPosition
-    style.top = this.props.yPosition
+    style.left = this.props.xPosition + 350;
+    style.top = this.props.yPosition;
     return style
   }
 
   getLineStyle = () => {
     let style = Object.assign({}, lineStyle);
-    style.left = this.props.xPosition + 40;
+    style.left = this.props.xPosition + 390;
     style.top = this.props.yPosition + 40;
     style.transform = this.TransRotate;
     style.transformOrigin = this.Origin;

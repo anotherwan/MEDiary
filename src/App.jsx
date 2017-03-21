@@ -22,13 +22,13 @@ class App extends Component {
             }>
             <Row>
               <Col m={3}>
-                <img src={steph} height="180px"/>
+                <img src={steph} role="presentation" height="180px"/>
               </Col>
               <Col m={3} offset="m1">
-                <img src={parshant} height="180px"/>
+                <img src={parshant} role="presentation" height="180px"/>
               </Col>
               <Col m={3} offset="m1">
-                <img src={kapish} height="180px"/>
+                <img src={kapish} role="presentation" height="180px"/>
               </Col>
             </Row>
             <Row>

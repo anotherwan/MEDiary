@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {Row, Col, Collapsible, CollapsibleItem, Icon} from "react-materialize";
+import {Row, Col, Collapsible, CollapsibleItem, Icon, Button, Modal} from "react-materialize";
 import Body from '../obj.json';
+import $ from 'jquery';
+import '../public/styles/Profile.css';
 
 
 class Profile extends Component {
@@ -9,39 +11,69 @@ class Profile extends Component {
     this.state = {
       profile: [],
       user: '',
-      painItems: []
+      painItems: [],
+      emailStatus: '',
+      toggle: false
     }
+
+    this.onSubmit = this.userEmail.bind(this);
   }
 
-  componentDidMount() {
+  userEmail = (event) => {
 
-    fetch('http://localhost:4000/profile', {
+    fetch('http://localhost:4000/email', {
       method: 'post',
       mode: 'cors',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({
-          user: localStorage.getItem('uid')
-        })
+        user: this.state.profile[0].name,
+        age: this.state.profile[0].age,
+        height_feet: this.state.profile[0].height_feet,
+        height_inches: this.state.profile[0].height_inches,
+        weight: this.state.profile[0].weight,
+        gender: this.state.profile[0].gender,
+        allergies: this.state.profile[0].allergies,
+        medication: this.state.profile[0].medication,
+        conditions: this.state.profile[0].conditions,
+        painItems: this.state.painItems,
+      })
+    }).then((response) => {
+      return response.json();
+    }).then((body) => {
+      this.setState({
+        emailStatus: body.message,
+        toggle: true
+      })
+      $(function() {
+        $('.modal-trigger').click();
+      });
+    })
+  }
+
+
+  componentDidMount() {
+
+    const user = localStorage.getItem('uid');
+
+    fetch('http://localhost:4000/profile/' + user, {
+      method: 'get',
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json'}
       }).then((response) => {
         return response.json();
       }).then((body) => {
-        console.log(body);
         this.setState({
           profile: body.data
         })
       })
 
-    fetch('http://localhost:4000/dashboard', {
-      method: 'post',
+    fetch('http://localhost:4000/logs/' + user, {
+      method: 'get',
       mode: 'cors',
       headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        user: localStorage.getItem('uid')
-      })
     }).then((response) => {
       return response.json();
     }).then((body) => {
-      console.log(body);
       this.setState({
         user: body.data[0].name,
         painItems: body.data
@@ -49,11 +81,16 @@ class Profile extends Component {
     })
   }
 
-formatDate = (date) => {
-  return (date.slice(0, 10));
-}
+  formatDate = (date) => {
+    return (date.slice(0, 10));
+  }
 
   render() {
+
+    const hidden = {
+      'display': 'none'
+    };
+
     return (
       <div>
         <Row></Row>
@@ -69,7 +106,7 @@ formatDate = (date) => {
           <Col m={8} offset="m2">
             {this.state.profile.map((obj, index ) => {
               return (
-                <Collapsible popout>
+                <Collapsible key={index} popout>
                   <CollapsibleItem header="Full Name" className="grey lighten-5 z-depth-1" icon='perm_identity'>
                     {obj.name}
                     <Icon right className='orange-text'>mode_edit</Icon><Icon right className='red-text'>delete</Icon>
@@ -110,6 +147,22 @@ formatDate = (date) => {
               )
             })}
           </Col>
+          <Row>
+            <Col m={1} offset="m5">
+              <form id="submitDescription" onSubmit={this.onSubmit}>
+                <Modal
+                  id="email-modal"
+                  header="Email Status"
+                  fixedFooter
+                  trigger={
+                    <Button type="submit" value="Submit" className="modal-trigger" style={hidden} />
+                  }>
+                  <h5>{this.state.emailStatus}</h5>
+                </Modal>
+                <Button waves="light" type="submit" value="Submit" className="red lighten-2" id="share-btn">Share</Button>
+              </form>
+            </Col>
+          </Row>
         </Row>
         <Row>
           <Col m={8} offset="m2" className='red lighten-2 z-depth-1'>
@@ -119,7 +172,7 @@ formatDate = (date) => {
             <br></br>
             {this.state.painItems.map((obj, index) => {
               return (
-                <Collapsible popout>
+                <Collapsible key={index} popout>
                   <CollapsibleItem header={obj.title} className="grey lighten-5 z-depth-1">
                     <Row>
                       <b> Pain Location </b> <br/>
