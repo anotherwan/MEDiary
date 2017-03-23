@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Row, Col, Input, Button, Card } from "react-materialize";
+import '../public/styles/Register.css';
 
 class Register extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class Register extends Component {
       email: '',
       password: '',
       age: '',
-      gender: 'male',
+      gender: 'Male',
       weight: '',
       heightFeet: '5',
       heightInches: '5',
@@ -80,44 +81,47 @@ class Register extends Component {
         <Row></Row>
         <Row></Row>
         <Row>
-          <Col m={10} offset="m1" className="red lighten-2 z-depth-1">
+          <Col s={10} m={10} l={10} offset="m1 s1 l1" className="red lighten-2 z-depth-1">
               <h5 className="white-text">Registration</h5>
           </Col>
         </Row>
         <Row>
-          <Col m={8} offset="m2">
+          <Col s={10} m={8} l={8} offset="m2 s1 l2">
             <Card className="blue-grey lighten-5">
               <form id="register" onSubmit={this.onSubmit} >
             <Row>
-              <Col m={5} offset="m1">
-                <Input m={10} label="Name" type="text" onChange={(e) => this.setState({name: e.target.value})} value={this.state.name} />
+              <Col s={12} m={6}>
+                <Input s={12} m={12} label="Name" type="text" onChange={(e) => this.setState({name: e.target.value})} value={this.state.name} />
               </Col>
-              <Col m={6}>
-                <Input m={9} label="Email" type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}  data-error="wrong" data-success="right"/>
+              <Col s={12} m={6}>
+                <Input s={12} m={12} label="Email" type="email" onChange={(e) => this.setState({email: e.target.value})} value={this.state.email}  data-error="wrong" data-success="right"/>
               </Col>
-              <Col m={2} offset="m1">
-                <Input m={10} label="Age" type="number" onChange={(e) => this.setState({age: e.target.value})} value={this.state.age}/>
+              <Col s={12} m={6}>
+                <Input s={12} m={12} label="Password" type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
               </Col>
-              <Col m={2}>
-                <Input m={10} type="select" label="Gender" name="gender" onChange={(e) => this.setState({gender: e.target.value})} value={this.state.gender}>
-                  <option value="male"> Male </option>
-                  <option value="female" disabled selected> Female </option>
+              <Col s={12} m={3}>
+                <Input s={12} m={12} label="Age" type="number" onChange={(e) => this.setState({age: e.target.value})} value={this.state.age}/>
+              </Col>
+              <Col s={12} m={3}>
+                <Input s={12} m={12} type="select" label="Gender" name="gender" onChange={(e) => this.setState({gender: e.target.value})} value={this.state.gender}>
+                  <option value="Male"> Male </option>
+                  <option value="Female" disabled selected> Female </option>
                 </Input>
               </Col>
-              <Col m={6} offset="m1">
-                <Input m={9} label="Password" type="password" onChange={(e) => this.setState({password: e.target.value})} value={this.state.password}/>
+              <Col s={12} m={6}>
+                <Input s={12} m={12} label="Allergies" type="text" onChange={(e) => this.setState({allergies: e.target.value})} value={this.state.allergies} />
               </Col>
-              <Col m={5} offset="m1">
-                <Input m={10} label="Weight in Pounds" type="number" onChange={(e) => this.setState({weight: e.target.value})} value={this.state.weight}/>
+              <Col s={12} m={3}>
+                <Input s={12} m={12} label="Weight (lbs)" type="number" onChange={(e) => this.setState({weight: e.target.value})} value={this.state.weight}/>
               </Col>
-              <Col m={2}>
-                <Input m={5} label="Height" type="select" onChange={(e) => this.setState({heightFeet: e.target.value})} value={this.state.heightFeet}>
+              <Col s={12} m={3}>
+                <Input s={6} m={6} label="Height" type="select" onChange={(e) => this.setState({heightFeet: e.target.value})} value={this.state.heightFeet}>
                   <option value="4"> 4 </option>
                   <option value="5"> 5 </option>
                   <option value="6"> 6 </option>
                   <option value="7"> 7 </option>
                 </Input>
-                <Input m={5} type="select" onChange={(e) => this.setState({heightInches: e.target.value})} value={this.state.heightInches}>
+                <Input s={6} m={6} type="select" onChange={(e) => this.setState({heightInches: e.target.value})} value={this.state.heightInches}>
                   <option value="1"> 1 </option>
                   <option value="2"> 2 </option>
                   <option value="3"> 3 </option>
@@ -131,17 +135,14 @@ class Register extends Component {
                   <option value="11"> 11 </option>
                 </Input>
               </Col>
-              <Col m={3}>
-                <Input m={10} label="Allergies" type="text" onChange={(e) => this.setState({allergies: e.target.value})} value={this.state.allergies} />
+              <Col s={12} m={6}>
+                <Input s={12} m={12} label="Medication" type="text" onChange={(e) => this.setState({medication: e.target.value})} value={this.state.medication} />
               </Col>
-              <Col m={5} offset="m1">
-                <Input m={10} label="Medication" type="text" onChange={(e) => this.setState({medication: e.target.value})} value={this.state.medication} />
+              <Col s={12} m={6}>
+                <Input s={12} m={12} label="Medical Conditions" type="text" onChange={(e) => this.setState({conditions: e.target.value})} value={this.state.conditions} />
               </Col>
-              <Col m={6}>
-                <Input m={9} label="Medical Conditions" type="text" onChange={(e) => this.setState({conditions: e.target.value})} value={this.state.conditions} />
-              </Col>
-              <Col m={5} offset="m5">
-                <Button m={2} waves="light" type="submit" value="Submit" className="red lighten-2">Submit</Button>
+              <Col s={12} m={5} offset="m5">
+                <Button waves="light" type="submit" value="Submit" className="red lighten-2 register-btn">Submit</Button>
               </Col>
             </Row>
               </form>
