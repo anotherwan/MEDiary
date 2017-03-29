@@ -21,6 +21,10 @@ class Profile extends Component {
 
   userEmail = (event) => {
 
+    $(function() {
+        $('.modal-trigger').click();
+    });
+
     fetch('http://localhost:4000/email', {
       method: 'post',
       mode: 'cors',
@@ -44,9 +48,6 @@ class Profile extends Component {
         emailStatus: body.message,
         toggle: true
       })
-      $(function() {
-        $('.modal-trigger').click();
-      });
     })
   }
 
@@ -89,6 +90,14 @@ class Profile extends Component {
 
     const hidden = {
       'display': 'none'
+    };
+
+    var emailMessage = '';
+
+    if (!this.state.toggle) {
+      emailMessage = "Sending Email.....Please Wait";
+    } else {
+      emailMessage =  this.state.emailStatus;
     };
 
     return (
@@ -158,7 +167,8 @@ class Profile extends Component {
                   trigger={
                     <Button type="submit" value="Submit" className="modal-trigger" style={hidden} />
                   }>
-                  <h5>{this.state.emailStatus}</h5>
+                  <h5>{ emailMessage }
+                  </h5>
                 </Modal>
                 <Button waves="light" type="submit" value="Submit" className="red lighten-2" id="share-btn">Share</Button>
               </form>
