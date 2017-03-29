@@ -42,15 +42,19 @@ class Home extends Component {
     if (localStorage.getItem('uid')) {
       return (
         <div className="home">
-          <Dashboard />
           <Row>
-            <Col m={3} offset="m1">
-              <br></br><br></br><br></br>
-              <img src={maleBody} alt="Body" style={{'height': '380px'}} />
+            <Col s={4} m={4}>
+              <Dashboard />
             </Col>
           </Row>
           <Row>
-            <Col m={4}>
+            <Col s={4} m={4}>
+              <br></br><br></br><br></br>
+              <img src={maleBody} alt="Body" className="male-body" />
+            </Col>
+          </Row>
+          <Row>
+            <Col s={4} m={4}>
               <br></br><br></br><br></br>
               <Link to="/region/head">
                 <img className="region-bubbles" src={headHead} alt="Head" style={this.bubbleStyle}/>
@@ -73,7 +77,7 @@ class Home extends Component {
             </Col>
           </Row>
           <Row>
-            <Col m={4}>
+            <Col s={4} m={4}>
               <br></br><br></br><br></br>
               <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Head</h6></div>
 
