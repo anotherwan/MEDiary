@@ -43,8 +43,39 @@ class Home extends Component {
       return (
         <div className="home">
           <Row>
+            <Col s={12} offset="s10" className="hide-on-med-and-up">
+              <br></br><br></br><br></br>
+
+              <div className="region-label">
+                Head
+                <Link to="/region/head">
+                  <img className="region-bubbles" src={headHead} alt="Head" />
+                </Link>
+              </div>
+              <br></br><br></br>
+              <Link to="/region/torso">
+                <img className="region-bubbles" src={torsoMan} alt="Torso" />
+              </Link>
+
+              <br></br><br></br>
+              <Link to="/region/arms">
+                <img className="region-bubbles" src={armsArm} alt="Arms" />
+              </Link>
+
+              <br></br><br></br>
+              <Link to="/region/legs">
+                <img className="region-bubbles" src={legsLeg} alt="Legs" />
+              </Link>
+            </Col>
+          </Row>
+           <Row className="dashboard">
+            <Col s={12} className="hide-on-med-and-up">
+              <Dashboard width={300} height={575}/>
+            </Col>
+          </Row>
+          <Row>
             <Col m={4} className="hide-on-small-only">
-              <Dashboard />
+              <Dashboard width={500} height={300} />
             </Col>
           </Row>
           <Row>
