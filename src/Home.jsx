@@ -43,18 +43,18 @@ class Home extends Component {
       return (
         <div className="home">
           <Row>
-            <Col s={4} m={4}>
+            <Col m={4} className="hide-on-small-only">
               <Dashboard />
             </Col>
           </Row>
           <Row>
-            <Col s={4} m={4}>
+            <Col m={4} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <img src={maleBody} alt="Body" className="male-body" />
             </Col>
           </Row>
           <Row>
-            <Col s={4} m={4}>
+            <Col m={4} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <Link to="/region/head">
                 <img className="region-bubbles" src={headHead} alt="Head" style={this.bubbleStyle}/>
@@ -77,7 +77,7 @@ class Home extends Component {
             </Col>
           </Row>
           <Row>
-            <Col s={4} m={4}>
+            <Col m={4} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Head</h6></div>
 
