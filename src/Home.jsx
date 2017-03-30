@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import {Row, Col, Slider, Slide } from "react-materialize"
+import { Row, Col, Slider, Slide } from "react-materialize";
+
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
@@ -32,7 +33,7 @@ class Home extends Component {
     this.AboutUs = this.AboutUs.bind(this);
   }
 
-  AboutUs () {
+  AboutUs() {
     this.setState({
       showAboutUs: true,
     })
@@ -43,29 +44,59 @@ class Home extends Component {
       return (
         <div className="home">
           <Row>
-            <Col s={12} offset="s10" className="hide-on-med-and-up">
+            <Col s={12} className="hide-on-med-and-up small-screen-title">
+              <h5>Please Select A Body Region</h5>
+            </Col>
+            <Col s={12} offset="s4" className="hide-on-med-and-up region-parts">
               <br></br><br></br><br></br>
-
-              <div className="region-label">
-                Head
+              <div className="region">
+                <div className="head-label">
+                  <span className="w0">H</span>
+                  <span className="w1">e</span>
+                  <span className="w2">a</span>
+                  <span className="w3">d</span>
+                </div>
                 <Link to="/region/head">
                   <img className="region-bubbles" src={headHead} alt="Head" />
                 </Link>
               </div>
               <br></br><br></br>
-              <Link to="/region/torso">
-                <img className="region-bubbles" src={torsoMan} alt="Torso" />
-              </Link>
-
+              <div className="region">
+                 <div className="torso-label">
+                  <span className="w0">T</span>
+                  <span className="w1">o</span>
+                  <span className="w2">r</span>
+                  <span className="w3">s</span>
+                  <span className="w4">o</span>
+                </div>
+                <Link to="/region/torso">
+                  <img className="region-bubbles" src={torsoMan} alt="Torso" />
+                </Link>
+              </div>
               <br></br><br></br>
-              <Link to="/region/arms">
-                <img className="region-bubbles" src={armsArm} alt="Arms" />
-              </Link>
-
+              <div className="region">
+                <div className="arms-label">
+                  <span className="w0">A</span>
+                  <span className="w1">r</span>
+                  <span className="w2">m</span>
+                  <span className="w3">s</span>
+                </div>
+                <Link to="/region/arms">
+                  <img className="region-bubbles" src={armsArm} alt="Arms" />
+                </Link>
+              </div>
               <br></br><br></br>
-              <Link to="/region/legs">
-                <img className="region-bubbles" src={legsLeg} alt="Legs" />
-              </Link>
+              <div className="region">
+                <div className="legs-label">
+                  <span className="w0">L</span>
+                  <span className="w1">e</span>
+                  <span className="w2">g</span>
+                  <span className="w3">s</span>
+                </div>
+                <Link to="/region/legs">
+                  <img className="region-bubbles" src={legsLeg} alt="Legs" />
+                </Link>
+              </div>
             </Col>
           </Row>
            <Row className="dashboard">
