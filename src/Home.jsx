@@ -47,7 +47,7 @@ class Home extends Component {
             <Col s={12} className="hide-on-med-and-up small-screen-title">
               <h5>Please Select A Body Region</h5>
             </Col>
-            <Col s={12} offset="s4" className="hide-on-med-and-up region-parts">
+            <Col s={12} className="hide-on-med-and-up region-parts">
               <br></br><br></br><br></br>
               <div className="region">
                 <div className="head-label">

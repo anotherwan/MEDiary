@@ -22,7 +22,7 @@
     border-radius: 50%;
     height: 25px;
     width: 70px;
-    left: 15px;
+    left: 122px;
     transform: rotate(-13deg);
 
   }
@@ -32,8 +32,8 @@
     border-radius: 50%;
     height: 25px;
     width: 70px;
-    left: 10px;
-    transform: rotate(-15deg);
+    left: 118px;
+    transform: rotate(-18deg);
   }
 
   .arms-label {
@@ -41,8 +41,8 @@
     border-radius: 50%;
     height: 25px;
     width: 70px;
-    left: 10px;
-    transform: rotate(-15deg);
+    left: 122px;
+    transform: rotate(-13deg);
   }
 
   .legs-label {
@@ -50,13 +50,14 @@
     border-radius: 50%;
     height: 25px;
     width: 70px;
-    left: 10px;
-    transform: rotate(-15deg);
+    left: 122px;
+    transform: rotate(-13deg);
   }
 
   .region {
     position: relative;
     top: -30px;
+    text-align: center;
   }
   .region span{
     font: 16px Monaco, Monospace;
@@ -65,6 +66,7 @@
     width: 10px;
     left: 0;
     top: 0;
+    text-align: center;
 
   }
 
