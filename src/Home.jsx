@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import {Row, Col, Slider, Slide } from "react-materialize"
+import { Row, Col, Slider, Slide, Card } from "react-materialize";
+
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
@@ -16,41 +17,127 @@ import Dashboard from './Dashboard.jsx';
 import '../public/styles/Home.css'
 
 class Home extends Component {
-  bubbleStyle = {
-    "border": "2px solid #e36352",
-    "borderRadius": "40px",
-    "height": "80px",
-    "width": "80px",
-    "backgroundColor": "#F7F7F7"
-  }
+  // bubbleStyle = {
+  //   "border": "2px solid #e36352",
+  //   "borderRadius": "40px",
+  //   "height": "80px",
+  //   "width": "80px",
+  //   "backgroundColor": "#F7F7F7"
+  // }
 
   constructor(props) {
     super(props);
     this.state = {
       showAboutUs: false,
+      lineWidth: 0,
+      lineHeight: 0
     };
     this.AboutUs = this.AboutUs.bind(this);
   }
 
-  AboutUs () {
+  AboutUs() {
     this.setState({
       showAboutUs: true,
     })
+  }
+
+  componentWillMount() {
+    let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    console.log(screenWidth);
+
+    if (screenWidth === 320) {
+      this.setState({
+        lineWidth: 300,
+        lineHeight: 575
+      });
+    } else if (screenWidth === 375) {
+      this.setState({
+        lineWidth: 355,
+        lineHeight: 575
+      })
+    }
   }
 
   render () {
     if (localStorage.getItem('uid')) {
       return (
         <div className="home">
-          <Dashboard />
           <Row>
-            <Col m={3} offset="m1">
+            <Col s={12} className="hide-on-med-and-up title-col">
+              <Card className="blue-grey lighten-5">
+                <span className="small-screen-title">Please Select A Body Region</span>
+              </Card>
+            </Col>
+            <Col s={12} className="hide-on-med-and-up region-parts">
               <br></br><br></br><br></br>
-              <img src={maleBody} alt="Body" style={{'height': '380px'}} />
+              <div className="region">
+                <div className="head-label">
+                  <span className="w0">H</span>
+                  <span className="w1">e</span>
+                  <span className="w2">a</span>
+                  <span className="w3">d</span>
+                </div>
+                <Link to="/region/head">
+                  <img className="region-bubbles" src={headHead} alt="Head" />
+                </Link>
+              </div>
+              <br></br><br></br>
+              <div className="region">
+                 <div className="torso-label">
+                  <span className="w0">T</span>
+                  <span className="w1">o</span>
+                  <span className="w2">r</span>
+                  <span className="w3">s</span>
+                  <span className="w4">o</span>
+                </div>
+                <Link to="/region/torso">
+                  <img className="region-bubbles" src={torsoMan} alt="Torso" />
+                </Link>
+              </div>
+              <br></br><br></br>
+              <div className="region">
+                <div className="arms-label">
+                  <span className="w0">A</span>
+                  <span className="w1">r</span>
+                  <span className="w2">m</span>
+                  <span className="w3">s</span>
+                </div>
+                <Link to="/region/arms">
+                  <img className="region-bubbles" src={armsArm} alt="Arms" />
+                </Link>
+              </div>
+              <br></br><br></br>
+              <div className="region">
+                <div className="legs-label">
+                  <span className="w0">L</span>
+                  <span className="w1">e</span>
+                  <span className="w2">g</span>
+                  <span className="w3">s</span>
+                </div>
+                <Link to="/region/legs">
+                  <img className="region-bubbles" src={legsLeg} alt="Legs" />
+                </Link>
+              </div>
+            </Col>
+          </Row>
+           <Row className="dashboard">
+            <Col s={12} className="hide-on-med-and-up">
+              <Dashboard width={ this.state.lineWidth } height={ this.state.lineHeight }/>
             </Col>
           </Row>
           <Row>
-            <Col m={4}>
+            <Col m={4} className="hide-on-small-only">
+              <Dashboard width={500} height={300} />
+            </Col>
+          </Row>
+          <Row>
+            <Col m={4} className="hide-on-small-only">
+              <br></br><br></br><br></br>
+              <img src={maleBody} alt="Body" className="male-body" />
+            </Col>
+          </Row>
+          <Row>
+            <Col m={4} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <Link to="/region/head">
                 <img className="region-bubbles" src={headHead} alt="Head" style={this.bubbleStyle}/>
@@ -73,7 +160,7 @@ class Home extends Component {
             </Col>
           </Row>
           <Row>
-            <Col m={4}>
+            <Col m={4} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Head</h6></div>
 

@@ -268,6 +268,8 @@ class Dashboard extends Component {
           torsoData={this.TorsoData}
           armsData={this.ArmsData}
           legsData={this.LegsData}
+          width={this.props.width}
+          height={this.props.height}
         />
       </div>
     )

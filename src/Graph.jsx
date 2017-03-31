@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Line} from 'react-chartjs-2';
-import {Row, Col, Card} from "react-materialize";
+import {Card} from "react-materialize";
 
 class Graph extends Component {
 
@@ -97,23 +97,22 @@ class Graph extends Component {
   }
   render() {
     return (
-        <Row>
+        <div>
           <br></br><br></br>
-           <Col offset="m1">
             <Card className="blue-grey lighten-5" title='Dashboard'>
               <p>Monthly Number of Pain Occurances by Body Regions</p>
               <Line
                 data={this.myData}
-                width={500}
-                height={300}
+                width={this.props.width}
+                height={this.props.height}
                 options={{
                   mainAspectRatio: false
                 }}
                 redraw
               />
             </Card>
-          </Col>
-        </Row>
+        </div>
+
     )
   }
 

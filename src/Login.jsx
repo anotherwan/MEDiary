@@ -63,7 +63,7 @@ class Login extends Component {
         <Row></Row>
         <Row></Row>
         <Row>
-          <Col s={10} m={10} offset="m1 s1  " className="red lighten-2 z-depth-1">
+          <Col s={10} m={10} offset="m1 s1" className="red lighten-2 z-depth-1">
               <h5 className="white-text">Login</h5>
           </Col>
         </Row>
