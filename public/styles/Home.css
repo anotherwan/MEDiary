@@ -1,8 +1,4 @@
-@media only screen and (min-width: 320px) and (max-width: 375px) {
-
-  .male-body {
-    height: 180px;
-  }
+@media only screen and (min-width: 320px) {
 
   .title-col {
     position: relative;
@@ -100,6 +96,59 @@
     width: 50%;
   }
 
+}
+
+@media only screen and (min-width: 375px) {
+  .small-screen-title {
+    text-align: center;
+    font-size: 1.7499rem;
+
+  }
+
+  .head-label {
+    position: relative;
+    border-radius: 50%;
+    height: 25px;
+    width: 70px;
+    left: 150px;
+    transform: rotate(-13deg);
+
+  }
+
+  .torso-label {
+    position: relative;
+    border-radius: 50%;
+    height: 25px;
+    width: 70px;
+    left: 145px;
+    transform: rotate(-17deg);
+  }
+
+  .arms-label {
+    position: relative;
+    border-radius: 50%;
+    height: 25px;
+    width: 70px;
+    left: 150px;
+    transform: rotate(-13deg);
+  }
+
+  .legs-label {
+    position: relative;
+    border-radius: 50%;
+    height: 25px;
+    width: 70px;
+    left: 150px;
+    transform: rotate(-13deg);
+  }
+
+  .dashboard {
+    width: 355px;
+    height: 600px;
+    position: absolute;
+    top: 173%;
+    right: 3%;
+  }
 }
 
 @media only screen and (min-width: 768px) {

@@ -17,18 +17,20 @@ import Dashboard from './Dashboard.jsx';
 import '../public/styles/Home.css'
 
 class Home extends Component {
-  bubbleStyle = {
-    "border": "2px solid #e36352",
-    "borderRadius": "40px",
-    "height": "80px",
-    "width": "80px",
-    "backgroundColor": "#F7F7F7"
-  }
+  // bubbleStyle = {
+  //   "border": "2px solid #e36352",
+  //   "borderRadius": "40px",
+  //   "height": "80px",
+  //   "width": "80px",
+  //   "backgroundColor": "#F7F7F7"
+  // }
 
   constructor(props) {
     super(props);
     this.state = {
       showAboutUs: false,
+      lineWidth: 0,
+      lineHeight: 0
     };
     this.AboutUs = this.AboutUs.bind(this);
   }
@@ -37,6 +39,23 @@ class Home extends Component {
     this.setState({
       showAboutUs: true,
     })
+  }
+
+  componentWillMount() {
+    let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    console.log(screenWidth);
+
+    if (screenWidth === 320) {
+      this.setState({
+        lineWidth: 300,
+        lineHeight: 575
+      });
+    } else if (screenWidth === 375) {
+      this.setState({
+        lineWidth: 355,
+        lineHeight: 575
+      })
+    }
   }
 
   render () {
@@ -103,7 +122,7 @@ class Home extends Component {
           </Row>
            <Row className="dashboard">
             <Col s={12} className="hide-on-med-and-up">
-              <Dashboard width={300} height={575}/>
+              <Dashboard width={ this.state.lineWidth } height={ this.state.lineHeight }/>
             </Col>
           </Row>
           <Row>
