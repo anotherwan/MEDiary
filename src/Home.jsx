@@ -64,8 +64,8 @@ class Home extends Component {
         <div className="home">
           <Row>
             <Col s={12} className="hide-on-med-and-up title-col">
-              <Card className="blue-grey lighten-5">
-                <span className="small-screen-title">Please Select A Body Region</span>
+              <Card className="red lighten-2">
+                <span className="white-text small-screen-title">Please Select A Body Region</span>
               </Card>
             </Col>
             <Col s={12} className="hide-on-med-and-up region-parts">
