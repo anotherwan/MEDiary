@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import { Row, Col, Slider, Slide } from "react-materialize";
+import { Row, Col, Slider, Slide, Card } from "react-materialize";
 
 import maleBody from '../public/images/mainBodyGray.svg';
 import headHead from '../public/images/headHead.svg';
@@ -44,8 +44,10 @@ class Home extends Component {
       return (
         <div className="home">
           <Row>
-            <Col s={12} className="hide-on-med-and-up small-screen-title">
-              <h5>Please Select A Body Region</h5>
+            <Col s={12} className="hide-on-med-and-up title-col">
+              <Card className="blue-grey lighten-5">
+                <span className="small-screen-title">Please Select A Body Region</span>
+              </Card>
             </Col>
             <Col s={12} className="hide-on-med-and-up region-parts">
               <br></br><br></br><br></br>
