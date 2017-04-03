@@ -152,6 +152,58 @@
   }
 }
 
+@media only screen and (min-width: 425px) {
+  .small-screen-title {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .head-label {
+    position: relative;
+    border-radius: 50%;
+    height: 25px;
+    width: 70px;
+    left: 175px;
+    transform: rotate(-13deg);
+
+  }
+
+  .torso-label {
+    position: relative;
+    border-radius: 50%;
+    height: 25px;
+    width: 70px;
+    left: 170px;
+    transform: rotate(-17deg);
+  }
+
+  .arms-label {
+    position: relative;
+    border-radius: 50%;
+    height: 25px;
+    width: 70px;
+    left: 175px;
+    transform: rotate(-13deg);
+  }
+
+  .legs-label {
+    position: relative;
+    border-radius: 50%;
+    height: 25px;
+    width: 70px;
+    left: 175px;
+    transform: rotate(-13deg);
+  }
+
+  .dashboard {
+    width: 405px;
+    height: 600px;
+    position: absolute;
+    top: 103%;
+    right: 2.5%;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .male-body {
     height: 380px;

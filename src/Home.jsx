@@ -55,6 +55,11 @@ class Home extends Component {
         lineWidth: 355,
         lineHeight: 575
       })
+    } else if (screenWidth === 425) {
+      this.setState({
+        lineWidth: 405,
+        lineHeight: 575
+      })
     }
   }
 
