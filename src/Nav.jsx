@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Link } from "react-router";
+import { Link } from 'react-router';
+import { Icon, Button } from 'react-materialize';
 
 import medProfile from '../public/images/medProfile.svg';
 import bandaid from '../public/images/BandaidLogo.svg';
@@ -29,19 +30,39 @@ class Nav extends Component {
           </div>
           <div className="nav-list-wrapper">
             <ul className="nav-list">
-              <div>
+              <div className="login-display">
                 <LoginDisplay />
               </div>
               <li>
                 <Link to='/profile'>
-                  <img src={medProfile} alt="Profile" height="40" width="40" />
+                  <img src={medProfile} alt="Profile" className="profile" height="40" width="40" />
                 </Link>
-                <Link to='/profile'>Profile</Link>
+                <Link className="profile" to='/profile'>Profile</Link>
               </li>
               <li>
-                <Link to='/login' onClick={this.onClick}>Logout</Link>
+                <Link className="logout" to='/login' onClick={this.onClick}>Logout</Link>
               </li>
             </ul>
+          </div>
+          <div className="mobile-menu-wrapper">
+            
+            {/*<ul className="mobile-menu">*/}
+              {/*<label htmlFor="show-menu" className="show-menu">Show Menu</label>
+                <input type="checkbox" id="show-menu" role="button" />*/}
+              {/*<li className="menu-icon"><Icon>view_headline</Icon></li>
+              <li className="mobile-login-display">
+                <LoginDisplay />
+              </li>
+              <li>
+                <Link to='/profile'>
+                  <img src={medProfile} alt="Profile" className="mobile-profile" height="40" width="40" />
+                </Link>
+                <Link className="profile" to='/profile'>Profile</Link>
+              </li>
+              <li>
+                <Link className="mobile-logout" to='/login' onClick={this.onClick}>Logout</Link>
+              </li>
+            </ul>*/}
           </div>
         </div>
     )
@@ -56,12 +77,14 @@ class Nav extends Component {
           </div>
           <div className="nav-list-wrapper">
             <ul className="nav-list">
+              <label for="show-menu" class="show-menu">Show Menu</label>
+              <input type="checkbox" id="show-menu" role="button" />
               <div>
                 <LoginDisplay />
               </div>
               <li>
                 <Link to='/register'>Registration</Link>
-              </li>
+              </li> 
               <li>
                 <Link to='/login'>Login</Link>
               </li>
