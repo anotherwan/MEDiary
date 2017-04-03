@@ -55,6 +55,11 @@ class Home extends Component {
         lineWidth: 355,
         lineHeight: 575
       })
+    } else if (screenWidth === 425) {
+      this.setState({
+        lineWidth: 405,
+        lineHeight: 575
+      })
     }
   }
 
@@ -64,8 +69,8 @@ class Home extends Component {
         <div className="home">
           <Row>
             <Col s={12} className="hide-on-med-and-up title-col">
-              <Card className="blue-grey lighten-5">
-                <span className="small-screen-title">Please Select A Body Region</span>
+              <Card className="red lighten-2">
+                <span className="white-text small-screen-title">Please Select A Body Region</span>
               </Card>
             </Col>
             <Col s={12} className="hide-on-med-and-up region-parts">
