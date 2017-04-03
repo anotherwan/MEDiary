@@ -125,7 +125,7 @@ class Home extends Component {
               </div>
             </Col>
           </Row>
-           <Row className="dashboard">
+           <Row className="dashboard hide-on-med-and-up">
             <Col s={12} className="hide-on-med-and-up">
               <Dashboard width={ this.state.lineWidth } height={ this.state.lineHeight }/>
             </Col>
