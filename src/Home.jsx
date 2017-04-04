@@ -43,7 +43,10 @@ class Home extends Component {
 
   componentWillMount() {
     let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    console.log(screenWidth);
+
+    // let legsBubble = document.getElementById('legs-bubble');
+    // let rect = legsBubble.getBoundingClientRect();
+    // console.log(rect.bottom)
 
     if (screenWidth === 320) {
       this.setState({
@@ -54,14 +57,34 @@ class Home extends Component {
       this.setState({
         lineWidth: 355,
         lineHeight: 575
-      })
+      });
     } else if (screenWidth === 425) {
       this.setState({
         lineWidth: 405,
         lineHeight: 575
-      })
+      });
     }
   }
+
+  componentDidMount() {
+    let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    let screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+    let fourLeft = (screenWidth / 2) - 38;
+    console.log('Width Data: ', screenWidth, fourLeft);
+    console.log('Height Data: ', screenHeight);
+
+    // let sheets = document.styleSheets;
+    // let sheet = sheets[5];
+    let dashboard = document.getElementsByClassName('dashboard');
+    console.log(dashboard);
+    let head = document.getElementById('head-label');
+    head.style.left = fourLeft + "px";
+
+    if (screenHeight === 568) {
+      dashboard[0].style.top = "730px";
+    }
+  }
+
 
   render () {
     if (localStorage.getItem('uid')) {
@@ -76,7 +99,7 @@ class Home extends Component {
             <Col s={12} className="hide-on-med-and-up region-parts">
               <br></br><br></br><br></br>
               <div className="region">
-                <div className="head-label">
+                <div className="head-label" id="head-label">
                   <span className="w0">H</span>
                   <span className="w1">e</span>
                   <span className="w2">a</span>
@@ -112,7 +135,7 @@ class Home extends Component {
                 </Link>
               </div>
               <br></br><br></br>
-              <div className="region">
+              <div className="region" id="legs-bubble">
                 <div className="legs-label">
                   <span className="w0">L</span>
                   <span className="w1">e</span>
@@ -125,9 +148,9 @@ class Home extends Component {
               </div>
             </Col>
           </Row>
-           <Row className="dashboard hide-on-med-and-up">
+          <Row className="dashboard hide-on-med-and-up">
             <Col s={12} className="hide-on-med-and-up">
-              <Dashboard width={ this.state.lineWidth } height={ this.state.lineHeight }/>
+                <Dashboard width={ this.state.lineWidth } height={ this.state.lineHeight }/>
             </Col>
           </Row>
           <Row>
