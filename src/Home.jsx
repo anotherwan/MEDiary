@@ -29,8 +29,8 @@ class Home extends Component {
     super(props);
     this.state = {
       showAboutUs: false,
-      lineWidth: 0,
-      lineHeight: 0
+      lineWidth: 300,
+      lineHeight: 575
     };
     this.AboutUs = this.AboutUs.bind(this);
   }
@@ -49,11 +49,13 @@ class Home extends Component {
     // console.log(rect.bottom)
 
     if (screenWidth === 320) {
+      console.log('Setting state at: ', screenWidth);
       this.setState({
         lineWidth: 300,
         lineHeight: 575
       });
     } else if (screenWidth === 375) {
+      console.log('Setting state at: ', screenWidth);
       this.setState({
         lineWidth: 355,
         lineHeight: 575
@@ -66,24 +68,23 @@ class Home extends Component {
     }
   }
 
-  componentDidMount() {
-    let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    let screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-    let fourLeft = (screenWidth / 2) - 38;
-    console.log('Width Data: ', screenWidth, fourLeft);
-    console.log('Height Data: ', screenHeight);
+  // componentDidMount() {
+  //   let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  //   let screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+  //   let fourLeft = (screenWidth / 2) - 38;
+  //   console.log('Width Data: ', screenWidth, fourLeft);
+  //   console.log('Height Data: ', screenHeight);
 
-    // let sheets = document.styleSheets;
-    // let sheet = sheets[5];
-    let dashboard = document.getElementsByClassName('dashboard');
-    console.log(dashboard);
-    let head = document.getElementById('head-label');
-    head.style.left = fourLeft + "px";
+  //   // let sheets = document.styleSheets;
+  //   // let sheet = sheets[5];
+  //   let dashboard = document.getElementsByClassName('dashboard');
+  //   let head = document.getElementById('head-label');
+  //   head.style.left = fourLeft + "px";
 
-    if (screenHeight === 568) {
-      dashboard[0].style.top = "730px";
-    }
-  }
+  //   if (screenHeight === 568) {
+  //     dashboard[0].style.top = "730px";
+  //   }
+  // }
 
 
   render () {
@@ -202,8 +203,9 @@ class Home extends Component {
               <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Legs</h6></div>
             </Col>
           </Row>
+          { this.dynamicStyles() }
         </div>
-      )
+      );
     } else {
       return (
         <div>
@@ -234,8 +236,27 @@ class Home extends Component {
               </Slide>
             </Slider>
         </div>
-      )
+      );
     }
+  }
+  dynamicStyles() {
+    let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    let screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+    let fourLeft = (screenWidth / 2) - 38;
+    console.log('Width Data: ', screenWidth, fourLeft);
+    console.log('Height Data: ', screenHeight);
+
+    // let sheets = document.styleSheets;
+    // let sheet = sheets[5];
+    let dashboard = document.getElementsByClassName('dashboard');
+    let head = document.getElementById('head-label');
+    head.style.left = fourLeft + "px";
+
+    if (screenHeight === 568) {
+      dashboard[0].style.top = "730px";
+    }
+
+    return;
   }
 }
 
