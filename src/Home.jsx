@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
+import $ from 'jquery';
 import { Row, Col, Slider, Slide, Card } from "react-materialize";
 
 import maleBody from '../public/images/mainBodyGray.svg';
@@ -7,7 +8,6 @@ import headHead from '../public/images/headHead.svg';
 import torsoMan from '../public/images/torsoMan.svg';
 import armsArm from '../public/images/armsArm.svg';
 import legsLeg from '../public/images/legsLeg.svg';
-
 import torsoPain from '../public/images/torsoPain.svg';
 import visual2 from '../public/images/visual2.svg';
 import doctor8 from '../public/images/doctor8.svg';
@@ -68,23 +68,15 @@ class Home extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-  //   let screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-  //   let fourLeft = (screenWidth / 2) - 38;
-  //   console.log('Width Data: ', screenWidth, fourLeft);
-  //   console.log('Height Data: ', screenHeight);
+  componentDidMount() {
+    this.dynamicStyles();
 
-  //   // let sheets = document.styleSheets;
-  //   // let sheet = sheets[5];
-  //   let dashboard = document.getElementsByClassName('dashboard');
-  //   let head = document.getElementById('head-label');
-  //   head.style.left = fourLeft + "px";
+    $(window).on('resize',this.dynamicStyles);
+  }
 
-  //   if (screenHeight === 568) {
-  //     dashboard[0].style.top = "730px";
-  //   }
-  // }
+  componentWillUnmount() {
+    $(window).off('resize', this.dynamicStyles);
+  }
 
 
   render () {
@@ -112,7 +104,7 @@ class Home extends Component {
               </div>
               <br></br><br></br>
               <div className="region">
-                 <div className="torso-label">
+                 <div className="torso-label" id="torso-label">
                   <span className="w0">T</span>
                   <span className="w1">o</span>
                   <span className="w2">r</span>
@@ -125,7 +117,7 @@ class Home extends Component {
               </div>
               <br></br><br></br>
               <div className="region">
-                <div className="arms-label">
+                <div className="arms-label" id="arms-label">
                   <span className="w0">A</span>
                   <span className="w1">r</span>
                   <span className="w2">m</span>
@@ -137,7 +129,7 @@ class Home extends Component {
               </div>
               <br></br><br></br>
               <div className="region" id="legs-bubble">
-                <div className="legs-label">
+                <div className="legs-label" id="legs-label">
                   <span className="w0">L</span>
                   <span className="w1">e</span>
                   <span className="w2">g</span>
@@ -203,7 +195,6 @@ class Home extends Component {
               <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Legs</h6></div>
             </Col>
           </Row>
-          { this.dynamicStyles() }
         </div>
       );
     } else {
@@ -239,22 +230,28 @@ class Home extends Component {
       );
     }
   }
+  //function to handle dynamic resizing and setting of css properties
   dynamicStyles() {
-    let screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    let screenHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+
+    let screenWidth = screen.width;  //used to get actual screen values
+    let screenHeight = screen.height;
     let fourLeft = (screenWidth / 2) - 38;
+    let fiveLeft = (screenWidth / 2) - 42;
     console.log('Width Data: ', screenWidth, fourLeft);
     console.log('Height Data: ', screenHeight);
 
-    // let sheets = document.styleSheets;
-    // let sheet = sheets[5];
     let dashboard = document.getElementsByClassName('dashboard');
     let head = document.getElementById('head-label');
-    head.style.left = fourLeft + "px";
+    let torso = document.getElementById('torso-label');
+    let arms = document.getElementById('arms-label');
+    let legs = document.getElementById('legs-label');
 
-    if (screenHeight === 568) {
-      dashboard[0].style.top = "730px";
-    }
+    head.style.left = fourLeft + "px";
+    torso.style.left = fiveLeft + "px";
+    arms.style.left = fourLeft + "px";
+    legs.style.left = fourLeft + "px";
+    dashboard[0].style.width = (screenWidth - 20) + "px";
+    dashboard[0].style.height = (screenHeight - 20) + "px";
 
     return;
   }
