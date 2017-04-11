@@ -83,7 +83,7 @@ class Home extends Component {
     if (localStorage.getItem('uid')) {
       return (
         <div className="home">
-          <Row>
+          <Row className="hide-on-med-and-up">
             <Col s={12} className="hide-on-med-and-up title-col">
               <Card className="red lighten-2">
                 <span className="white-text small-screen-title">Please Select A Body Region</span>
@@ -148,16 +148,9 @@ class Home extends Component {
           </Row>
           <Row>
             <Col m={4} className="hide-on-small-only">
-              <Dashboard width={500} height={300} />
-            </Col>
-          </Row>
-          <Row>
-            <Col m={4} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <img src={maleBody} alt="Body" className="male-body" />
             </Col>
-          </Row>
-          <Row>
             <Col m={4} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <Link to="/region/head">
@@ -179,8 +172,6 @@ class Home extends Component {
                 <img className="region-bubbles" src={legsLeg} alt="Legs" style={this.bubbleStyle}/>
               </Link>
             </Col>
-          </Row>
-          <Row>
             <Col m={4} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Head</h6></div>
@@ -193,6 +184,11 @@ class Home extends Component {
 
               <br></br><br></br><br></br><br></br>
               <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Legs</h6></div>
+            </Col>
+          </Row>
+          <Row className="dashboard">
+            <Col m={12} className="hide-on-small-only">
+              <Dashboard width={500} height={300} />
             </Col>
           </Row>
         </div>
@@ -240,7 +236,7 @@ class Home extends Component {
     console.log('Width Data: ', screenWidth, fourLeft);
     console.log('Height Data: ', screenHeight);
 
-    let dashboard = document.getElementsByClassName('dashboard');
+    let dashboards = document.getElementsByClassName('dashboard');
     let head = document.getElementById('head-label');
     let torso = document.getElementById('torso-label');
     let arms = document.getElementById('arms-label');
@@ -250,8 +246,17 @@ class Home extends Component {
     torso.style.left = fiveLeft + "px";
     arms.style.left = fourLeft + "px";
     legs.style.left = fourLeft + "px";
-    dashboard[0].style.width = (screenWidth - 20) + "px";
-    dashboard[0].style.height = (screenHeight - 20) + "px";
+
+    for (let i = 0; i < dashboards.length; i++) {
+      if (screenWidth < 768) {
+        dashboards[0].style.width = (screenWidth - 20) + "px";
+        dashboards[0].style.height = (screenHeight - 20) + "px";
+      } else if (screenWidth === 768) {
+        dashboards[1].style.width = (screenWidth - 20) + "px";
+        dashboards[1].style.top = screenHeight / 2 + "px";
+        dashboards[1].style.right = ((screenWidth - (screenWidth - 20)) / 2 ) + "px";
+      }
+    }
 
     return;
   }

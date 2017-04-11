@@ -88,7 +88,6 @@
   .region-parts {
     width: 50%;
   }
-
 }
 
 @media only screen and (min-height: 568px) {
@@ -127,11 +126,6 @@
     font-size: 1.7499rem;
 
   }
-
-  .dashboard {
-    width: 355px;
-    height: 600px;
-  }
 }
 
 @media only screen and (min-width: 425px) {
@@ -141,9 +135,18 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .home {
+    width: 100%;
+    height: 1024px;
+  }
+
   .male-body {
     height: 380px;
+  }
+
+  .dashboard {
+    height: 900px;
   }
 }
 
