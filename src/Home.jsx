@@ -71,13 +71,47 @@ class Home extends Component {
   componentDidMount() {
     this.dynamicStyles();
 
-    $(window).on('resize',this.dynamicStyles);
+    $(window).resize(this.dynamicStyles);
   }
 
   componentWillUnmount() {
-    $(window).off('resize', this.dynamicStyles);
+    $(window).off('resize');
   }
 
+
+  //function to handle dynamic resizing and setting of css properties
+  dynamicStyles() {
+
+    let screenWidth = screen.width;  //used to get actual screen values
+    let screenHeight = screen.height;
+    let fourLeft = (screenWidth / 2) - 38;
+    let fiveLeft = (screenWidth / 2) - 42;
+    console.log('Width Data: ', screenWidth, fourLeft);
+    console.log('Height Data: ', screenHeight);
+
+    let dashboards = document.getElementsByClassName('dashboard');
+    let head = document.getElementById('head-label');
+    let torso = document.getElementById('torso-label');
+    let arms = document.getElementById('arms-label');
+    let legs = document.getElementById('legs-label');
+
+    head.style.left = fourLeft + "px";
+    torso.style.left = fiveLeft + "px";
+    arms.style.left = fourLeft + "px";
+    legs.style.left = fourLeft + "px";
+
+
+    if (screenWidth < 768) {
+      dashboards[0].style.width = (screenWidth - 20) + "px";
+      dashboards[0].style.height = (screenHeight - 20) + "px";
+    } else if (screenWidth === 768) {
+      dashboards[1].style.width = (screenWidth - 20) + "px";
+      dashboards[1].style.top = screenHeight / 2 + "px";
+      dashboards[1].style.right = ((screenWidth - (screenWidth - 20)) / 2 ) + "px";
+    }
+
+    return;
+  }
 
   render () {
     if (localStorage.getItem('uid')) {
@@ -147,11 +181,11 @@ class Home extends Component {
             </Col>
           </Row>
           <Row>
-            <Col m={4} className="hide-on-small-only">
+            <Col m={6} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <img src={maleBody} alt="Body" className="male-body" />
             </Col>
-            <Col m={4} className="hide-on-small-only">
+            <Col m={6} className="hide-on-small-only">
               <br></br><br></br><br></br>
               <Link to="/region/head">
                 <img className="region-bubbles" src={headHead} alt="Head" style={this.bubbleStyle}/>
@@ -171,19 +205,6 @@ class Home extends Component {
               <Link to="/region/legs">
                 <img className="region-bubbles" src={legsLeg} alt="Legs" style={this.bubbleStyle}/>
               </Link>
-            </Col>
-            <Col m={4} className="hide-on-small-only">
-              <br></br><br></br><br></br>
-              <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Head</h6></div>
-
-              <br></br><br></br><br></br>
-              <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Torso</h6></div>
-
-              <br></br><br></br><br></br>
-              <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Arms</h6></div>
-
-              <br></br><br></br><br></br><br></br>
-              <div style={{'borderBottom':'solid black 2px', 'width': '60px'}}><h6>Legs</h6></div>
             </Col>
           </Row>
           <Row className="dashboard">
@@ -225,40 +246,6 @@ class Home extends Component {
         </div>
       );
     }
-  }
-  //function to handle dynamic resizing and setting of css properties
-  dynamicStyles() {
-
-    let screenWidth = screen.width;  //used to get actual screen values
-    let screenHeight = screen.height;
-    let fourLeft = (screenWidth / 2) - 38;
-    let fiveLeft = (screenWidth / 2) - 42;
-    console.log('Width Data: ', screenWidth, fourLeft);
-    console.log('Height Data: ', screenHeight);
-
-    let dashboards = document.getElementsByClassName('dashboard');
-    let head = document.getElementById('head-label');
-    let torso = document.getElementById('torso-label');
-    let arms = document.getElementById('arms-label');
-    let legs = document.getElementById('legs-label');
-
-    head.style.left = fourLeft + "px";
-    torso.style.left = fiveLeft + "px";
-    arms.style.left = fourLeft + "px";
-    legs.style.left = fourLeft + "px";
-
-    for (let i = 0; i < dashboards.length; i++) {
-      if (screenWidth < 768) {
-        dashboards[0].style.width = (screenWidth - 20) + "px";
-        dashboards[0].style.height = (screenHeight - 20) + "px";
-      } else if (screenWidth === 768) {
-        dashboards[1].style.width = (screenWidth - 20) + "px";
-        dashboards[1].style.top = screenHeight / 2 + "px";
-        dashboards[1].style.right = ((screenWidth - (screenWidth - 20)) / 2 ) + "px";
-      }
-    }
-
-    return;
   }
 }
 

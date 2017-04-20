@@ -142,7 +142,14 @@
   }
 
   .male-body {
-    height: 380px;
+    position: relative;
+    left: -130px;
+    height: 400px;
+  }
+
+  .region-bubbles {
+    position: relative;
+    left: 65px;
   }
 
   .dashboard {
